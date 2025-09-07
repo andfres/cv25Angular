@@ -1,13 +1,13 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RouterOutlet } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { CvComponent } from './components/cv/cv.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TranslateModule],
+  imports: [RouterOutlet, TranslateModule, CvComponent],
   templateUrl: './app.html',
-  styleUrl: './app.sass',
+  styleUrl: './app.scss',
   standalone: true,               // 👈 importante
 })
 export class App implements OnInit {
