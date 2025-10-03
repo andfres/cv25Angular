@@ -10,8 +10,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   template: `
     <section>
       <h2>{{ 'sections.timeline' | translate }}</h2>
-      obj
-      <pre>{{ timeline | json }}</pre>
+  
       @for (entry of sortedTimeline; track entry.startDate) {
         <div [ngClass]="{
           'experience-entry': entry.type === 'experience',
