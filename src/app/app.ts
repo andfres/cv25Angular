@@ -1,25 +1,62 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { RouterOutlet } from '@angular/router';
 import { CvComponent } from './components/cv/cv.component';
+import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { LanguagesComponent } from './components/languages/languages.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CommonModule } from '@angular/common'; // Importar CommonModule
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TranslateModule, CvComponent],
+  imports: [RouterOutlet, TranslateModule, CvComponent, HeaderComponent, SkillsComponent, LanguagesComponent, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.scss',
-  standalone: true,               // 👈 importante
+  standalone: true,
 })
 export class App implements OnInit {
   protected readonly title = signal('my-angular-app');
+  cvData: any; // Se cargará dinámicamente
+  profileImage: string = '/assets/user-profile.png'; // Ruta estática de la imagen de perfil
+  currentLanguageDisplay: string = ''; // Nueva propiedad para mostrar el idioma actual
 
-  constructor(private translate: TranslateService) {}
-
-  ngOnInit(): void {
-    void this.translate.use('en');
+  constructor(public translate: TranslateService) {
+    console.log('App Constructor - translate service initialized');
   }
 
-  changeLanguage(lang: string) {
-    void this.translate.use(lang);
+  ngOnInit(): void {
+    console.log('App ngOnInit - starting initialization');
+    // Añadir idiomas soportados y establecer un idioma de respaldo
+    this.translate.addLangs(['en', 'es']);
+    this.translate.setDefaultLang('en');
+
+    // Usar el idioma por defecto del navegador o 'en' si no se detecta
+    const browserLang = this.translate.getBrowserLang();
+    const initialLang = (browserLang && browserLang.match(/en|es/)) ? browserLang : 'en';
+    console.log(`App ngOnInit - Initializing with language: ${initialLang}`);
+
+    // Cargar las traducciones para el idioma inicial y luego cargar los datos del CV
+    this.translate.getTranslation(initialLang).subscribe(() => {
+      console.log(`App ngOnInit - Initial translations for ${initialLang} loaded.`);
+      this.translate.use(initialLang);
+      this.loadAndSetCvData();
+      this.currentLanguageDisplay = this.translate.currentLang;
+    });
+
+    // Suscribirse a los cambios de idioma para actualizar cvData en el futuro
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      console.log(`App onLangChange - Language changed to: ${event.lang}`);
+      this.loadAndSetCvData();
+      this.currentLanguageDisplay = event.lang;
+    });
+  }
+
+  private loadAndSetCvData(): void {
+    console.log('App loadAndSetCvData - Attempting to load CV data.');
+    this.translate.get('.').subscribe((data: any) => {
+      console.log('App loadAndSetCvData - CV data received:', data);
+      this.cvData = data;
+    });
   }
 }

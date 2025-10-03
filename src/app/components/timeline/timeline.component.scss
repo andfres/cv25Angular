@@ -24,3 +24,19 @@ ul {
 li {
   margin-bottom: 0.5rem;
 }
+
+.experience-entry {
+  background-color: #e0f2f7; /* Light blue for experience */
+  border-left: 5px solid #0288d1;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.education-entry {
+  background-color: #e8f5e9; /* Light green for education */
+  border-left: 5px solid #388e3c;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}

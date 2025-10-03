@@ -1,13 +1,17 @@
+@if (cvData) {
 <main>
-  <h1>{{ 'HELLO' | translate }}</h1>
-  <p>{{ 'WELCOME' | translate }}</p>
-
-  <div>
-    <button (click)="changeLanguage('en')">English</button>
-    <button (click)="changeLanguage('es')">Español</button>
+  <p>Idioma Actual: {{ currentLanguageDisplay | uppercase }}</p>
+  <aside class="sidebar">
+    <div class="profile-image-container">
+      <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}" class="profile-image">
+    </div>
+    <app-skills [skills]="cvData.skills"></app-skills>
+    <app-languages [languages]="cvData.languages"></app-languages>
+  </aside>
+  <div class="main-content">
+    <app-header></app-header>
+    <app-cv [cvData]="cvData"></app-cv>
+    <router-outlet />
   </div>
-
-  <app-cv></app-cv>
-
-  <router-outlet />
 </main>
+}

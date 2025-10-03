@@ -2,6 +2,10 @@
   "HELLO": "Hello world!",
   "WELCOME": "Welcome to my application!",
 
+  "profile": {
+    "picture": "Profile Picture"
+  },
+
   "sections": {
     "languages": "Languages",
     "skills": "Skills",
@@ -10,7 +14,7 @@
   },
 
   "personalInfo": {
-    "name": "Your Name",
+    "name": "Andrés Fresno Bausela",
     "title": "Fullstack Engineer / Analyst",
     "location": "Valladolid, Spain",
     "email": "your.email@example.com",

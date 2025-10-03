@@ -1,0 +1,45 @@
+    main {
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+    }
+    
+    .main-content {
+      flex: 3;
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .sidebar {
+      flex: 1;
+      background-color: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .profile-image-container {
+      border: 3px solid #007bff;
+      border-radius: 50%;
+      padding: 5px;
+      display: inline-block;
+    }
+    
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    app-skills,
+    app-languages {
+      width: 100%;
+    }
+

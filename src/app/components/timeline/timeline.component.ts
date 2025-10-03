@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { TimelineEntry } from '../../models/cv.model';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -11,7 +11,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     <section>
       <h2>{{ 'sections.timeline' | translate }}</h2>
       @for (entry of sortedTimeline; track entry.startDate) {
-        <div>
+        <div [ngClass]="{
+          'experience-entry': entry.type === 'experience',
+          'education-entry': entry.type === 'education'
+        }">
           <h3>
             @if (entry.type === 'experience') {
               <span>{{ entry.company }}</span>
@@ -47,14 +50,20 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   `,
   styleUrl: './timeline.component.scss',
 })
-export class TimelineComponent implements OnInit {
+export class TimelineComponent implements OnInit, OnChanges {
   @Input() timeline!: TimelineEntry[];
   sortedTimeline!: TimelineEntry[];
 
   constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
-    this.sortTimeline();
+    // La ordenación se realizará en ngOnChanges
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['timeline'] && this.timeline) {
+      this.sortTimeline();
+    }
   }
 
   sortTimeline(): void {

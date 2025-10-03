@@ -4,6 +4,7 @@ export interface PersonalInfo {
   location: string;
   email: string;
   objective: string;
+  image: string;
 }
 
 export interface Role {
