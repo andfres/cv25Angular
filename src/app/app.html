@@ -1,17 +1,13 @@
+<app-header></app-header>
+<div class="language-selector">
+  @for (lang of getAvailableLanguages(); track lang) {
+    <button (click)="changeLanguage(lang)" [class.active]="getCurrentLanguage() === lang">
+      <img src="assets/flags/{{ lang }}.png" alt="{{ lang | uppercase }} Flag">
+      {{ lang | uppercase }}
+    </button>
+  }
+</div>
+<button class="print-button" (click)="printPage()">Print CV</button>
 @if (cvData) {
-<main>
-  <p>Idioma Actual: {{ currentLanguageDisplay | uppercase }}</p>
-  <aside class="sidebar">
-    <div class="profile-image-container">
-      <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}" class="profile-image">
-    </div>
-    <app-skills [skills]="cvData.skills"></app-skills>
-    <app-languages [languages]="cvData.languages"></app-languages>
-  </aside>
-  <div class="main-content">
-    <app-header></app-header>
-    <app-cv [cvData]="cvData"></app-cv>
-    <router-outlet />
-  </div>
-</main>
+  <app-cv-content [cvData]="cvData" [profileImage]="profileImage"></app-cv-content>
 }

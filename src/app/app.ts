@@ -1,17 +1,13 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { TranslateModule, TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { RouterOutlet } from '@angular/router';
-import { CvComponent } from './components/cv/cv.component';
-import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
-import { SkillsComponent } from './components/skills/skills.component';
-import { LanguagesComponent } from './components/languages/languages.component';
-import { HeaderComponent } from './components/header/header.component';
+import { CvContentComponent } from './components/cv-content/cv-content.component';
 import { CommonModule } from '@angular/common'; // Importar CommonModule
 import { HttpClient } from '@angular/common/http'; // Import HttpClient
+import { HeaderComponent } from './components/header/header.component'; // Import HeaderComponent
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TranslateModule, CvComponent, HeaderComponent, SkillsComponent, LanguagesComponent, CommonModule],
+  imports: [TranslateModule, CvContentComponent, CommonModule, HeaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
   standalone: true,
@@ -60,5 +56,25 @@ export class App implements OnInit {
       this.cvData = data;
       console.log('App loadAndSetCvData - cvData assigned:', this.cvData);
     });
+  }
+
+  printPage(): void {
+    window.print();
+  }
+
+  changeLanguage(lang: string) {
+    this.translate.use(lang).subscribe(() => {
+      console.log(`App changeLanguage - Language changed to: ${lang}`);
+      this.loadAndSetCvData(); // Reload data when language changes
+      this.currentLanguageDisplay = this.translate.currentLang;
+    });
+  }
+
+  getCurrentLanguage(): string {
+    return this.translate.currentLang;
+  }
+
+  getAvailableLanguages(): readonly string[] {
+    return this.translate.getLangs();
   }
 }

@@ -1,0 +1,40 @@
+<section class="cv-section">
+  <h2 class="cv-heading-2">{{ 'sections.timeline' | translate }}</h2>
+  <pre>{{ timeline | json }}</pre>
+  @for (entry of sortedTimeline; track entry.startDate) {
+    <div [ngClass]="{
+      'experience-entry': entry.type === 'experience',
+      'education-entry': entry.type === 'education'
+    }">
+      <h3>
+        @if (entry.type === 'experience') {
+          <span>{{ entry.company }}</span>
+        }
+        @if (entry.type === 'education') {
+          <span>{{ entry.institution }}</span>
+        }
+      </h3>
+      @if (entry.type === 'experience') {
+        <p>{{ entry.position }}</p>
+      }
+      @if (entry.type === 'education') {
+        <p>{{ entry.degree }}</p>
+      }
+      <p>{{ entry.period }}</p>
+      @if (entry.type === 'experience' && entry.summary) {
+        <p>{{ entry.summary }}</p>
+      }
+      @if (entry.type === 'experience' && entry.roles && entry.roles.length > 0) {
+        <h4>{{ 'sections.roles' | translate }}</h4>
+        <ul class="reset-list">
+          @for (role of entry.roles; track role.startDate) {
+            <li class="list-item-margin">
+              {{ role.title }} ({{ role.period }})
+              <p>{{ role.summary }}</p>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  }
+</section>

@@ -1,0 +1,13 @@
+<main>
+  <aside class="sidebar">
+    <div class="profile-image-container">
+      <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}" class="profile-image">
+    </div>
+    <app-skills [skills]="cvData.skills"></app-skills>
+    <app-languages [languages]="cvData.languages"></app-languages>
+  </aside>
+  <div class="main-content">
+    <app-cv [cvData]="cvData"></app-cv>
+    <router-outlet />
+  </div>
+</main>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core'; // Keep TranslateModule for pipes
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,18 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  constructor(private translate: TranslateService) {}
-
-  changeLanguage(lang: string) {
-    void this.translate.use(lang);
-  }
-
-  getCurrentLanguage(): string {
-    return this.translate.currentLang;
-  }
-
-  getAvailableLanguages(): readonly string[] {
-    return this.translate.getLangs();
-  }
+  // Constructor and language methods removed, as they are now in AppComponent
 }
 

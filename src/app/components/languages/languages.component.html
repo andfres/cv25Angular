@@ -1,0 +1,10 @@
+<section class="cv-section">
+  <h2 class="cv-heading-2">{{ 'sections.languages' | translate }}</h2>
+  <ul class="reset-list">
+    @for (language of languages; track language.name) {
+      <li class="list-item-margin">
+        {{ language.name }} ({{ language.level }}%)
+      </li>
+    }
+  </ul>
+</section>

@@ -1,18 +1,4 @@
-section {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-
+/* Common styles moved to src/styles.scss */
 h2 {
-  color: #ff0000;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 0.5rem;
+  color: #ff0000; /* Unique color for languages heading */
 }

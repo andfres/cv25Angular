@@ -1,0 +1,54 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #fff;
+  position: relative;
+  max-width: 210mm;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* border-radius: 8px; */ /* Removed for sharp corners */
+}
+
+main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+aside.sidebar {
+  width: 30%; /* Adjusted sidebar width to 30% */
+  padding: 1rem; /* Re-added padding */
+  background-color: #fff;
+  /* border-right: 1px solid #eee; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-content {
+  flex-grow: 1; /* Take remaining space */
+  display: flex;
+  flex-direction: column;
+  background-color: #fff; /* White background for main content */
+}
+
+.profile-image-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+
+  .profile-image {
+    width: 100%;
+    max-width: 100%; /* Ensure image fits within container */
+    height: auto;    /* Maintain aspect ratio */
+    object-fit: cover;
+  }
+}

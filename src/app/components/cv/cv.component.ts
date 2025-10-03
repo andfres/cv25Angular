@@ -15,7 +15,6 @@ import { CommonModule } from '@angular/common';
       <app-timeline [timeline]="cvData.timeline"></app-timeline>
     }
   `,
-  styleUrl: './cv.component.scss',
 })
 export class CvComponent implements OnInit {
   @Input() cvData!: CvData;

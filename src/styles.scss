@@ -1,5 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* Base Styles */
 body {
-  background-color: lightgrey;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5; /* Light grey background for the body */
+}
+
+/* Reusable Classes */
+.cv-section {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cv-heading-2 {
+  color: #333;
+}
+
+.reset-list {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item-margin {
+  margin-bottom: 0.5rem;
 }

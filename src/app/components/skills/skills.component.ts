@@ -8,18 +8,17 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   template: `
-    <section>
-      <h2>{{ 'sections.skills' | translate }}</h2>
-      <ul>
+    <section class="cv-section">
+      <h2 class="cv-heading-2">{{ 'sections.skills' | translate }}</h2>
+      <ul class="reset-list">
         @for (skill of skills; track skill.name) {
-          <li>
+          <li class="list-item-margin">
             {{ skill.name }} ({{ skill.level }}%)
           </li>
         }
       </ul>
     </section>
   `,
-  styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {
   @Input() skills!: Skill[];
