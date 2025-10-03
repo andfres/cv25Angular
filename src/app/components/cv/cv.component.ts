@@ -10,10 +10,10 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [TranslateModule, PersonalInfoComponent, TimelineComponent, CommonModule],
   template: `
-    <div *ngIf="cvData">
+    @if (cvData) {
       <app-personal-info [personalInfo]="cvData.personalInfo"></app-personal-info>
       <app-timeline [timeline]="cvData.timeline"></app-timeline>
-    </div>
+    }
   `,
   styleUrl: './cv.component.scss',
 })

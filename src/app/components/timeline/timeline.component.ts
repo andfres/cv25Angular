@@ -10,6 +10,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   template: `
     <section>
       <h2>{{ 'sections.timeline' | translate }}</h2>
+      obj
+      <pre>{{ timeline | json }}</pre>
       @for (entry of sortedTimeline; track entry.startDate) {
         <div [ngClass]="{
           'experience-entry': entry.type === 'experience',
@@ -57,10 +59,12 @@ export class TimelineComponent implements OnInit, OnChanges {
   constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
+    console.log('TimelineComponent ngOnInit - timeline input:', this.timeline);
     // La ordenación se realizará en ngOnChanges
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log('TimelineComponent ngOnChanges - changes:', changes);
     if (changes['timeline'] && this.timeline) {
       this.sortTimeline();
     }

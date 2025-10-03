@@ -7,6 +7,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { LanguagesComponent } from './components/languages/languages.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CommonModule } from '@angular/common'; // Importar CommonModule
+import { HttpClient } from '@angular/common/http'; // Import HttpClient
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ export class App implements OnInit {
   profileImage: string = '/assets/user-profile.png'; // Ruta estática de la imagen de perfil
   currentLanguageDisplay: string = ''; // Nueva propiedad para mostrar el idioma actual
 
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService, private http: HttpClient) {
     console.log('App Constructor - translate service initialized');
   }
 
@@ -37,9 +38,8 @@ export class App implements OnInit {
     console.log(`App ngOnInit - Initializing with language: ${initialLang}`);
 
     // Cargar las traducciones para el idioma inicial y luego cargar los datos del CV
-    this.translate.getTranslation(initialLang).subscribe(() => {
+    this.translate.use(initialLang).subscribe(() => {
       console.log(`App ngOnInit - Initial translations for ${initialLang} loaded.`);
-      this.translate.use(initialLang);
       this.loadAndSetCvData();
       this.currentLanguageDisplay = this.translate.currentLang;
     });
@@ -54,9 +54,11 @@ export class App implements OnInit {
 
   private loadAndSetCvData(): void {
     console.log('App loadAndSetCvData - Attempting to load CV data.');
-    this.translate.get('.').subscribe((data: any) => {
+    const currentLang = this.translate.currentLang; // Get the currently active language
+    this.http.get(`/assets/i18n/${currentLang}.json`).subscribe((data: any) => {
       console.log('App loadAndSetCvData - CV data received:', data);
       this.cvData = data;
+      console.log('App loadAndSetCvData - cvData assigned:', this.cvData);
     });
   }
 }
