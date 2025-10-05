@@ -1,8 +1,8 @@
-<section class="cv-section">
-  <h2 class="cv-heading-2">{{ 'sections.skills' | translate }}</h2>
-  <ul class="reset-list">
+<section class="p-4 mb-4">
+  <h2 class="text-gray-800 text-xl font-bold mb-4">{{ 'sections.skills' | translate }}</h2>
+  <ul class="list-none p-0">
     @for (skill of skills; track skill.name) {
-      <li class="list-item-margin">
+      <li class="mb-2">
         {{ skill.name }} ({{ skill.level }}%)
       </li>
     }

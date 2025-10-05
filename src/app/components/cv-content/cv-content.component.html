@@ -1,13 +1,26 @@
-<main>
-  <aside class="sidebar">
-    <div class="profile-image-container">
-      <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}" class="profile-image">
+<main class="a4-page">
+  <div class="cv-header-section">
+    <div class="profile-personal-info-group">
+      <div class="profile-image-container">
+        <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}" class="profile-image">
+      </div>
+      <app-personal-info [personalInfo]="cvData.personalInfo"></app-personal-info>
     </div>
-    <app-skills [skills]="cvData.skills"></app-skills>
-    <app-languages [languages]="cvData.languages"></app-languages>
-  </aside>
+    <div class="skills-languages-group">
+      <app-skills [skills]="cvData.skills"></app-skills>
+      <app-languages [languages]="cvData.languages"></app-languages>
+    </div>
+  </div>
+  <div class="language-selector print:hidden">
+    @for (lang of cvData.languages; track lang.name) {
+      <button (click)="changeLanguage(lang.name)" [class.active]="translate.currentLang === lang.name">
+        <img src="assets/flags/{{ lang.name }}.png" alt="{{ lang.name | uppercase }} Flag">
+        <span>{{ lang.name | uppercase }}</span>
+      </button>
+    }
+  </div>
   <div class="main-content">
-    <app-cv [cvData]="cvData"></app-cv>
-    <router-outlet />
+    <app-experience-timeline [entries]="cvData.experience"></app-experience-timeline>
+    <app-education-timeline [entries]="cvData.education"></app-education-timeline>
   </div>
 </main>

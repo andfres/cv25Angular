@@ -1,0 +1,35 @@
+.experience-company {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600;    /* font-semibold */
+  margin-bottom: 0.25rem; /* mb-1 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.experience-period {
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280;     /* text-gray-600 */
+  margin-left: 1rem;
+}
+
+.experience-position {
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.role-title {
+  font-weight: 500; /* font-medium */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.role-period {
+  font-size: 0.75rem; /* text-xs */
+  color: #6b7280;     /* text-gray-500 */
+  margin-left: 1rem;
+}
+
+.role-summary {
+  font-size: 0.875rem; /* text-sm */
+}

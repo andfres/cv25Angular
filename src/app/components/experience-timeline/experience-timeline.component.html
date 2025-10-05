@@ -1,0 +1,36 @@
+<section class="p-4 mb-4">
+  <h3 class="text-gray-800 text-xl font-bold mb-4">{{ 'sections.experience' | translate }}</h3>
+  @if (sortedEntries && sortedEntries.length > 0) {
+    @for (entry of sortedEntries; track entry.startDate) {
+      <div class="bg-blue-50 border-l-4 border-blue-700 p-4 mb-4 rounded-lg">
+        <h4 class="experience-company">
+          <span>{{ entry.company }}</span>
+          <span class="experience-period">{{ formatPeriod(entry.startDate, entry.endDate) }}</span>
+        </h4>
+        <p class="experience-position">{{ entry.position }}</p>
+        @if (entry.summary) {
+          <p class="mb-2">{{ entry.summary }}</p>
+        }
+        @if (entry.roles && entry.roles.length > 0) {
+          <ul class="list-none p-0 mt-2">
+            @for (role of entry.roles; track role.startDate) {
+              <li class="mb-2 p-2 border-l-2 border-blue-400 bg-blue-100 rounded">
+                <h5 class="role-title">{{ role.title }} <span class="role-period">{{ formatPeriod(role.startDate, role.endDate) }}</span></h5>
+                <p class="role-summary">{{ role.summary }}</p>
+                @if (role.technologies && role.technologies.length > 0) {
+                  <p class="text-xs font-medium mt-2 text-blue-800">{{ 'sections.technologies' | translate }}: {{ role.technologies.join(', ') }}</p>
+                }
+              </li>
+            }
+          </ul>
+        }
+        @if (entry.technologies && entry.technologies.length > 0) {
+          <p class="text-sm font-medium mt-2 text-blue-800">{{ 'sections.technologies' | translate }}: {{ entry.technologies.join(', ') }}</p>
+        }
+      </div>
+    }
+  }
+  @else {
+    <p class="text-gray-600">{{ 'sections.noExperience' | translate }}</p>
+  }
+</section>

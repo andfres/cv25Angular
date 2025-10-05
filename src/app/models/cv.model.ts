@@ -9,34 +9,31 @@ export interface PersonalInfo {
 
 export interface Role {
   title: string;
-  period: string;
   startDate: string;
-  endDate: string;
+  endDate: string | 'present'; // Allow 'present' string
   summary: string;
+  technologies?: string[];
 }
 
 export interface Experience {
-  type: 'experience';
   company: string;
   location: string;
   position: string;
-  period: string;
   startDate: string;
-  endDate: string;
+  endDate: string | 'present'; // Allow 'present' string
   roles?: Role[];
   summary?: string;
+  technologies?: string[];
 }
 
 export interface Education {
-  type: 'education';
   institution: string;
   degree: string;
-  period: string;
   startDate: string;
-  endDate: string;
+  endDate: string | 'present'; // Allow 'present' string
+  summary?: string;
+  technologies?: string[];
 }
-
-export type TimelineEntry = Experience | Education;
 
 export interface Skill {
   name: string;
@@ -49,11 +46,9 @@ export interface Language {
 }
 
 export interface CvData {
-  HELLO: string;
-  WELCOME: string;
   personalInfo: PersonalInfo;
-  timeline: TimelineEntry[];
+  experience: Experience[];
+  education: Education[];
   skills: Skill[];
   languages: Language[];
-  sections: { [key: string]: string };
 }

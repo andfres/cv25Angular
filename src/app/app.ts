@@ -1,16 +1,17 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { TranslateModule, TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { CvContentComponent } from './components/cv-content/cv-content.component';
-import { CommonModule } from '@angular/common'; // Importar CommonModule
 import { HttpClient } from '@angular/common/http'; // Import HttpClient
-import { HeaderComponent } from './components/header/header.component'; // Import HeaderComponent
+import { CvContentComponent } from './components/cv-content/cv-content.component';
+import { CvData } from './models/cv.model'; // Import CvData interface
+import { CommonModule } from '@angular/common'; // Import CommonModule
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
-  imports: [TranslateModule, CvContentComponent, CommonModule, HeaderComponent],
+  standalone: true,
+  imports: [TranslateModule, CvContentComponent, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.scss',
-  standalone: true,
 })
 export class App implements OnInit {
   protected readonly title = signal('my-angular-app');

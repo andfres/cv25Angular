@@ -1,7 +1,4 @@
 {
-  "HELLO": "Hello world!",
-  "WELCOME": "Welcome to my application!",
-
   "profile": {
     "picture": "Profile Picture"
   },
@@ -9,8 +6,11 @@
   "sections": {
     "languages": "Languages",
     "skills": "Skills",
-    "timeline": "Timeline",
-    "roles": "Roles"
+    "experience": "Experience",
+    "education": "Education",
+    "present": "Present",
+    "noExperience": "No experience entries to display.",
+    "noEducation": "No education entries to display."
   },
 
   "personalInfo": {
@@ -18,67 +18,83 @@
     "title": "Fullstack Engineer / Analyst",
     "location": "Valladolid, Spain",
     "email": "your.email@example.com",
-    "objective": "Looking for opportunities in fullstack development and application analysis."
+    "objective": "Looking for opportunities in fullstack development, frontend leadership, and application analysis."
   },
 
-  "timeline": [
+  "experience": [
+
     {
-      "type": "experience",
       "company": "NTT Data",
       "location": "Valladolid, Spain",
       "position": "Fullstack Engineer",
-      "period": "Jan 2023 – Present",
       "startDate": "2023-01-01T00:00:00.000Z",
-      "endDate": "2024-06-29T23:59:59.999Z",
+      "endDate": "2024-03-31T23:59:59.999Z",
       "roles": [
         {
           "title": "Intern",
-          "period": "Jan 2023 – Mar 2023",
           "startDate": "2023-01-01T00:00:00.000Z",
           "endDate": "2023-03-31T23:59:59.999Z",
-          "summary": "3-month internship. Assisted in frontend and backend tasks, learned internal processes and tools."
+          "summary": "3-month internship assisting in frontend and backend tasks, learning internal processes and tools.",
+          "technologies": ["Angular", "TypeScript", "HTML", "CSS"]
         },
         {
           "title": "Junior Developer",
-          "period": "Apr 2023 – Mar 2024",
           "startDate": "2023-04-01T00:00:00.000Z",
           "endDate": "2024-03-31T23:59:59.999Z",
-          "summary": "1-year junior role. Developed features in Vue 3, React, Spring Boot. Participated in code reviews and estimation of small applications."
-        },
-        {
-          "title": "Engineer",
-          "period": "Apr 2024 – Present",
-          "startDate": "2024-04-01T00:00:00.000Z",
-          "endDate": "2024-06-29T23:59:59.999Z",
-          "summary": "Fullstack development, application estimation and definition, analysis, and architecture design. Technologies: Vue 3, React (legacy + modern), Spring Boot, SQL, CI/CD."
+          "summary": "Developed features in Vue 3, React, and Spring Boot. Participated in code reviews and estimation of small applications.",
+          "technologies": ["Vue 3", "React", "Spring Boot", "Java", "SQL"]
         }
       ]
     },
     {
-      "type": "experience",
+      "company": "Friuli in Tagli",
+      "location": "Italia",
+      "position": "Operario de fábrica de madera",
+      "startDate": "2019-01-01T00:00:00.000Z",
+      "endDate": "2019-12-31T23:59:59.999Z",
+      "show": true,
+      "highlight": true,
+      "summary": "Worked as a factory operator. Learned teamwork and Italian language skills.",
+      "skillsLearned": ["Trabajo en equipo", "Italiano"]
+    },
+    {
       "company": "Alcañiz Fresnos",
-      "location": "Alcañiz, Spain",
+      "location": "Valladolid, Spain",
       "position": "Official Newsletter Layout Designer",
-      "period": "Jan 2010 – Dec 2019",
       "startDate": "2010-01-01T00:00:00.000Z",
       "endDate": "2019-12-31T23:59:59.999Z",
-      "summary": "Designed and laid out official newsletters. Managed content formatting and presentation."
+      "summary": "Designed and laid out official newsletters. Managed content formatting and presentation.",
+      "technologies": ["Newsletter Layout Design", "InDesign", "Photoshop", "Expresiones regulares", "OCR", "Accesibilidad"]
     },
     {
-      "type": "education",
-      "institution": "Instituto Ribera de Castilla",
-      "degree": "Specialization Course in AI & Big Data",
-      "period": "Jan 2025 – Jun 2025",
-      "startDate": "2025-01-01T00:00:00.000Z",
-      "endDate": "2025-06-30T23:59:59.999Z"
-    },
+      "company": "Alcañiz Fresnos",
+      "location": "Valladolid, Spain",
+      "position": "Newsletter Project (Canarias)",
+      "startDate": "2020-09-01T00:00:00.000Z",
+      "endDate": "2021-02-28T23:59:59.999Z",
+      "show": true,
+      "highlight": true,
+      "summary": "Worked to launch the official newsletter for Canarias region.",
+      "skillsLearned": ["Newsletter Layout Design", "Project Management", "InDesign", "Photoshop", "Expresiones regulares", "OCR", "Accesibilidad"]
+    }
+  ],
+
+  "education": [
     {
-      "type": "education",
-      "institution": "Instituto Ribera de Castilla",
+      "institution": "IES Ribera de Castilla",
       "degree": "Vocational Training in Web Application Development",
-      "period": "2020 – 2022",
       "startDate": "2020-01-01T00:00:00.000Z",
-      "endDate": "2022-12-31T23:59:59.999Z"
+      "endDate": "2022-12-31T23:59:59.999Z",
+      "show": true,
+      "skillsLearned": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
+    },
+    {
+      "institution": "IES Ribera de Castilla",
+      "degree": "Specialization Course in AI & Big Data",
+      "startDate": "2025-01-01T00:00:00.000Z",
+      "endDate": "2025-06-30T23:59:59.999Z",
+      "show": true,
+      "skillsLearned": ["Python", "TensorFlow", "BigQuery", "GCP"]
     }
   ],
 
@@ -89,8 +105,8 @@
     { "name": "SQL", "level": 75 },
     { "name": "CI/CD", "level": 70 },
     { "name": "Application Estimation & Definition", "level": 85 },
-    { "name": "Project Analysis", "level": 80 },
-    { "name": "Newsletter Layout Design", "level": 70 }
+    { "name": "Project Analysis", "level": 80 }
+
   ],
 
   "languages": [

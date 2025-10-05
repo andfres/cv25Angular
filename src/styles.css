@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* You can add global styles to this file, and also import other style files */
+
+/* Base Styles */
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5; /* Light grey background for the body */
+}

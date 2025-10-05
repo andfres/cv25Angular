@@ -6,15 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
   selector: 'app-personal-info',
   standalone: true,
   imports: [TranslateModule],
-  template: `
-    <section class="cv-section">
-      <h2 class="cv-heading-2">{{ 'personalInfo.name' | translate }}</h2>
-      <p>{{ 'personalInfo.title' | translate }}</p>
-      <p>{{ 'personalInfo.location' | translate }}</p>
-      <p>{{ 'personalInfo.email' | translate }}</p>
-      <p>{{ 'personalInfo.objective' | translate }}</p>
-    </section>
-  `,
+  templateUrl: './personal-info.component.html',
 })
 export class PersonalInfoComponent {
   @Input() personalInfo!: PersonalInfo;

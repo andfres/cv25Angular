@@ -7,19 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
   selector: 'app-languages',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  template: `
-    <section>
-      <h2>{{ 'sections.languages' | translate }}</h2>
-      <ul>
-        @for (language of languages; track language.name) {
-          <li>
-            {{ language.name }} ({{ language.level }}%)
-          </li>
-        }
-      </ul>
-    </section>
-  `,
-  styleUrl: './languages.component.scss',
+  templateUrl: './languages.component.html', // Use external template
 })
 export class LanguagesComponent {
   @Input() languages!: Language[];

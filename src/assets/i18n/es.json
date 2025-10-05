@@ -9,8 +9,12 @@
   "sections": {
     "languages": "Idiomas",
     "skills": "Habilidades",
-    "timeline": "Experiencia y Educación",
-    "roles": "Roles"
+    "experience": "Experiencia",
+    "education": "Educación",
+    "roles": "Roles",
+    "present": "Presente",
+    "noExperience": "No hay entradas de experiencia para mostrar.",
+    "noEducation": "No hay entradas de educación para mostrar."
   },
 
   "personalInfo": {
@@ -21,64 +25,64 @@
     "objective": "Buscando oportunidades en desarrollo fullstack y análisis de aplicaciones."
   },
 
-  "timeline": [
+  "experience": [
     {
-      "type": "experience",
+      "company": "NTT Data",
+      "location": "Valladolid, España",
+      "position": "Ingeniero Frontend Responsable",
+      "startDate": "2024-04-01T00:00:00.000Z",
+      "endDate": "presente",
+      "summary": "Liderar el desarrollo frontend para la aplicación web corporativa. Mentorizar a desarrolladores junior, definir la arquitectura y coordinar con los equipos de backend y UX.",
+      "technologies": ["Vue 3", "Pinia", "React", "Spring Boot", "SQL", "CI/CD", "AWS"]
+    },
+    {
       "company": "NTT Data",
       "location": "Valladolid, España",
       "position": "Ingeniero Fullstack",
-      "period": "Ene 2023 – Presente",
       "startDate": "2023-01-01T00:00:00.000Z",
-      "endDate": "2024-06-29T23:59:59.999Z",
+      "endDate": "2024-03-31T23:59:59.999Z",
       "roles": [
         {
           "title": "Becario",
-          "period": "Ene 2023 – Mar 2023",
           "startDate": "2023-01-01T00:00:00.000Z",
           "endDate": "2023-03-31T23:59:59.999Z",
-          "summary": "3 meses de prácticas. Asistí en tareas de frontend y backend, aprendí procesos y herramientas internas."
+          "summary": "3 meses de prácticas. Asistí en tareas de frontend y backend, aprendí procesos y herramientas internas.",
+          "technologies": ["Angular", "TypeScript", "HTML", "CSS"]
         },
         {
           "title": "Desarrollador Junior",
-          "period": "Abr 2023 – Mar 2024",
           "startDate": "2023-04-01T00:00:00.000Z",
           "endDate": "2024-03-31T23:59:59.999Z",
-          "summary": "1 año como junior. Desarrollé funcionalidades en Vue 3, React, Spring Boot. Participé en revisiones de código y estimación de pequeñas aplicaciones."
-        },
-        {
-          "title": "Ingeniero",
-          "period": "Abr 2024 – Presente",
-          "startDate": "2024-04-01T00:00:00.000Z",
-          "endDate": "2024-06-29T23:59:59.999Z",
-          "summary": "Desarrollo fullstack, estimación y definición de aplicaciones, análisis y diseño de arquitectura. Tecnologías: Vue 3, React (legado + moderno), Spring Boot, SQL, CI/CD."
+          "summary": "1 año como junior. Desarrollé funcionalidades en Vue 3, React, Spring Boot. Participé en revisiones de código y estimación de pequeñas aplicaciones.",
+          "technologies": ["Vue 3", "React", "Spring Boot", "Java", "SQL"]
         }
       ]
     },
     {
-      "type": "experience",
       "company": "Alcañiz Fresnos",
-      "location": "Alcañiz, España",
+      "location": "Valladolid, España",
       "position": "Diseñador de Maquetación de Boletín Oficial",
-      "period": "Ene 2010 – Dic 2019",
       "startDate": "2010-01-01T00:00:00.000Z",
       "endDate": "2019-12-31T23:59:59.999Z",
-      "summary": "Diseñé y maqueté boletines oficiales. Gestioné el formato y la presentación del contenido."
-    },
+      "summary": "Diseñé y maqueté boletines oficiales. Gestioné el formato y la presentación del contenido.",
+      "technologies": ["Newsletter Layout Design", "InDesign", "Photoshop", "Expresiones regulares", "OCR", "Accesibilidad"]
+    }
+  ],
+
+  "education": [
     {
-      "type": "education",
       "institution": "Instituto Ribera de Castilla",
       "degree": "Curso de Especialización en IA y Big Data",
-      "period": "Ene 2025 – Jun 2025",
       "startDate": "2025-01-01T00:00:00.000Z",
-      "endDate": "2025-06-30T23:59:59.999Z"
+      "endDate": "2025-06-30T23:59:59.999Z",
+      "technologies": ["Python", "TensorFlow", "BigQuery", "GCP"]
     },
     {
-      "type": "education",
       "institution": "Instituto Ribera de Castilla",
       "degree": "Formación Profesional en Desarrollo de Aplicaciones Web",
-      "period": "2020 – 2022",
       "startDate": "2020-01-01T00:00:00.000Z",
-      "endDate": "2022-12-31T23:59:59.999Z"
+      "endDate": "2022-12-31T23:59:59.999Z",
+      "technologies": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
     }
   ],
 
