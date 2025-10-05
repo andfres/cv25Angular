@@ -1,5 +1,8 @@
 <section class="p-4 mb-4">
-  <h3 class="text-gray-800 text-xl font-bold mb-4">{{ 'sections.experience' | translate }}</h3>
+  <div class="flex items-center gap-2 mb-4">
+    <img src="assets/icons/briefcase.png" alt="Experience Icon" class="h-6 w-6 text-gray-700"/>
+    <span class="text-gray-800 text-xl font-bold">{{ 'sections.experience' | translate }}</span>
+  </div>
   @if (sortedEntries && sortedEntries.length > 0) {
     @for (entry of sortedEntries; track entry.startDate) {
       <div class="bg-blue-50 border-l-4 border-blue-700 p-4 mb-4 rounded-lg">
@@ -18,14 +21,22 @@
                 <h5 class="role-title">{{ role.title }} <span class="role-period">{{ formatPeriod(role.startDate, role.endDate) }}</span></h5>
                 <p class="role-summary">{{ role.summary }}</p>
                 @if (role.technologies && role.technologies.length > 0) {
-                  <p class="text-xs font-medium mt-2 text-blue-800">{{ 'sections.technologies' | translate }}: {{ role.technologies.join(', ') }}</p>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    @for (tech of role.technologies; track tech) {
+                      <span class="technology-tab">{{ tech }}</span>
+                    }
+                  </div>
                 }
               </li>
             }
           </ul>
         }
         @if (entry.technologies && entry.technologies.length > 0) {
-          <p class="text-sm font-medium mt-2 text-blue-800">{{ 'sections.technologies' | translate }}: {{ entry.technologies.join(', ') }}</p>
+          <div class="flex flex-wrap gap-2 mt-2">
+            @for (tech of entry.technologies; track tech) {
+              <span class="technology-tab">{{ tech }}</span>
+            }
+          </div>
         }
       </div>
     }

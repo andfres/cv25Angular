@@ -1,26 +1,22 @@
-<main class="a4-page">
-  <div class="cv-header-section">
-    <div class="profile-personal-info-group">
-      <div class="profile-image-container">
-        <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}" class="profile-image">
-      </div>
+<main class="a4-page flexaf gap-6">
+  <!-- Aside (columna izquierda 40%) -->
+  <aside class="profile-personal-info-group flex flex-col basis-2/5 max-w-[40%] bg-gray-50 p-1 ">
+    <div class="profile-image-container flex justify-center mb-4">
+      <img
+        [src]="profileImage"
+        alt="{{ 'profile.picture' | translate }}"
+        class="profile-image w-32 h-32 rounded-full object-cover shadow"
+      />
+    </div>
+
       <app-personal-info [personalInfo]="cvData.personalInfo"></app-personal-info>
-    </div>
-    <div class="skills-languages-group">
-      <app-skills [skills]="cvData.skills"></app-skills>
+      <!-- <app-skills [skills]="cvData.skills"></app-skills> -->
       <app-languages [languages]="cvData.languages"></app-languages>
-    </div>
-  </div>
-  <div class="language-selector print:hidden">
-    @for (lang of cvData.languages; track lang.name) {
-      <button (click)="changeLanguage(lang.name)" [class.active]="translate.currentLang === lang.name">
-        <img src="assets/flags/{{ lang.name }}.png" alt="{{ lang.name | uppercase }} Flag">
-        <span>{{ lang.name | uppercase }}</span>
-      </button>
-    }
-  </div>
-  <div class="main-content">
+  </aside>
+
+  <!-- Main content (columna derecha 60%) -->
+  <section class="main-content ">
     <app-experience-timeline [entries]="cvData.experience"></app-experience-timeline>
     <app-education-timeline [entries]="cvData.education"></app-education-timeline>
-  </div>
+  </section>
 </main>

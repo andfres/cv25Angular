@@ -1,9 +1,11 @@
 .a4-page {
   width: 210mm;
   min-height: 297mm;
-  padding: 10mm; /* Reduced padding */
-  margin: 10mm auto;
-  border: 1px solid #d3d3d3;
+  padding: 10mm 0; /* Reduced padding */
+  margin: auto 0; /* Remove top margin */
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3; /* Keep bottom border */
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -14,10 +16,10 @@
 }
 
 
-.flex {
+.flexaf {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end; 
+  flex-direction: row;
+  align-items: flex-start; 
   gap: 0.5rem;
 }
 
@@ -39,10 +41,10 @@
 }
 
 .main-content {
-  display: flex;
+  --display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 1rem;
+  border: 1px solid red;
 }
 
 

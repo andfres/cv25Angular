@@ -1,8 +1,15 @@
-<header>
-  <!-- Language switcher removed from here -->
+<header class="language-switcher print:hidden">
+  @for (lang of getAvailableLanguages(); track lang) {
+    <button (click)="changeLanguage(lang)" [class.active]="lang === getCurrentLanguage()" class="lang-button">
+      <img src="/assets/flags/{{ lang }}.png" alt="{{ lang | uppercase }}" class="w-6 h-6"/>
+    </button>
+  }
 </header>
 <!-- Print button remains here, outside A4 flow -->
 <button class="fixed top-[70px] right-[calc(50%-210mm/2-100px)] p-2 bg-green-600 text-white border-none rounded cursor-pointer text-base z-50 hover:bg-green-700 print:hidden" (click)="printPage()">Print CV</button>
-@if (cvData) {
-  <app-cv-content [cvData]="cvData" [profileImage]="profileImage"></app-cv-content>
-}
+<main class="flex justify-center items-start print:block mt-[10mm] border-t-[1px] border-[#d3d3d3]">
+  @if (cvData) {
+    <app-cv-content [cvData]="cvData" [profileImage]="profileImage"></app-cv-content>
+    <div class="red-guide w-4 h-[297mm] bg-red-500 opacity-50 print:hidden ml-4"></div>
+  }
+</main>

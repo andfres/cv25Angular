@@ -47,35 +47,40 @@
       ]
     },
     {
-      "company": "Friuli in Tagli",
-      "location": "Italia",
-      "position": "Operario de fábrica de madera",
+      "company": "Friul Intagli",
+      "location": "Patra di Pordenone, Italy",
+      "position": "Factory Operator",
       "startDate": "2019-01-01T00:00:00.000Z",
       "endDate": "2019-12-31T23:59:59.999Z",
       "show": true,
       "highlight": true,
-      "summary": "Worked as a factory operator. Learned teamwork and Italian language skills.",
-      "skillsLearned": ["Trabajo en equipo", "Italiano"]
+      "summary": "Worked as a factory operator, learning teamwork and Italian language skills.",
+      "skillsLearned": ["Teamwork", "Italian Language"]
     },
     {
       "company": "Alcañiz Fresnos",
       "location": "Valladolid, Spain",
-      "position": "Official Newsletter Layout Designer",
+      "position": "Newsletter Designer & Project Manager",
       "startDate": "2010-01-01T00:00:00.000Z",
-      "endDate": "2019-12-31T23:59:59.999Z",
-      "summary": "Designed and laid out official newsletters. Managed content formatting and presentation.",
-      "technologies": ["Newsletter Layout Design", "InDesign", "Photoshop", "Expresiones regulares", "OCR", "Accesibilidad"]
-    },
-    {
-      "company": "Alcañiz Fresnos",
-      "location": "Valladolid, Spain",
-      "position": "Newsletter Project (Canarias)",
-      "startDate": "2020-09-01T00:00:00.000Z",
       "endDate": "2021-02-28T23:59:59.999Z",
-      "show": true,
-      "highlight": true,
-      "summary": "Worked to launch the official newsletter for Canarias region.",
-      "skillsLearned": ["Newsletter Layout Design", "Project Management", "InDesign", "Photoshop", "Expresiones regulares", "OCR", "Accesibilidad"]
+      "summary": "Managed and designed official newsletters, including project management for regional launches.",
+      "technologies": ["Newsletter Layout Design", "InDesign", "Photoshop", "Expresiones regulares", "OCR", "Accesibilidad", "Project Management"],
+      "roles": [
+        {
+          "title": "Official Newsletter Layout Designer",
+          "startDate": "2010-01-01T00:00:00.000Z",
+          "endDate": "2019-12-31T23:59:59.999Z",
+          "summary": "Designed and laid out official newsletters. Managed content formatting and presentation.",
+          "technologies": ["Newsletter Layout Design", "InDesign", "Photoshop", "Expresiones regulares", "OCR", "Accesibilidad"]
+        },
+        {
+          "title": "Newsletter Project (Canarias)",
+          "startDate": "2020-09-01T00:00:00.000Z",
+          "endDate": "2021-02-28T23:59:59.999Z",
+          "summary": "Worked to launch the official newsletter for Canarias region.",
+          "technologies": ["Newsletter Layout Design", "Project Management", "InDesign", "Photoshop", "Expresiones regulares", "OCR", "Accesibilidad"]
+        }
+      ]
     }
   ],
 
@@ -86,7 +91,7 @@
       "startDate": "2020-01-01T00:00:00.000Z",
       "endDate": "2022-12-31T23:59:59.999Z",
       "show": true,
-      "skillsLearned": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
+      "technologies": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
     },
     {
       "institution": "IES Ribera de Castilla",
@@ -94,7 +99,7 @@
       "startDate": "2025-01-01T00:00:00.000Z",
       "endDate": "2025-06-30T23:59:59.999Z",
       "show": true,
-      "skillsLearned": ["Python", "TensorFlow", "BigQuery", "GCP"]
+      "technologies": ["Python", "TensorFlow", "BigQuery", "GCP", "python", "tensorflow"]
     }
   ],
 

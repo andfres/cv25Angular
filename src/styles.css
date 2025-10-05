@@ -12,3 +12,21 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f0f2f5; /* Light grey background for the body */
 }
+
+.technology-tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  background-color: #e0f2fe; /* blue-100 */
+  color: #0c4a6e; /* sky-800 */
+  border-radius: 9999px; /* full rounded */
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 500; /* font-medium */
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #bfdbfe; /* blue-200 */
+    cursor: pointer;
+  }
+}

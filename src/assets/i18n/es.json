@@ -75,7 +75,7 @@
       "degree": "Curso de Especialización en IA y Big Data",
       "startDate": "2025-01-01T00:00:00.000Z",
       "endDate": "2025-06-30T23:59:59.999Z",
-      "technologies": ["Python", "TensorFlow", "BigQuery", "GCP"]
+      "technologies": ["Python", "TensorFlow", "BigQuery", "GCP", "python", "tensorflow"]
     },
     {
       "institution": "Instituto Ribera de Castilla",
