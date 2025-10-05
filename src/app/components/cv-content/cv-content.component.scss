@@ -1,11 +1,8 @@
 .a4-page {
   width: 210mm;
   min-height: 297mm;
-  padding: 10mm 0; /* Reduced padding */
-  margin: auto 0; /* Remove top margin */
-  border-left: 1px solid #d3d3d3;
-  border-right: 1px solid #d3d3d3;
-  border-bottom: 1px solid #d3d3d3; /* Keep bottom border */
+  margin: auto 0; 
+
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);

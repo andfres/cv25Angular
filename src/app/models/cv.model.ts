@@ -19,8 +19,8 @@ export interface Experience {
   company: string;
   location: string;
   position: string;
-  startDate: string;
-  endDate: string | 'present'; // Allow 'present' string
+  startDate?: string;
+  endDate?: string | 'present'; // Allow 'present' string
   roles?: Role[];
   summary?: string;
   technologies?: string[];

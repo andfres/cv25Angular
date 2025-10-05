@@ -1,7 +1,6 @@
 .experience-company {
   font-size: 1.125rem; /* text-lg */
   font-weight: 600;    /* font-semibold */
-  margin-bottom: 0.25rem; /* mb-1 */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,7 +13,8 @@
 }
 
 .experience-position {
-  margin-bottom: 0.25rem; /* mb-1 */
+  font-style: italic; /* Añadir estilo cursiva */
+  color: #4b5563;    /* text-gray-700 */
 }
 
 .role-title {

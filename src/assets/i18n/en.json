@@ -61,24 +61,25 @@
       "company": "Alcañiz Fresnos",
       "location": "Valladolid, Spain",
       "position": "Newsletter Designer & Project Manager",
-      "startDate": "2010-01-01T00:00:00.000Z",
-      "endDate": "2021-02-28T23:59:59.999Z",
+
       "summary": "Managed and designed official newsletters, including project management for regional launches.",
-      "technologies": ["Newsletter Layout Design", "InDesign", "Photoshop", "Expresiones regulares", "OCR", "Accesibilidad", "Project Management"],
       "roles": [
         {
           "title": "Official Newsletter Layout Designer",
           "startDate": "2010-01-01T00:00:00.000Z",
           "endDate": "2019-12-31T23:59:59.999Z",
-          "summary": "Designed and laid out official newsletters. Managed content formatting and presentation.",
-          "technologies": ["Newsletter Layout Design", "InDesign", "Photoshop", "Expresiones regulares", "OCR", "Accesibilidad"]
+          "summary": "Worked to launch the official newsletter for Canarias region.",
+          "technologies": [ "InDesign", "Photoshop", "Expresiones regulares", "Accesibilidad"]
+  
         },
         {
           "title": "Newsletter Project (Canarias)",
           "startDate": "2020-09-01T00:00:00.000Z",
           "endDate": "2021-02-28T23:59:59.999Z",
-          "summary": "Worked to launch the official newsletter for Canarias region.",
-          "technologies": ["Newsletter Layout Design", "Project Management", "InDesign", "Photoshop", "Expresiones regulares", "OCR", "Accesibilidad"]
+         
+
+          "summary": "Designed and laid out official newsletters. Managed content formatting and presentation.",
+          "technologies": ["Project Management", "ExtendScript"]
         }
       ]
     }
