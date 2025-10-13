@@ -12,27 +12,35 @@ export interface Role {
   startDate: string;
   endDate: string | 'present'; // Allow 'present' string
   summary: string;
-  technologies?: string[];
+  technologies?: TechnologySkill[];
 }
 
-export interface Experience {
+export interface TechnologySkill {
+  name: string;
+  level: number;
+}
+
+export interface TimelineEntry {
+  type: 'experience' | 'education';
+  startDate?: string;
+  endDate?: string | 'present';
+  show?: boolean; // Para ocultar entradas si show: false
+}
+
+export interface Experience extends TimelineEntry {
   company: string;
   location: string;
   position: string;
-  startDate?: string;
-  endDate?: string | 'present'; // Allow 'present' string
   roles?: Role[];
   summary?: string;
-  technologies?: string[];
+  technologies?: TechnologySkill[];
 }
 
-export interface Education {
-  institution: string;
-  degree: string;
-  startDate: string;
-  endDate: string | 'present'; // Allow 'present' string
+export interface Education extends TimelineEntry {
+  company: string;
+  position: string;
   summary?: string;
-  technologies?: string[];
+  technologies?: TechnologySkill[];
 }
 
 export interface Skill {

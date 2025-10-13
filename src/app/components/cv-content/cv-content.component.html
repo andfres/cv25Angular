@@ -1,11 +1,11 @@
 <main class="a4-page flexaf pt-4">
   <!-- Aside (columna izquierda 40%) -->
-  <aside class="profile-personal-info-group flex flex-col basis-2/5 max-w-[40%] bg-gray-50 p-1 ">
-    <div class="profile-image-container flex justify-center mb-4">
+  <aside class="profile-personal-info-group flex flex-col basis-2/5 max-w-[40%] p-1 ">
+    <div class="profile-image-container flex justify-center mb-4 w-full max-w-[calc(210mm/3)] h-[calc(210mm/3)]">
       <img
         [src]="profileImage"
         alt="{{ 'profile.picture' | translate }}"
-        class="profile-image w-32 h-32 rounded-full object-cover shadow"
+        class="profile-image rounded-full object-cover w-full h-full"
       />
     </div>
 
@@ -16,7 +16,7 @@
 
   <!-- Main content (columna derecha 60%) -->
   <section class="main-content ">
-    <app-experience-timeline [entries]="cvData.experience"></app-experience-timeline>
-    <app-education-timeline [entries]="cvData.education"></app-education-timeline>
+    <app-timeline [entries]="cvData.experience"></app-timeline>
+    <app-timeline [entries]="cvData.education"></app-timeline>
   </section>
 </main>

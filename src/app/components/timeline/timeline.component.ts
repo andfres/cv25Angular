@@ -1,28 +1,32 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Experience, Role } from '../../models/cv.model';
+import { Experience, Role, TimelineEntry, Education } from '../../models/cv.model';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { formatPeriod } from '../../utils/date-format.utility'; // Import the utility function
 
 @Component({
-  selector: 'app-experience-timeline',
+  selector: 'app-timeline',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  templateUrl: './experience-timeline.component.html',
-  styleUrl: './experience-timeline.component.scss',
+  templateUrl: './timeline.component.html',
+  styleUrl: './timeline.component.scss',
 })
-export class ExperienceTimelineComponent implements OnInit, OnChanges {
-  @Input() entries!: Experience[];
-  sortedEntries: Experience[] = [];
+export class TimelineComponent implements OnInit, OnChanges {
+  @Input() entries!: (Experience | Education)[]; // Aceptar ambos tipos
+  sortedEntries: (Experience | Education)[] = [];
 
   constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
-    // console.log('ExperienceTimelineComponent entries:', this.entries);
+    // console.log('TimelineComponent entries on init:', this.entries);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['entries'] && this.entries) {
+      // console.log('TimelineComponent entries on changes:', this.entries);
+      // this.entries.forEach(entry => {
+      //   console.log(`Entry: ${entry.company || entry.position}, Type: ${entry.type}, isExperience: ${this.isExperience(entry)}`);
+      // });
       this.sortEntries();
     }
   }
@@ -34,8 +38,9 @@ export class ExperienceTimelineComponent implements OnInit, OnChanges {
       return dateB.getTime() - dateA.getTime();
     });
 
+    // Si es una experiencia, ordenar también los roles
     this.sortedEntries.forEach(entry => {
-      if (entry.roles) {
+      if (this.isExperience(entry) && entry.roles) {
         entry.roles.sort((a, b) => {
           const dateA = a.startDate ? new Date(a.startDate) : new Date(0);
           const dateB = b.startDate ? new Date(b.startDate) : new Date(0);
@@ -48,4 +53,15 @@ export class ExperienceTimelineComponent implements OnInit, OnChanges {
   // Use the utility function directly in the template
   protected readonly formatPeriod = (startDate: string | undefined, endDate: string | 'present' | undefined) =>
     formatPeriod(startDate, endDate, this.translate);
+
+  getExperienceRoles(entry: Experience | Education): Role[] | undefined {
+    if (this.isExperience(entry)) {
+      return (entry as Experience).roles;
+    }
+    return undefined;
+  }
+
+  isExperience(entry: Experience | Education): entry is Experience {
+    return entry.type === 'experience';
+  }
 }

@@ -1,0 +1,57 @@
+<section class="px-4">
+  @if (sortedEntries && sortedEntries.length > 0) {
+    @for (entry of sortedEntries; track entry.startDate) {
+      @if (entry.show !== false) {
+        <div [class.bg-blue-50]="isExperience(entry)" [class.border-blue-700]="isExperience(entry)"
+             [class.bg-green-50]="!isExperience(entry)" [class.border-green-700]="!isExperience(entry)"
+             class="border-l-4 p-4 mb-4 rounded-lg">
+          <h4 [class.experience-company]="isExperience(entry)" [class.education-company]="!isExperience(entry)" class="flex items-center">
+            <span class="flex items-center gap-1">
+              @if (isExperience(entry)) {
+                <img src="assets/icons/briefcase.png" alt="Experience Icon" class="h-6 w-6"/>
+              }
+              @if (!isExperience(entry)) {
+                <img src="assets/icons/graduation-hat.png" alt="Education Icon" class="h-6 w-6"/>
+              }
+              <span>{{ entry.company }}</span>
+            </span>
+            <span [class.experience-period]="isExperience(entry)" [class.education-period]="!isExperience(entry)" class="ml-auto">{{ formatPeriod(entry.startDate, entry.endDate) }}</span>
+          </h4>
+          <p [class.experience-position]="isExperience(entry)" [class.education-position]="!isExperience(entry)" class="text-sm font-medium">{{ entry.position }}</p>
+          @if (entry.summary) {
+            <p class="mb-2">{{ entry.summary }}</p>
+          }
+          @if (isExperience(entry) && getExperienceRoles(entry)) {
+            <ul class="list-none p-0 mt-2 space-y-1">
+              @for (role of getExperienceRoles(entry); track role.startDate) {
+                <li class="py-2 px-0 border-l-2 border-blue-400 rounded">
+                  <div class="pl-3">
+                    <h5 class="role-title">{{ role.title }} <span class="role-period">{{ formatPeriod(role.startDate, role.endDate) }}</span></h5>
+                    <p class="role-summary">{{ role.summary }}</p>
+                    @if (role.technologies && role.technologies.length > 0) {
+                      <div class="flex flex-wrap gap-2 mt-2">
+                        @for (tech of role.technologies; track tech) {
+                          <span class="technology-tab" [style.font-size.px]="10 + (tech.level * 0.05)" [style.padding.px]="5 + (tech.level * 0.025)">{{ tech.name }}</span>
+                        }
+                      </div>
+                    }
+                  </div>
+                </li>
+              }
+            </ul>
+          }
+          @if (entry.technologies && entry.technologies.length > 0) {
+            <div class="flex flex-wrap gap-2 mt-2">
+              @for (tech of entry.technologies; track tech) {
+                <span class="technology-tab" [style.font-size.px]="10 + (tech.level * 0.05)" [style.padding.px]="5 + (tech.level * 0.025)">{{ tech.name }}</span>
+              }
+            </div>
+          }
+        </div>
+      }
+    }
+  }
+  @else {
+    <p class="text-gray-600">{{ 'sections.noExperience' | translate }}</p>
+  }
+</section>

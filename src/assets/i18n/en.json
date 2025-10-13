@@ -18,35 +18,67 @@
     "title": "Fullstack Engineer / Analyst",
     "location": "Valladolid, Spain",
     "email": "your.email@example.com",
-    "objective": "Looking for opportunities in fullstack development, frontend leadership, and application analysis."
+    "objective": "Passionate Fullstack Engineer with experience in building scalable and maintainable applications. I learn quickly and adapt to new technologies with ease. I am actively seeking opportunities to grow both technically and linguistically. I have some experience working with <b>Angular</b>, including a short-term project for a major electric company (Red Eléctrica Española). This CV itself has been developed using <b>Angular</b> 20, and the full project can be viewed on GitHub: github.com/andres/CV25"
   },
 
   "experience": [
-
     {
+      "type": "experience",
+      "company": "Moeve / Cepsa",
+      "location": "Madrid, Spain",
+      "position": "Mid-Senior Frontend Developer",
+      "startDate": "2024-04-01T00:00:00.000Z",
+      "endDate": "present",
+      "summary": "Began in an entry-level role, gradually taking on more responsibilities. Currently leading the frontend for the CEPSA / Moeve project, responsible for architecture, feature implementation, mentoring junior developers, and guiding the team on effective AI usage and best practices to improve workflows and maintain code quality.",
+      "technologies": [
+        { "name": "Angular", "level": 30 },
+        { "name": "TypeScript", "level": 85 },
+        { "name": "Spring", "level": 90 },
+        { "name": "React", "level": 80 },
+        { "name": "Vue", "level": 75 },
+        { "name": "AWS", "level": 30 },
+        { "name": "Azure DevOps", "level": 50 },
+        { "name": "Git", "level": 50 }
+      ]
+    },
+    {
+      "type": "experience",
       "company": "NTT Data",
       "location": "Valladolid, Spain",
       "position": "Fullstack Engineer",
       "startDate": "2023-01-01T00:00:00.000Z",
       "endDate": "2024-03-31T23:59:59.999Z",
+      "show": false,
       "roles": [
         {
           "title": "Intern",
           "startDate": "2023-01-01T00:00:00.000Z",
           "endDate": "2023-03-31T23:59:59.999Z",
           "summary": "3-month internship assisting in frontend and backend tasks, learning internal processes and tools.",
-          "technologies": ["Angular", "TypeScript", "HTML", "CSS"]
+          "technologies": [
+            { "name": "Angular", "level": 60 },
+            { "name": "TypeScript", "level": 50 },
+            { "name": "HTML", "level": 70 },
+            { "name": "CSS", "level": 50 }
+          ]
         },
         {
           "title": "Junior Developer",
           "startDate": "2023-04-01T00:00:00.000Z",
           "endDate": "2024-03-31T23:59:59.999Z",
           "summary": "Developed features in Vue 3, React, and Spring Boot. Participated in code reviews and estimation of small applications.",
-          "technologies": ["Vue 3", "React", "Spring Boot", "Java", "SQL"]
+          "technologies": [
+            { "name": "Vue 3", "level": 80 },
+            { "name": "React", "level": 70 },
+            { "name": "Spring Boot", "level": 70 },
+            { "name": "Java", "level": 65 },
+            { "name": "SQL", "level": 60 }
+          ]
         }
       ]
     },
     {
+      "type": "experience",
       "company": "Friul Intagli",
       "location": "Patra di Pordenone, Italy",
       "position": "Factory Operator",
@@ -54,10 +86,14 @@
       "endDate": "2019-12-31T23:59:59.999Z",
       "show": true,
       "highlight": true,
-      "summary": "Worked as a factory operator, learning teamwork and Italian language skills.",
-      "skillsLearned": ["Teamwork", "Italian Language"]
+      "summary": "Worked as a factory operator.",
+      "technologies": [
+        { "name": "Teamwork", "level": 75 },
+        { "name": "Italian Language", "level": 60 }
+      ]
     },
     {
+      "type": "experience",
       "company": "Alcañiz Fresnos",
       "location": "Valladolid, Spain",
       "position": "Newsletter Designer & Project Manager",
@@ -69,17 +105,25 @@
           "startDate": "2010-01-01T00:00:00.000Z",
           "endDate": "2019-12-31T23:59:59.999Z",
           "summary": "Worked to launch the official newsletter for Canarias region.",
-          "technologies": [ "InDesign", "Photoshop", "Expresiones regulares", "Accesibilidad"]
-  
+          "technologies": [
+            { "name": "InDesign", "level": 80 },
+            { "name": "Photoshop", "level": 70 },
+            { "name": "Expresiones regulares", "level": 75 },
+            { "name": "Accesibilidad", "level": 70 }
+          ]
+
         },
         {
           "title": "Newsletter Project (Canarias)",
           "startDate": "2020-09-01T00:00:00.000Z",
           "endDate": "2021-02-28T23:59:59.999Z",
-         
+
 
           "summary": "Designed and laid out official newsletters. Managed content formatting and presentation.",
-          "technologies": ["Project Management", "ExtendScript"]
+          "technologies": [
+            { "name": "Project Management", "level": 80 },
+            { "name": "ExtendScript", "level": 70 }
+          ]
         }
       ]
     }
@@ -87,26 +131,40 @@
 
   "education": [
     {
-      "institution": "IES Ribera de Castilla",
-      "degree": "Vocational Training in Web Application Development",
+      "type": "education",
+      "company": "IES Ribera de Castilla",
+      "position": "Vocational Training in Web Application Development",
       "startDate": "2020-01-01T00:00:00.000Z",
       "endDate": "2022-12-31T23:59:59.999Z",
       "show": true,
-      "technologies": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
+      "technologies": [
+        { "name": "HTML", "level": 80 },
+        { "name": "CSS", "level": 75 },
+        { "name": "JavaScript", "level": 70 },
+        { "name": "PHP", "level": 65 },
+        { "name": "MySQL", "level": 60 }
+      ]
     },
     {
-      "institution": "IES Ribera de Castilla",
-      "degree": "Specialization Course in AI & Big Data",
+      "type": "education",
+      "company": "IES Ribera de Castilla",
+      "position": "Specialization Course in AI & Big Data",
       "startDate": "2025-01-01T00:00:00.000Z",
       "endDate": "2025-06-30T23:59:59.999Z",
       "show": true,
-      "technologies": ["Python", "TensorFlow", "BigQuery", "GCP", "python", "tensorflow"]
+      "technologies": [
+        { "name": "Python", "level": 85 },
+        { "name": "TensorFlow", "level": 75 },
+        { "name": "BigQuery", "level": 70 },
+        { "name": "GCP", "level": 70 }
+      ]
     }
   ],
 
   "skills": [
     { "name": "Vue 3", "level": 90 },
     { "name": "React", "level": 85 },
+    { "name": "React Legacy", "level": 60 },
     { "name": "Spring Boot", "level": 80 },
     { "name": "SQL", "level": 75 },
     { "name": "CI/CD", "level": 70 },

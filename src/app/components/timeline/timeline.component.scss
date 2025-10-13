@@ -33,3 +33,22 @@
 .role-summary {
   font-size: 0.875rem; /* text-sm */
 }
+
+.education-company {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600;    /* font-semibold */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.education-period {
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280;     /* text-gray-600 */
+  margin-left: 1rem;
+}
+
+.education-position {
+  font-style: italic; /* Añadir estilo cursiva */
+  color: #4b5563;    /* text-gray-700 */
+}
