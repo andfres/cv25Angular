@@ -24,11 +24,14 @@
   "experience": [
     {
       "type": "experience",
-      "company": "Moeve / Cepsa",
+      "company": "NTT Data",
       "location": "Madrid, Spain",
       "position": "Mid-Senior Frontend Developer",
       "startDate": "2024-04-01T00:00:00.000Z",
       "endDate": "present",
+      "logo": "assets/logos/logo_ntt2.png",
+      "logoAlt": "NTT Data logo",
+      "logoStyle": "full",
       "summary": "Began in an entry-level role, gradually taking on more responsibilities. Currently leading the frontend for the CEPSA / Moeve project, responsible for architecture, feature implementation, mentoring junior developers, and guiding the team on effective AI usage and best practices to improve workflows and maintain code quality.",
       "technologies": [
         { "name": "Angular", "level": 30 },
@@ -43,12 +46,15 @@
     },
     {
       "type": "experience",
-      "company": "NTT Data",
+      "company": "NTT Prueba roles",
       "location": "Valladolid, Spain",
       "position": "Fullstack Engineer",
       "startDate": "2023-01-01T00:00:00.000Z",
       "endDate": "2024-03-31T23:59:59.999Z",
       "show": false,
+      "logo": "assets/logos/logo_ntt2.png",
+      "logoAlt": "NTT Prueba roles logo",
+      "logoStyle": "full",
       "roles": [
         {
           "title": "Intern",
@@ -86,6 +92,8 @@
       "endDate": "2019-12-31T23:59:59.999Z",
       "show": true,
       "highlight": true,
+      "logo": "assets/logos/logo_fi.png",
+      "logoAlt": "Friul Intagli logo",
       "summary": "Worked as a factory operator.",
       "technologies": [
         { "name": "Teamwork", "level": 75 },
@@ -97,7 +105,8 @@
       "company": "Alcañiz Fresnos",
       "location": "Valladolid, Spain",
       "position": "Newsletter Designer & Project Manager",
-
+      "logo": "assets/logos/logo_af.png",
+      "logoAlt": "Alcañiz Fresnos logo",
       "summary": "Managed and designed official newsletters, including project management for regional launches.",
       "roles": [
         {

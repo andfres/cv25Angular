@@ -33,6 +33,8 @@
       "position": "Desarrollador Frontend Mid-Senior",
       "startDate": "2024-04-01T00:00:00.000Z",
       "endDate": "presente",
+      "logo": "assets/logos/logo_moeve_cepsa.png",
+      "logoAlt": "Logo de Moeve / Cepsa",
       "summary": "Encargado del desarrollo frontend, implementando nuevas funcionalidades y manteniendo las existentes. Trabajé con un stack tecnológico moderno.",
       "technologies": [
         { "name": "Angular", "level": 90 },
@@ -69,6 +71,8 @@
       "position": "Ingeniero Fullstack",
       "startDate": "2023-01-01T00:00:00.000Z",
       "endDate": "2024-03-31T23:59:59.999Z",
+      "logo": "assets/logos/logo_ntt2.png",
+      "logoAlt": "Logo de NTT Data",
       "roles": [
         {
           "title": "Becario",
@@ -104,6 +108,8 @@
       "position": "Diseñador de Maquetación de Boletín Oficial",
       "startDate": "2010-01-01T00:00:00.000Z",
       "endDate": "2019-12-31T23:59:59.999Z",
+      "logo": "assets/logos/logo_af.png",
+      "logoAlt": "Logo de Alcañiz Fresnos",
       "summary": "Diseñé y maqueté boletines oficiales. Gestioné el formato y la presentación del contenido.",
       "technologies": [
         { "name": "Newsletter Layout Design", "level": 70 },
@@ -112,6 +118,21 @@
         { "name": "Expresiones regulares", "level": 75 },
         { "name": "OCR", "level": 65 },
         { "name": "Accesibilidad", "level": 70 }
+      ]
+    },
+    {
+      "type": "experience",
+      "company": "Friul Intagli",
+      "location": "Patra di Pordenone, Italy",
+      "position": "Factory Operator",
+      "startDate": "2010-01-01T00:00:00.000Z",
+      "endDate": "2019-12-31T23:59:59.999Z",
+      "logo": "assets/logos/logo_fi.png",
+      "logoAlt": "Logo de Friul Intagli",
+      "summary": "Worked as a factory operator.",
+      "technologies": [
+        { "name": "Teamwork", "level": 75 },
+        { "name": "Italian Language", "level": 60 }
       ]
     }
   ],

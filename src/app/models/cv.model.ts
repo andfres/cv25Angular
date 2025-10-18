@@ -31,6 +31,9 @@ export interface Experience extends TimelineEntry {
   company: string;
   location: string;
   position: string;
+  logo?: string; // Add this line
+  logoAlt?: string; // Add this line for accessibility
+  logoStyle?: 'default' | 'full' | 'no-border'; // Add logo style configuration
   roles?: Role[];
   summary?: string;
   technologies?: TechnologySkill[];

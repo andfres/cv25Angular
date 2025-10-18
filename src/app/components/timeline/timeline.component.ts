@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Experience, Role, TimelineEntry, Education } from '../../models/cv.model';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { formatPeriod } from '../../utils/date-format.utility'; // Import the utility function
+import { isExperience } from '../../utils/timeline-type.utility'; // Import isExperience type guard
 
 @Component({
   selector: 'app-timeline',
@@ -40,7 +41,7 @@ export class TimelineComponent implements OnInit, OnChanges {
 
     // Si es una experiencia, ordenar también los roles
     this.sortedEntries.forEach(entry => {
-      if (this.isExperience(entry) && entry.roles) {
+      if (isExperience(entry) && entry.roles) {
         entry.roles.sort((a, b) => {
           const dateA = a.startDate ? new Date(a.startDate) : new Date(0);
           const dateB = b.startDate ? new Date(b.startDate) : new Date(0);
@@ -55,13 +56,20 @@ export class TimelineComponent implements OnInit, OnChanges {
     formatPeriod(startDate, endDate, this.translate);
 
   getExperienceRoles(entry: Experience | Education): Role[] | undefined {
-    if (this.isExperience(entry)) {
+    if (isExperience(entry)) {
       return (entry as Experience).roles;
     }
     return undefined;
   }
+  protected readonly isExperience = isExperience; // Expose isExperience to the template
 
-  isExperience(entry: Experience | Education): entry is Experience {
-    return entry.type === 'experience';
+  getLogoClass(entry: Experience | Education): string {
+    if (isExperience(entry)) {
+      const experience = entry as Experience;
+      if (experience.logoStyle === 'full') {
+        return 'company-logo-full';
+      }
+    }
+    return 'company-logo';
   }
 }

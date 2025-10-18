@@ -17,6 +17,26 @@
   color: #4b5563;    /* text-gray-700 */
 }
 
+.company-logo {
+  width: 48px; /* w-12 */
+  height: 48px; /* h-12 */
+  border-radius: 4px; /* rounded corners but not fully rounded */
+  border: 1px solid #e5e7eb; /* light gray border */
+  object-fit: cover;
+  background-color: white; /* white background */
+  padding: 4px; /* small padding inside */
+}
+
+.company-logo-full {
+  width: 48px; /* w-12 */
+  height: 48px; /* h-12 */
+  border-radius: 0; /* no rounded corners */
+  border: none; /* no border */
+  object-fit: cover;
+  background-color: transparent; /* no background */
+  padding: 0; /* no padding */
+}
+
 .role-title {
   font-weight: 500; /* font-medium */
   display: flex;
