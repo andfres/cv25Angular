@@ -39,6 +39,19 @@ export const PADDING_CONFIG = {
   // PADDING_SCALE: 1.1,  // 110% - spacious
 };
 
+export const PROFILE_FONT_CONFIG = {
+  // Profile font scale factor (for name and title)
+  // Change this value to scale profile fonts independently
+  PROFILE_FONT_SCALE: 1.0, // 100% of original size
+  
+  // Alternative scale values for testing:
+  // PROFILE_FONT_SCALE: 0.8,  // 80% - smaller
+  // PROFILE_FONT_SCALE: 0.9,  // 90% - slightly smaller
+  // PROFILE_FONT_SCALE: 1.0,  // 100% - normal
+  // PROFILE_FONT_SCALE: 1.2,  // 120% - larger
+  // PROFILE_FONT_SCALE: 1.4,  // 140% - much larger
+};
+
 /**
  * Apply font scale to the document
  * Call this function to update the font scale dynamically
@@ -70,5 +83,22 @@ export function applyPaddingScale(scale: number): void {
 export function getCurrentPaddingScale(): number {
   const scale = getComputedStyle(document.documentElement)
     .getPropertyValue('--padding-scale');
+  return parseFloat(scale) || 1.0;
+}
+
+/**
+ * Apply profile font scale to the document
+ * Call this function to update the profile font scale dynamically
+ */
+export function applyProfileFontScale(scale: number): void {
+  document.documentElement.style.setProperty('--profile-font-scale', scale.toString());
+}
+
+/**
+ * Get current profile font scale
+ */
+export function getCurrentProfileFontScale(): number {
+  const scale = getComputedStyle(document.documentElement)
+    .getPropertyValue('--profile-font-scale');
   return parseFloat(scale) || 1.0;
 }

@@ -1,3 +1,15 @@
+// Estilos para nombre y título
+.name {
+  font-size: calc(var(--font-2xl) * var(--profile-font-scale, 1));
+  font-weight: bold;
+  margin-bottom: var(--padding-sm);
+}
+
+.title {
+  font-size: calc(var(--font-lg) * var(--profile-font-scale, 1));
+  margin-bottom: var(--padding-xs);
+}
+
 .a4-page {
   width: 210mm;
   min-height: 297mm;
@@ -20,29 +32,18 @@
   gap: 0.5rem;
 }
 
-// .profile-image-container {
-//   width: 100%;
-//   border-radius: 9999px;
-//   overflow: hidden;
-//   margin-bottom: 0.5rem;
-//   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-//   padding: 0.5rem;
-// }
-
-// .profile-image {
-//   width: 100%;
-//   height: 100%;
-//   max-width: 100%;
-//   object-fit: cover;
-// }
 
 .main-content {
   --display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 2;
   border: 1px solid red;
 }
 
+.profile-personal-info-group{
+  flex: 1;
+
+}
 
 
 @media print {

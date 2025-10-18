@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Experience, Role, TimelineEntry, Education } from '../../models/cv.model';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -12,14 +12,28 @@ import { isExperience } from '../../utils/timeline-type.utility'; // Import isEx
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss',
 })
-export class TimelineComponent implements OnInit, OnChanges {
+export class TimelineComponent implements OnInit, OnChanges, OnDestroy {
   @Input() entries!: (Experience | Education)[]; // Aceptar ambos tipos
   sortedEntries: (Experience | Education)[] = [];
+  sortByDate = false;
 
   constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
     // console.log('TimelineComponent entries on init:', this.entries);
+    // Listen for sorting changes from control panel
+    window.addEventListener('sortingChanged', this.onSortingChanged.bind(this) as EventListener);
+  }
+
+  ngOnDestroy(): void {
+    // Clean up event listener
+    window.removeEventListener('sortingChanged', this.onSortingChanged.bind(this) as EventListener);
+  }
+
+  onSortingChanged(event: Event): void {
+    const customEvent = event as CustomEvent;
+    this.sortByDate = customEvent.detail.sortByDate;
+    this.sortEntries();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -33,13 +47,10 @@ export class TimelineComponent implements OnInit, OnChanges {
   }
 
   private sortEntries(): void {
-    this.sortedEntries = [...this.entries].sort((a, b) => {
-      const dateA = a.startDate ? new Date(a.startDate) : new Date(0); // Usar Epoch para ordenar entradas sin fecha al final
-      const dateB = b.startDate ? new Date(b.startDate) : new Date(0); // Usar Epoch para ordenar entradas sin fecha al final
-      return dateB.getTime() - dateA.getTime();
-    });
+    // Respect incoming order from parent; only sort roles inside experiences
+    this.sortedEntries = [...this.entries];
 
-    // Si es una experiencia, ordenar también los roles
+    // Si es una experiencia, ordenar también los roles por fecha (más reciente primero)
     this.sortedEntries.forEach(entry => {
       if (isExperience(entry) && entry.roles) {
         entry.roles.sort((a, b) => {

@@ -14,7 +14,7 @@
   },
 
   "personalInfo": {
-    "name": "Andrés Fresno Bausela",
+    "name": "Andrés Fresno",
     "title": "Fullstack Engineer / Analyst",
     "location": "Valladolid, Spain",
     "email": "your.email@example.com",
@@ -25,7 +25,7 @@
     {
       "type": "experience",
       "company": "NTT Data",
-      "location": "Madrid, Spain",
+      "location": "Valladolid, España",
       "position": "Mid-Senior Frontend Developer",
       "startDate": "2024-04-01T00:00:00.000Z",
       "endDate": "present",
@@ -47,7 +47,7 @@
     {
       "type": "experience",
       "company": "NTT Prueba roles",
-      "location": "Valladolid, Spain",
+      "location": "Valladolid, España",
       "position": "Fullstack Engineer",
       "startDate": "2023-01-01T00:00:00.000Z",
       "endDate": "2024-03-31T23:59:59.999Z",
@@ -103,8 +103,10 @@
     {
       "type": "experience",
       "company": "Alcañiz Fresnos",
-      "location": "Valladolid, Spain",
+      "location": "Valladolid, España",
       "position": "Newsletter Designer & Project Manager",
+      "startDate": "2020-09-01T00:00:00.000Z",
+      "endDate": "2021-03-31T23:59:59.999Z",
       "logo": "assets/logos/logo_af.png",
       "logoAlt": "Alcañiz Fresnos logo",
       "summary": "Managed and designed official newsletters, including project management for regional launches.",
@@ -141,8 +143,8 @@
   "education": [
     {
       "type": "education",
-      "company": "IES Ribera de Castilla",
-      "position": "Vocational Training in Web Application Development",
+      "company": "Vocational Training in Web Application Development",
+      "position": "IES Ribera de Castilla",
       "startDate": "2020-01-01T00:00:00.000Z",
       "endDate": "2022-12-31T23:59:59.999Z",
       "show": true,
@@ -156,8 +158,8 @@
     },
     {
       "type": "education",
-      "company": "IES Ribera de Castilla",
-      "position": "Specialization Course in AI & Big Data",
+      "company": "Specialization Course in AI & Big Data",
+      "position": "IES Ribera de Castilla",
       "startDate": "2025-01-01T00:00:00.000Z",
       "endDate": "2025-06-30T23:59:59.999Z",
       "show": true,

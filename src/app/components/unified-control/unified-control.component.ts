@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { applyFontScale, getCurrentFontScale, applyPaddingScale, getCurrentPaddingScale } from '../../config/font-config';
+import { applyFontScale, getCurrentFontScale, applyPaddingScale, getCurrentPaddingScale, applyProfileFontScale, getCurrentProfileFontScale } from '../../config/font-config';
 
 @Component({
   selector: 'app-unified-control',
@@ -25,6 +25,26 @@ import { applyFontScale, getCurrentFontScale, applyPaddingScale, getCurrentPaddi
           <button (click)="setFontScale(0.9)" class="control-btn">90%</button>
           <button (click)="setFontScale(1.0)" class="control-btn">100%</button>
           <button (click)="setFontScale(1.1)" class="control-btn">110%</button>
+        </div>
+      </div>
+
+      <!-- Profile Font Control -->
+      <div class="control-section">
+        <label class="control-label">Profile Font Scale: {{ profileFontScale | number:'1.2-2' }}</label>
+        <input 
+          type="range" 
+          [value]="profileFontScale" 
+          (input)="onProfileFontScaleChange($event)"
+          min="0.6" 
+          max="1.6" 
+          step="0.05"
+          class="control-slider">
+        <div class="control-buttons">
+          <button (click)="setProfileFontScale(0.8)" class="control-btn">80%</button>
+          <button (click)="setProfileFontScale(0.9)" class="control-btn">90%</button>
+          <button (click)="setProfileFontScale(1.0)" class="control-btn">100%</button>
+          <button (click)="setProfileFontScale(1.2)" class="control-btn">120%</button>
+          <button (click)="setProfileFontScale(1.4)" class="control-btn">140%</button>
         </div>
       </div>
 
@@ -65,6 +85,32 @@ import { applyFontScale, getCurrentFontScale, applyPaddingScale, getCurrentPaddi
           <button (click)="setVerticalPaddingScale(0.7)" class="control-btn">70%</button>
           <button (click)="setVerticalPaddingScale(0.8)" class="control-btn">80%</button>
           <button (click)="setVerticalPaddingScale(1.0)" class="control-btn">100%</button>
+        </div>
+      </div>
+
+      <!-- Date Sorting Control -->
+      <div class="control-section">
+        <label class="control-label">Sort by Date:</label>
+        <div class="checkbox-container">
+          <input 
+            type="checkbox" 
+            [checked]="sortByDate" 
+            (change)="onSortByDateChange($event)"
+            class="control-checkbox">
+          <span class="checkbox-label">Chronological order (newest first)</span>
+        </div>
+      </div>
+
+      <!-- Layout Control -->
+      <div class="control-section">
+        <label class="control-label">Layout:</label>
+        <div class="checkbox-container">
+          <input 
+            type="checkbox" 
+            [checked]="photoOnTop" 
+            (change)="onPhotoOnTopChange($event)"
+            class="control-checkbox">
+          <span class="checkbox-label">Photo and About Me on top</span>
         </div>
       </div>
     </div>
@@ -126,17 +172,45 @@ import { applyFontScale, getCurrentFontScale, applyPaddingScale, getCurrentPaddi
     .control-btn:hover {
       background: #e5e5e5;
     }
+    
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 5px;
+    }
+    
+    .control-checkbox {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+    
+    .checkbox-label {
+      font-size: 10px;
+      color: #374151;
+      cursor: pointer;
+    }
   `]
 })
 export class UnifiedControlComponent {
   fontScale = getCurrentFontScale();
+  profileFontScale = getCurrentProfileFontScale();
   paddingScale = getCurrentPaddingScale();
   verticalPaddingScale = getCurrentVerticalPaddingScale();
+  sortByDate = false;
+  photoOnTop = false;
 
   onFontScaleChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     const scale = parseFloat(target.value);
     this.setFontScale(scale);
+  }
+
+  onProfileFontScaleChange(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const scale = parseFloat(target.value);
+    this.setProfileFontScale(scale);
   }
 
   onPaddingScaleChange(event: Event): void {
@@ -151,20 +225,95 @@ export class UnifiedControlComponent {
     this.setVerticalPaddingScale(scale);
   }
 
+  onSortByDateChange(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.sortByDate = target.checked;
+    this.notifySortingChange();
+  }
+
+  onPhotoOnTopChange(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.photoOnTop = target.checked;
+    this.notifyLayoutChange();
+  }
+
   setFontScale(scale: number): void {
     this.fontScale = scale;
     applyFontScale(scale);
+    this.logCurrentConfiguration('🔤 Font Scale Applied');
+  }
+
+  setProfileFontScale(scale: number): void {
+    this.profileFontScale = scale;
+    applyProfileFontScale(scale);
+    this.logCurrentConfiguration('👤 Profile Font Scale Applied');
   }
 
   setPaddingScale(scale: number): void {
     this.paddingScale = scale;
     applyPaddingScale(scale);
+    this.logCurrentConfiguration('📏 Padding Scale Applied');
   }
 
   setVerticalPaddingScale(scale: number): void {
     this.verticalPaddingScale = scale;
     applyVerticalPaddingScale(scale);
+    this.logCurrentConfiguration('📐 Vertical Padding Scale Applied');
   }
+
+  notifySortingChange(): void {
+    // Emit event to parent component or use a service to communicate with timeline
+    const event = new CustomEvent('sortingChanged', { 
+      detail: { sortByDate: this.sortByDate } 
+    });
+    window.dispatchEvent(event);
+  }
+
+  notifyLayoutChange(): void {
+    // Emit event to communicate layout changes
+    const event = new CustomEvent('layoutChanged', { 
+      detail: { photoOnTop: this.photoOnTop } 
+    });
+    window.dispatchEvent(event);
+  }
+
+  private logCurrentConfiguration(action: string): void {
+    const config = {
+      action: action,
+      timestamp: new Date().toLocaleTimeString(),
+      configuration: {
+        fontScale: {
+          value: this.fontScale,
+          percentage: Math.round(this.fontScale * 100) + '%'
+        },
+        profileFontScale: {
+          value: this.profileFontScale,
+          percentage: Math.round(this.profileFontScale * 100) + '%'
+        },
+        paddingScale: {
+          value: this.paddingScale,
+          percentage: Math.round(this.paddingScale * 100) + '%'
+        },
+        verticalPaddingScale: {
+          value: this.verticalPaddingScale,
+          percentage: Math.round(this.verticalPaddingScale * 100) + '%'
+        },
+        layout: {
+          sortByDate: this.sortByDate,
+          photoOnTop: this.photoOnTop
+        }
+      }
+    };
+    
+    console.log('🎛️ CV Configuration Applied:', config);
+    console.log('📋 Copy this configuration for print styles:', {
+      fontScale: this.fontScale,
+      profileFontScale: this.profileFontScale,
+      paddingScale: this.paddingScale,
+      verticalPaddingScale: this.verticalPaddingScale
+    });
+  }
+
 }
 
 // Add vertical padding functions to the config

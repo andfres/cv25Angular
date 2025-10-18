@@ -1,26 +1,82 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CvData } from '../../models/cv.model';
 import { LanguagesComponent } from '../languages/languages.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { PersonalInfoComponent } from '../personal-info/personal-info.component';
 import { TimelineComponent } from '../timeline/timeline.component';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-cv-content',
   standalone: true,
-  imports: [CommonModule, LanguagesComponent, TranslateModule, PersonalInfoComponent, TimelineComponent],
+  imports: [CommonModule, LanguagesComponent, TranslateModule, TimelineComponent],
   templateUrl: './cv-content.component.html',
   styleUrl: './cv-content.component.scss',
 })
-export class CvContentComponent implements OnInit {
+export class CvContentComponent implements OnInit, OnDestroy {
   @Input() cvData!: CvData;
   @Input() profileImage!: string;
+  combinedEntries: any[] = [];
+  photoOnTop = false;
 
-  constructor(public translate: TranslateService) { }
+  constructor(public translate: TranslateService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    // Initialization logic if needed
+    this.combineEntries();
+    window.addEventListener('sortingChanged', this.onSortingChanged as EventListener);
+    window.addEventListener('layoutChanged', this.onLayoutChanged as EventListener);
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('sortingChanged', this.onSortingChanged as EventListener);
+    window.removeEventListener('layoutChanged', this.onLayoutChanged as EventListener);
+  }
+
+  private onSortingChanged = (evt: Event) => {
+    const { sortByDate } = (evt as CustomEvent).detail as { sortByDate: boolean };
+    this.combineEntries(sortByDate);
+  };
+
+  private onLayoutChanged = (evt: Event) => {
+    const { photoOnTop } = (evt as CustomEvent).detail as { photoOnTop: boolean };
+    this.photoOnTop = photoOnTop;
+  };
+
+  private combineEntries(sortByDate: boolean = false): void {
+    if (!this.cvData) {
+      this.combinedEntries = [];
+      return;
+    }
+    const all = [...(this.cvData.experience || []), ...(this.cvData.education || [])];
+    if (sortByDate) {
+      this.combinedEntries = all.sort((a, b) => {
+        const normalize = (entry: any): number => {
+          if (entry.endDate === 'present') {
+            return Number.MAX_SAFE_INTEGER; // treat present as most recent
+          }
+          if (entry.endDate) {
+            const d = new Date(entry.endDate).getTime();
+            return isNaN(d) ? 0 : d;
+          }
+          if (entry.startDate) {
+            const d = new Date(entry.startDate).getTime();
+            return isNaN(d) ? 0 : d;
+          }
+          return 0;
+        };
+        return normalize(b) - normalize(a);
+      });
+    } else {
+      // Default: experience first (original order), then education (original order)
+      const exp = (this.cvData.experience || []).slice();
+      const edu = (this.cvData.education || []).slice();
+      this.combinedEntries = [...exp, ...edu];
+    }
+  }
+
+  get sanitizedObjective(): SafeHtml {
+    const objective = this.translate.instant('personalInfo.objective');
+    return this.sanitizer.bypassSecurityTrustHtml(objective);
   }
 
   changeLanguage(lang: string) {
