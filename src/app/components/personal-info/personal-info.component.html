@@ -1,7 +1,7 @@
-<section class="p-4 mb-4">
-  <h2 class="text-gray-800 text-2xl font-bold">{{ 'personalInfo.name' | translate }}</h2>
-  <p class="mb-2">{{ 'personalInfo.title' | translate }}</p>
-  <p class="mb-2">{{ 'personalInfo.location' | translate }}</p>
-  <p class="mb-2">{{ 'personalInfo.email' | translate }}</p>
-  <p class="mb-2" [innerHtml]="sanitizedObjective"></p>
+<section class="personal-info p-md mb-4">
+  <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
+  <p class="title">{{ 'personalInfo.title' | translate }}</p>
+  <p class="location">{{ 'personalInfo.location' | translate }}</p>
+  <p class="email">{{ 'personalInfo.email' | translate }}</p>
+  <p class="objective" [innerHtml]="sanitizedObjective"></p>
 </section>

@@ -1,0 +1,35 @@
+.personal-info {
+  .name {
+    font-size: var(--font-2xl);
+    font-weight: bold;
+    color: #1f2937; /* text-gray-800 */
+    margin-bottom: 0.5rem;
+  }
+  
+  .title {
+    font-size: var(--font-lg);
+    font-weight: 600;
+    color: #374151; /* text-gray-700 */
+    margin-bottom: 0.5rem;
+  }
+  
+  .location {
+    font-size: var(--font-base);
+    color: #6b7280; /* text-gray-600 */
+    margin-bottom: 0.5rem;
+  }
+  
+  .email {
+    font-size: var(--font-base);
+    color: #6b7280; /* text-gray-600 */
+    margin-bottom: 0.5rem;
+  }
+  
+  .objective {
+    font-size: var(--font-sm);
+    color: #4b5563; /* text-gray-700 */
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+}
+

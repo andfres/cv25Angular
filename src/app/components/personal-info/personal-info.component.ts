@@ -8,6 +8,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   standalone: true,
   imports: [TranslateModule],
   templateUrl: './personal-info.component.html',
+  styleUrl: './personal-info.component.scss',
 })
 export class PersonalInfoComponent {
   @Input() personalInfo!: PersonalInfo;
