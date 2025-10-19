@@ -41,13 +41,12 @@
         class="profile-personal-info-group flex flex-col afborder"
         [ngStyle]="{ width: asideWidth + 'rem', maxWidth: asideWidthPercent + '%' }"
       >
-        <div
-          class="profile-image-container flex justify-center mb-4 w-full max-w-[calc(210mm/3)] h-[calc(210mm/3)]"
-        >
+        <div class="profile-image-container flex justify-center w-full h-auto">
           <img
             [src]="profileImage"
             alt="{{ 'profile.picture' | translate }}"
-            class="profile-image rounded-full object-cover w-full h-full"
+            class="profile-image rounded-full object-cover w-full h-auto aspect-square"
+            style="max-width: 100%; max-height: 100%;"
           />
         </div>
 
