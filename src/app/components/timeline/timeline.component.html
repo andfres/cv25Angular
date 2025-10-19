@@ -24,6 +24,7 @@
                   }
                   <span>{{ entry.company }}</span>
                 </span>
+                <span class="text-xs text-gray-500">{{ entry.location }}</span>
                 <p [class.experience-position]="isExperience(entry)" [class.education-position]="!isExperience(entry)" class="text-sm font-medium">{{ entry.position }}</p>
               </div>
             </div>
@@ -32,31 +33,12 @@
           <!-- Spacing between header and content -->
           <div class="my-sm"></div>
           @if (entry.summary) {
-            <p class="summary-text">{{ entry.summary }}</p>
+            <p class="experience-summary">{{ entry.summary }}</p>
           }
-          @if (isExperience(entry) && getExperienceRoles(entry)) {
-            <ul class="list-none p-0 mt-2 space-y-1">
-              @for (role of getExperienceRoles(entry); track role.startDate) {
-                <li class="py-2 px-0 border-l-2 border-blue-400 rounded">
-                  <div class="pl-3">
-                    <h5 class="role-title">{{ role.title }} <span class="role-period">{{ formatPeriod(role.startDate, role.endDate) }}</span></h5>
-                    <p class="role-summary">{{ role.summary }}</p>
-                    @if (role.technologies && role.technologies.length > 0) {
-                      <div class="flex flex-wrap gap-2 mt-2">
-                        @for (tech of role.technologies; track tech) {
-                          <span class="technology-tab" [style.font-size.px]="7 + (tech.level * 0.03)" [style.padding.px]="3 + (tech.level * 0.015)">{{ tech.name }}</span>
-                        }
-                      </div>
-                    }
-                  </div>
-                </li>
-              }
-            </ul>
-          }
-          @if (entry.technologies && entry.technologies.length > 0) {
-            <div class="flex flex-wrap gap-2 mt-2">
-              @for (tech of entry.technologies; track tech) {
-                <span class="technology-tab" [style.font-size.px]="7 + (tech.level * 0.03)" [style.padding.px]="3 + (tech.level * 0.015)">{{ tech.name }}</span>
+          @if (entry.technologies) {
+            <div class="technology-list">
+              @for (tech of entry.technologies; track tech.name) {
+                <span class="technology-item">{{ tech.name }} ({{ tech.level }})</span>
               }
             </div>
           }

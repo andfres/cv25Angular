@@ -42,6 +42,7 @@ export interface Experience extends TimelineEntry {
 export interface Education extends TimelineEntry {
   company: string;
   position: string;
+  location: string;
   summary?: string;
   technologies?: TechnologySkill[];
 }

@@ -51,6 +51,12 @@
 
 }
 
+.profile-image {
+  filter: grayscale(100%);
+  padding: 1rem;
+  width: 100%;
+}
+
 
 @media print {
   .language-selector {
