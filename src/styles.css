@@ -121,3 +121,12 @@ body {
     cursor: pointer;
   }
 }
+
+/* Global section title style used by About Me, Languages, Experience, etc. */
+.section-title {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: #1f2937; /* text-gray-800 */
+  margin: 0 0 var(--vertical-padding-md) 0; /* consistent bottom spacing */
+  line-height: 1.2;
+}

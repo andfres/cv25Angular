@@ -2,25 +2,23 @@
   "profile": {
     "picture": "Profile Picture"
   },
-
   "sections": {
     "languages": "Languages",
     "skills": "Skills",
     "experience": "Experience",
+    "experienceTitle": "Experiencia",
     "education": "Education",
     "present": "Present",
     "noExperience": "No experience entries to display.",
     "noEducation": "No education entries to display."
   },
-
   "personalInfo": {
     "name": "Andrés Fresno",
     "title": "Fullstack Engineer / Analyst",
     "location": "Valladolid, Spain",
     "email": "your.email@example.com",
-    "objective": "Passionate Fullstack Engineer with experience in building scalable and maintainable applications. I learn quickly and adapt to new technologies with ease. I am actively seeking opportunities to grow both technically and linguistically. I have some experience working with <b>Angular</b>, including a short-term project for a major electric company (Red Eléctrica Española). This CV itself has been developed using <b>Angular</b> 20, and the full project can be viewed on GitHub: github.com/andres/CV25"
+    "objective": "Passionate Fullstack Engineer with experience in building scalable and maintainable applications. I learn quickly and adapt to new technologies with ease. I am actively seeking opportunities to grow both technically and linguistically. I have some experience working with Angular, including a short-term project for a major electric company (Red Eléctrica Española). This CV itself has been developed using Angular 20, and the full project can be viewed on <a href='https://github.com/andres/CV25' target='_blank' rel='noopener noreferrer'>https://github.com/andres/CV25</a>."
   },
-
   "experience": [
     {
       "type": "experience",
@@ -34,14 +32,38 @@
       "logoStyle": "full",
       "summary": "Began in an entry-level role, gradually taking on more responsibilities. Currently leading the frontend for the CEPSA / Moeve project, responsible for architecture, feature implementation, mentoring junior developers, and guiding the team on effective AI usage and best practices to improve workflows and maintain code quality.",
       "technologies": [
-        { "name": "Angular", "level": 30 },
-        { "name": "TypeScript", "level": 85 },
-        { "name": "Spring", "level": 90 },
-        { "name": "React", "level": 80 },
-        { "name": "Vue", "level": 75 },
-        { "name": "AWS", "level": 30 },
-        { "name": "Azure DevOps", "level": 50 },
-        { "name": "Git", "level": 50 }
+        {
+          "name": "Angular",
+          "level": 30
+        },
+        {
+          "name": "TypeScript",
+          "level": 85
+        },
+        {
+          "name": "Spring",
+          "level": 90
+        },
+        {
+          "name": "React",
+          "level": 80
+        },
+        {
+          "name": "Vue",
+          "level": 75
+        },
+        {
+          "name": "AWS",
+          "level": 30
+        },
+        {
+          "name": "Azure DevOps",
+          "level": 50
+        },
+        {
+          "name": "Git",
+          "level": 50
+        }
       ]
     },
     {
@@ -62,10 +84,22 @@
           "endDate": "2023-03-31T23:59:59.999Z",
           "summary": "3-month internship assisting in frontend and backend tasks, learning internal processes and tools.",
           "technologies": [
-            { "name": "Angular", "level": 60 },
-            { "name": "TypeScript", "level": 50 },
-            { "name": "HTML", "level": 70 },
-            { "name": "CSS", "level": 50 }
+            {
+              "name": "Angular",
+              "level": 60
+            },
+            {
+              "name": "TypeScript",
+              "level": 50
+            },
+            {
+              "name": "HTML",
+              "level": 70
+            },
+            {
+              "name": "CSS",
+              "level": 50
+            }
           ]
         },
         {
@@ -74,11 +108,26 @@
           "endDate": "2024-03-31T23:59:59.999Z",
           "summary": "Developed features in Vue 3, React, and Spring Boot. Participated in code reviews and estimation of small applications.",
           "technologies": [
-            { "name": "Vue 3", "level": 80 },
-            { "name": "React", "level": 70 },
-            { "name": "Spring Boot", "level": 70 },
-            { "name": "Java", "level": 65 },
-            { "name": "SQL", "level": 60 }
+            {
+              "name": "Vue 3",
+              "level": 80
+            },
+            {
+              "name": "React",
+              "level": 70
+            },
+            {
+              "name": "Spring Boot",
+              "level": 70
+            },
+            {
+              "name": "Java",
+              "level": 65
+            },
+            {
+              "name": "SQL",
+              "level": 60
+            }
           ]
         }
       ]
@@ -96,64 +145,96 @@
       "logoAlt": "Friul Intagli logo",
       "summary": "Worked as a factory operator.",
       "technologies": [
-        { "name": "Teamwork", "level": 75 },
-        { "name": "Italian Language", "level": 60 }
+        {
+          "name": "Teamwork",
+          "level": 75
+        },
+        {
+          "name": "Italian Language",
+          "level": 60
+        }
       ]
     },
     {
       "type": "experience",
       "company": "Alcañiz Fresnos",
       "location": "Valladolid, España",
-      "position": "Newsletter Designer & Project Manager",
-      "startDate": "2020-09-01T00:00:00.000Z",
-      "endDate": "2021-03-31T23:59:59.999Z",
+      "position": "Official Newsletter Layout Designer",
+      "startDate": "2010-01-01T00:00:00.000Z",
+      "endDate": "2019-12-31T23:59:59.999Z",
       "logo": "assets/logos/logo_af.png",
       "logoAlt": "Alcañiz Fresnos logo",
-      "summary": "Managed and designed official newsletters, including project management for regional launches.",
-      "roles": [
+      "summary": "Worked to launch the official newsletter for Canarias region.",
+      "technologies": [
         {
-          "title": "Official Newsletter Layout Designer",
-          "startDate": "2010-01-01T00:00:00.000Z",
-          "endDate": "2019-12-31T23:59:59.999Z",
-          "summary": "Worked to launch the official newsletter for Canarias region.",
-          "technologies": [
-            { "name": "InDesign", "level": 80 },
-            { "name": "Photoshop", "level": 70 },
-            { "name": "Expresiones regulares", "level": 75 },
-            { "name": "Accesibilidad", "level": 70 }
-          ]
-
+          "name": "InDesign",
+          "level": 80
         },
         {
-          "title": "Newsletter Project (Canarias)",
-          "startDate": "2020-09-01T00:00:00.000Z",
-          "endDate": "2021-02-28T23:59:59.999Z",
-
-
-          "summary": "Designed and laid out official newsletters. Managed content formatting and presentation.",
-          "technologies": [
-            { "name": "Project Management", "level": 80 },
-            { "name": "ExtendScript", "level": 70 }
-          ]
+          "name": "Photoshop",
+          "level": 70
+        },
+        {
+          "name": "Expresiones regulares",
+          "level": 75
+        },
+        {
+          "name": "Accesibilidad",
+          "level": 70
+        }
+      ]
+    },
+    {
+      "type": "experience",
+      "company": "Alcañiz Fresnos",
+      "location": "Valladolid, España",
+      "position": "Newsletter Project (Canarias)",
+      "startDate": "2020-09-01T00:00:00.000Z",
+      "endDate": "2021-01-31T23:59:59.999Z",
+      "logo": "assets/logos/logo_af.png",
+      "logoAlt": "Alcañiz Fresnos logo",
+      "summary": "Designed and laid out official newsletters. Managed content formatting and presentation.",
+      "technologies": [
+        {
+          "name": "Project Management",
+          "level": 80
+        },
+        {
+          "name": "ExtendScript",
+          "level": 70
         }
       ]
     }
   ],
-
   "education": [
     {
       "type": "education",
       "company": "Vocational Training in Web Application Development",
       "position": "IES Ribera de Castilla",
       "startDate": "2020-01-01T00:00:00.000Z",
-      "endDate": "2022-12-31T23:59:59.999Z",
+      "endDate": "2023-12-31T23:59:59.999Z",
       "show": true,
       "technologies": [
-        { "name": "HTML", "level": 80 },
-        { "name": "CSS", "level": 75 },
-        { "name": "JavaScript", "level": 70 },
-        { "name": "PHP", "level": 65 },
-        { "name": "MySQL", "level": 60 }
+        {
+          "name": "HTML",
+          "level": 80
+        },
+        {
+          "name": "CSS",
+          "level": 75
+        },
+        {
+          "name": "JavaScript",
+          "level": 70
+        },
+        {
+          "name": "PHP",
+          "level": 65
+        },
+        {
+          "name": "MySQL",
+          "level": 60
+        }
       ]
     },
     {
@@ -164,29 +245,71 @@
       "endDate": "2025-06-30T23:59:59.999Z",
       "show": true,
       "technologies": [
-        { "name": "Python", "level": 85 },
-        { "name": "TensorFlow", "level": 75 },
-        { "name": "BigQuery", "level": 70 },
-        { "name": "GCP", "level": 70 }
+        {
+          "name": "Python",
+          "level": 85
+        },
+        {
+          "name": "TensorFlow",
+          "level": 75
+        },
+        {
+          "name": "BigQuery",
+          "level": 70
+        },
+        {
+          "name": "GCP",
+          "level": 70
+        }
       ]
     }
   ],
-
   "skills": [
-    { "name": "Vue 3", "level": 90 },
-    { "name": "React", "level": 85 },
-    { "name": "React Legacy", "level": 60 },
-    { "name": "Spring Boot", "level": 80 },
-    { "name": "SQL", "level": 75 },
-    { "name": "CI/CD", "level": 70 },
-    { "name": "Application Estimation & Definition", "level": 85 },
-    { "name": "Project Analysis", "level": 80 }
-
+    {
+      "name": "Vue 3",
+      "level": 90
+    },
+    {
+      "name": "React",
+      "level": 85
+    },
+    {
+      "name": "React Legacy",
+      "level": 60
+    },
+    {
+      "name": "Spring Boot",
+      "level": 80
+    },
+    {
+      "name": "SQL",
+      "level": 75
+    },
+    {
+      "name": "CI/CD",
+      "level": 70
+    },
+    {
+      "name": "Application Estimation & Definition",
+      "level": 85
+    },
+    {
+      "name": "Project Analysis",
+      "level": 80
+    }
   ],
-
   "languages": [
-    { "name": "English", "level": 90 },
-    { "name": "Spanish", "level": 100 },
-    { "name": "Italian", "level": 60 }
+    {
+      "name": "English",
+      "level": 90
+    },
+    {
+      "name": "Spanish",
+      "level": 100
+    },
+    {
+      "name": "Italian",
+      "level": 60
+    }
   ]
 }

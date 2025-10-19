@@ -17,10 +17,9 @@
     </div>
   </div>
 
-  <div class="flexaf">
-    <aside class="profile-personal-info-group flex flex-col  p-1 border border-red-500 ">
+  <div class="flexaf ">
+    <aside class="profile-personal-info-group flex flex-col afborder ">
 
-      <!-- <app-skills [skills]="cvData.skills"></app-skills> -->
       <div class="about-me-section p-md mb-4">
         <h2 class="section-title text-xl font-bold mb-2">About Me</h2>
         <p class="objective text-sm leading-relaxed" [innerHtml]="sanitizedObjective"></p>
@@ -37,27 +36,33 @@
   <!-- Original layout -->
   <!-- Aside (columna izquierda 40%) -->
   <div class="flexaf">
-    <aside class="profile-personal-info-group flex flex-col basis-2/5 max-w-[40%] p-1 ">
+    <aside class="profile-personal-info-group flex flex-col basis-2/5 max-w-[40%] afborder">
       <div class="profile-image-container flex justify-center mb-4 w-full max-w-[calc(210mm/3)] h-[calc(210mm/3)]">
         <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}"
           class="profile-image rounded-full object-cover w-full h-full" />
       </div>
 
-      <section class="personal-info p-md mb-4">
-        <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
-        <p class="title">{{ 'personalInfo.title' | translate }}</p>
-        <p class="location">{{ 'personalInfo.location' | translate }}</p>
-        <p class="email">{{ 'personalInfo.email' | translate }}</p>
-        <h2 class="section-title text-xl font-bold mb-2">About Me</h2>
+      <section class="personal-info p-md afborder2">
+        <div class=" mb-4 afborder2">
+          <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
+          <p class="title">{{ 'personalInfo.title' | translate }}</p>
+          <p class="location">{{ 'personalInfo.location' | translate }}</p>
+          <p class="email">{{ 'personalInfo.email' | translate }}</p>
+        </div>
 
-        <p class="objective" [innerHtml]="sanitizedObjective"></p>
+        <div class=" afborder2 mb-4"> 
+          <h2 class="section-title text-xl font-bold mb-2">About Me</h2>
+          <p class="objective" [innerHtml]="sanitizedObjective"></p>
+        </div>
+
+        <app-languages [languages]="cvData.languages"></app-languages>
       </section>
       <!-- <app-skills [skills]="cvData.skills"></app-skills> -->
-      <app-languages [languages]="cvData.languages"></app-languages>
+   
     </aside>
 
     <!-- Main content (columna derecha 60%) -->
-    <section class="main-content ">
+    <section class="main-content afborder">
       <app-timeline [entries]="combinedEntries"></app-timeline>
     </section>
   </div>

@@ -1,4 +1,7 @@
-<section class="px-md">
+<section class="p-4 ">
+  <!-- Sección: título de experiencia tomado de i18n -->
+  <h2 class="section-title">{{ 'sections.experience' | translate }}</h2>
+
   @if (sortedEntries && sortedEntries.length > 0) {
     @for (entry of sortedEntries; track entry.startDate) {
       @if (entry.show !== false) {

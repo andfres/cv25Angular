@@ -5,6 +5,7 @@ import { LanguagesComponent } from '../languages/languages.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TimelineComponent } from '../timeline/timeline.component';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ConfigService } from '../../services/config.service';
 
 @Component({
   selector: 'app-cv-content',
@@ -19,10 +20,21 @@ export class CvContentComponent implements OnInit, OnDestroy {
   combinedEntries: any[] = [];
   photoOnTop = false;
 
-  constructor(public translate: TranslateService, private sanitizer: DomSanitizer) { }
+  constructor(public translate: TranslateService, private sanitizer: DomSanitizer, private config: ConfigService) { }
 
   ngOnInit(): void {
-    this.combineEntries();
+    // Apply initial configuration (sort and layout) from global config
+    const initial = this.config.state;
+    this.photoOnTop = initial.photoOnTop;
+    this.combineEntries(initial.sortByDate);
+
+    // Subscribe to future changes
+    this.config.state$.subscribe(cfg => {
+      this.photoOnTop = cfg.photoOnTop;
+      this.combineEntries(cfg.sortByDate);
+    });
+
+    // Keep existing event listeners for compatibility
     window.addEventListener('sortingChanged', this.onSortingChanged as EventListener);
     window.addEventListener('layoutChanged', this.onLayoutChanged as EventListener);
   }

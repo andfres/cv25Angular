@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { applyFontScale, getCurrentFontScale, applyPaddingScale, getCurrentPaddingScale, applyProfileFontScale, getCurrentProfileFontScale } from '../../config/font-config';
+import { ConfigService } from '../../services/config.service';
 
 @Component({
   selector: 'app-unified-control',
@@ -194,70 +194,98 @@ import { applyFontScale, getCurrentFontScale, applyPaddingScale, getCurrentPaddi
   `]
 })
 export class UnifiedControlComponent {
-  fontScale = getCurrentFontScale();
-  profileFontScale = getCurrentProfileFontScale();
-  paddingScale = getCurrentPaddingScale();
-  verticalPaddingScale = getCurrentVerticalPaddingScale();
-  sortByDate = false;
+  fontScale = 1;
+  profileFontScale = 1;
+  paddingScale = 1;
+  verticalPaddingScale = 1;
+  sortByDate = true;
   photoOnTop = false;
+
+  constructor(private config: ConfigService) {
+    const s = this.config.state;
+    this.fontScale = s.fontScale;
+    this.profileFontScale = s.profileFontScale;
+    this.paddingScale = s.paddingScale;
+    this.verticalPaddingScale = s.verticalPaddingScale;
+    this.sortByDate = s.sortByDate;
+    this.photoOnTop = s.photoOnTop;
+
+    // ensure CSS vars applied
+    this.config.init();
+
+    // subscribe to changes
+    this.config.state$.subscribe(cfg => {
+      this.fontScale = cfg.fontScale;
+      this.profileFontScale = cfg.profileFontScale;
+      this.paddingScale = cfg.paddingScale;
+      this.verticalPaddingScale = cfg.verticalPaddingScale;
+      this.sortByDate = cfg.sortByDate;
+      this.photoOnTop = cfg.photoOnTop;
+    });
+  }
 
   onFontScaleChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     const scale = parseFloat(target.value);
-    this.setFontScale(scale);
+    this.config.set({ fontScale: scale });
+    this.logCurrentConfiguration('🔤 Font Scale Applied');
   }
 
   onProfileFontScaleChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     const scale = parseFloat(target.value);
-    this.setProfileFontScale(scale);
+    this.config.set({ profileFontScale: scale });
+    this.logCurrentConfiguration('👤 Profile Font Scale Applied');
   }
 
   onPaddingScaleChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     const scale = parseFloat(target.value);
-    this.setPaddingScale(scale);
+    this.config.set({ paddingScale: scale });
+    this.logCurrentConfiguration('📏 Padding Scale Applied');
   }
 
   onVerticalPaddingScaleChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     const scale = parseFloat(target.value);
-    this.setVerticalPaddingScale(scale);
+    this.config.set({ verticalPaddingScale: scale });
+    this.logCurrentConfiguration('📐 Vertical Padding Scale Applied');
   }
 
   onSortByDateChange(event: Event): void {
     const target = event.target as HTMLInputElement;
-    this.sortByDate = target.checked;
+    const checked = target.checked;
+    this.config.set({ sortByDate: checked });
+    this.logCurrentConfiguration('🔀 Sort By Date Toggled');
     this.notifySortingChange();
   }
 
   onPhotoOnTopChange(event: Event): void {
     const target = event.target as HTMLInputElement;
-    this.photoOnTop = target.checked;
+    const checked = target.checked;
+    this.config.set({ photoOnTop: checked });
+    this.logCurrentConfiguration('🖼️ Layout Toggled');
     this.notifyLayoutChange();
   }
 
+  // Add direct setter methods used by template buttons
   setFontScale(scale: number): void {
-    this.fontScale = scale;
-    applyFontScale(scale);
+    this.config.set({ fontScale: scale });
     this.logCurrentConfiguration('🔤 Font Scale Applied');
   }
 
   setProfileFontScale(scale: number): void {
-    this.profileFontScale = scale;
-    applyProfileFontScale(scale);
+    this.config.set({ profileFontScale: scale });
     this.logCurrentConfiguration('👤 Profile Font Scale Applied');
   }
 
   setPaddingScale(scale: number): void {
-    this.paddingScale = scale;
-    applyPaddingScale(scale);
+    this.config.set({ paddingScale: scale });
     this.logCurrentConfiguration('📏 Padding Scale Applied');
   }
 
   setVerticalPaddingScale(scale: number): void {
-    this.verticalPaddingScale = scale;
-    applyVerticalPaddingScale(scale);
+    this.config.set({ verticalPaddingScale: scale });
     this.logCurrentConfiguration('📐 Vertical Padding Scale Applied');
   }
 
@@ -278,6 +306,11 @@ export class UnifiedControlComponent {
   }
 
   private logCurrentConfiguration(action: string): void {
+    const layoutHuman = {
+      sortByDate: this.sortByDate ? 'Chronological order (newest first)' : 'No sorting',
+      photoOnTop: this.photoOnTop ? 'Photo and About Me on top' : 'Original layout'
+    };
+
     const config = {
       action: action,
       timestamp: new Date().toLocaleTimeString(),
@@ -301,29 +334,23 @@ export class UnifiedControlComponent {
         layout: {
           sortByDate: this.sortByDate,
           photoOnTop: this.photoOnTop
-        }
+        },
+        layoutHuman: layoutHuman
       }
     };
-    
+
     console.log('🎛️ CV Configuration Applied:', config);
     console.log('📋 Copy this configuration for print styles:', {
       fontScale: this.fontScale,
       profileFontScale: this.profileFontScale,
       paddingScale: this.paddingScale,
-      verticalPaddingScale: this.verticalPaddingScale
+      verticalPaddingScale: this.verticalPaddingScale,
+      sortByDate: this.sortByDate,
+      photoOnTop: this.photoOnTop,
+      sortByDateLabel: layoutHuman.sortByDate,
+      layoutLabel: layoutHuman.photoOnTop
     });
   }
 
-}
-
-// Add vertical padding functions to the config
-function getCurrentVerticalPaddingScale(): number {
-  const scale = getComputedStyle(document.documentElement)
-    .getPropertyValue('--vertical-padding-scale');
-  return parseFloat(scale) || 1.0;
-}
-
-function applyVerticalPaddingScale(scale: number): void {
-  document.documentElement.style.setProperty('--vertical-padding-scale', scale.toString());
 }
 
