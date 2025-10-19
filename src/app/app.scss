@@ -24,3 +24,12 @@
 .lang-button img {
   display: block;
 }
+
+/* Summary text styles */
+.summary-text {
+  font-size: var(--font-base);
+  color:  #374151; /* text-gray-700 */; /* text-gray-700 */
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  
+}
