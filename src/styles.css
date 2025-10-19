@@ -8,6 +8,7 @@
 /* Font Size Control System */
 :root {
   --font-scale: 0.85; /* Global font scale - change this to adjust all text sizes (85% for A4) */
+  --profile-font-scale: 1.0; /* Profile font scale - change this to adjust profile text sizes (name, title) */
   
   /* Base font sizes (will be multiplied by --font-scale) */
   --font-xs: calc(0.75rem * var(--font-scale));     /* 12px * scale */
