@@ -16,7 +16,7 @@
     "name": "Andrés Fresno",
     "title": "Fullstack Engineer",
     "location": "Valladolid, Spain",
-    "email": "your.email@example.com",
+    "email": "andfres@gmail.com",
     "objective": "Passionate Fullstack Engineer with experience in building scalable and maintainable applications. I learn quickly and adapt to new technologies with ease. I am actively seeking opportunities to grow both technically and linguistically. I have some experience working with Angular, including a short-term project for a major electric company (Red Eléctrica Española). This CV itself has been developed using Angular 20, and the full project can be viewed on <a href='https://github.com/andres/CV25' target='_blank' rel='noopener noreferrer'>https://github.com/andres/CV25</a>."
   },
   "experience": [
@@ -30,6 +30,7 @@
       "logo": "assets/logos/logo_ntt2.png",
       "logoAlt": "NTT Data logo",
       "logoStyle": "full",
+      "showLogo": true,
       "summary": "Began in an entry-level role, gradually taking on more responsibilities. Currently leading the frontend for the CEPSA / Moeve project, responsible for architecture, feature implementation, mentoring junior developers, and guiding the team on effective AI usage and best practices to improve workflows and maintain code quality.",
       "technologies": [
         {
@@ -77,6 +78,7 @@
       "logo": "assets/logos/logo_ntt2.png",
       "logoAlt": "NTT Prueba roles logo",
       "logoStyle": "full",
+      "showLogo": true,
       "roles": [
         {
           "title": "Intern",
@@ -143,6 +145,7 @@
       "highlight": true,
       "logo": "assets/logos/logo_fi.png",
       "logoAlt": "Friul Intagli logo",
+      "showLogo": false,
       "summary": "Worked as a factory operator.",
       "technologies": [
         {
@@ -164,6 +167,7 @@
       "endDate": "2019-12-31T23:59:59.999Z",
       "logo": "assets/logos/logo_af.png",
       "logoAlt": "Alcañiz Fresnos logo",
+      "showLogo": false,
       "summary": "Worked to launch the official newsletter for Canarias region.",
       "technologies": [
         {
@@ -193,6 +197,7 @@
       "endDate": "2021-01-31T23:59:59.999Z",
       "logo": "assets/logos/logo_af.png",
       "logoAlt": "Alcañiz Fresnos logo",
+      "showLogo": false,
       "summary": "Designed and laid out official newsletters. Managed content formatting and presentation.",
       "technologies": [
         {

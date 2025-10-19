@@ -44,7 +44,8 @@
         { "name": "RxJS", "level": 75 },
         { "name": "Nx", "level": 70 },
         { "name": "Azure DevOps", "level": 70 }
-      ]
+      ],
+      "showLogo": false
     },
     {
       "type": "experience",
@@ -62,7 +63,8 @@
         { "name": "SQL", "level": 75 },
         { "name": "CI/CD", "level": 70 },
         { "name": "AWS", "level": 65 }
-      ]
+      ],
+      "showLogo": true
     },
     {
       "type": "experience",
@@ -84,7 +86,8 @@
             { "name": "TypeScript", "level": 50 },
             { "name": "HTML", "level": 70 },
             { "name": "CSS", "level": 50 }
-          ]
+          ],
+          "showLogo": false
         },
         {
           "title": "Desarrollador Junior",
@@ -97,7 +100,8 @@
             { "name": "Spring Boot", "level": 70 },
             { "name": "Java", "level": 65 },
             { "name": "SQL", "level": 60 }
-          ]
+          ],
+          "showLogo": false
         }
       ]
     },
@@ -118,7 +122,8 @@
         { "name": "Expresiones regulares", "level": 75 },
         { "name": "OCR", "level": 65 },
         { "name": "Accesibilidad", "level": 70 }
-      ]
+      ],
+      "showLogo": false
     },
     {
       "type": "experience",
@@ -133,7 +138,8 @@
       "technologies": [
         { "name": "Teamwork", "level": 75 },
         { "name": "Italian Language", "level": 60 }
-      ]
+      ],
+      "showLogo": false
     }
   ],
 

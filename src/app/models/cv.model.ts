@@ -37,6 +37,7 @@ export interface Experience extends TimelineEntry {
   roles?: Role[];
   summary?: string;
   technologies?: TechnologySkill[];
+  showLogo?: boolean; // If true, show company logo
 }
 
 export interface Education extends TimelineEntry {
