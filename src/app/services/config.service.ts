@@ -4,19 +4,17 @@ import { BehaviorSubject } from 'rxjs';
 export interface CvConfig {
   fontScale: number;
   profileFontScale: number;
-  paddingScale: number;
-  verticalPaddingScale: number;
   sortByDate: boolean;
   photoOnTop: boolean;
+  asideWidth: number; // Width of the aside in rem units
 }
 
 const DEFAULT: CvConfig = {
   fontScale: 0.85,
   profileFontScale: 1.05,
-  paddingScale: 0.8,
-  verticalPaddingScale: 0.8,
   sortByDate: true,
   photoOnTop: false,
+  asideWidth: 20,
 };
 
 @Injectable({ providedIn: 'root' })
@@ -42,11 +40,7 @@ export class ConfigService {
       '--profile-font-scale',
       String(cfg.profileFontScale),
     );
-    document.documentElement.style.setProperty('--padding-scale', String(cfg.paddingScale));
-    document.documentElement.style.setProperty(
-      '--vertical-padding-scale',
-      String(cfg.verticalPaddingScale),
-    );
+    document.documentElement.style.setProperty('--aside-width', String(cfg.asideWidth));
   }
 
   private save(cfg: CvConfig) {

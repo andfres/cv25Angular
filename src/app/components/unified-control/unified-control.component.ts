@@ -52,47 +52,23 @@ import { ConfigService } from '../../services/config.service';
         </div>
       </div>
 
-      <!-- Padding Control -->
+      <!-- Aside Width Control -->
       <div class="control-section">
-        <label class="control-label">Padding Scale: {{ paddingScale | number: '1.2-2' }}</label>
+        <label class="control-label">Aside Width: {{ asideWidth | number: '1.0-2' }}rem</label>
         <input
           type="range"
-          [value]="paddingScale"
-          (input)="onPaddingScaleChange($event)"
-          min="0.5"
-          max="1.3"
-          step="0.05"
+          [value]="asideWidth"
+          (input)="onAsideWidthChange($event)"
+          min="10"
+          max="40"
+          step="1"
           class="control-slider"
         />
         <div class="control-buttons">
-          <button (click)="setPaddingScale(0.6)" class="control-btn">60%</button>
-          <button (click)="setPaddingScale(0.7)" class="control-btn">70%</button>
-          <button (click)="setPaddingScale(0.8)" class="control-btn">80%</button>
-          <button (click)="setPaddingScale(0.9)" class="control-btn">90%</button>
-          <button (click)="setPaddingScale(1.0)" class="control-btn">100%</button>
-        </div>
-      </div>
-
-      <!-- Vertical Padding Control -->
-      <div class="control-section">
-        <label class="control-label"
-          >Vertical Padding: {{ verticalPaddingScale | number: '1.2-2' }}</label
-        >
-        <input
-          type="range"
-          [value]="verticalPaddingScale"
-          (input)="onVerticalPaddingScaleChange($event)"
-          min="0.4"
-          max="1.2"
-          step="0.05"
-          class="control-slider"
-        />
-        <div class="control-buttons">
-          <button (click)="setVerticalPaddingScale(0.5)" class="control-btn">50%</button>
-          <button (click)="setVerticalPaddingScale(0.6)" class="control-btn">60%</button>
-          <button (click)="setVerticalPaddingScale(0.7)" class="control-btn">70%</button>
-          <button (click)="setVerticalPaddingScale(0.8)" class="control-btn">80%</button>
-          <button (click)="setVerticalPaddingScale(1.0)" class="control-btn">100%</button>
+          <button (click)="setAsideWidth(15)" class="control-btn">15</button>
+          <button (click)="setAsideWidth(20)" class="control-btn">20</button>
+          <button (click)="setAsideWidth(25)" class="control-btn">25</button>
+          <button (click)="setAsideWidth(30)" class="control-btn">30</button>
         </div>
       </div>
 
@@ -208,8 +184,7 @@ import { ConfigService } from '../../services/config.service';
 export class UnifiedControlComponent {
   fontScale = 1;
   profileFontScale = 1;
-  paddingScale = 1;
-  verticalPaddingScale = 1;
+  asideWidth = 20;
   sortByDate = true;
   photoOnTop = false;
 
@@ -217,8 +192,7 @@ export class UnifiedControlComponent {
     const s = this.config.state;
     this.fontScale = s.fontScale;
     this.profileFontScale = s.profileFontScale;
-    this.paddingScale = s.paddingScale;
-    this.verticalPaddingScale = s.verticalPaddingScale;
+    this.asideWidth = s.asideWidth ?? 20;
     this.sortByDate = s.sortByDate;
     this.photoOnTop = s.photoOnTop;
 
@@ -229,8 +203,7 @@ export class UnifiedControlComponent {
     this.config.state$.subscribe((cfg) => {
       this.fontScale = cfg.fontScale;
       this.profileFontScale = cfg.profileFontScale;
-      this.paddingScale = cfg.paddingScale;
-      this.verticalPaddingScale = cfg.verticalPaddingScale;
+      this.asideWidth = cfg.asideWidth ?? 20;
       this.sortByDate = cfg.sortByDate;
       this.photoOnTop = cfg.photoOnTop;
     });
@@ -250,18 +223,11 @@ export class UnifiedControlComponent {
     this.logCurrentConfiguration('👤 Profile Font Scale Applied');
   }
 
-  onPaddingScaleChange(event: Event): void {
+  onAsideWidthChange(event: Event): void {
     const target = event.target as HTMLInputElement;
-    const scale = parseFloat(target.value);
-    this.config.set({ paddingScale: scale });
-    this.logCurrentConfiguration('📏 Padding Scale Applied');
-  }
-
-  onVerticalPaddingScaleChange(event: Event): void {
-    const target = event.target as HTMLInputElement;
-    const scale = parseFloat(target.value);
-    this.config.set({ verticalPaddingScale: scale });
-    this.logCurrentConfiguration('📐 Vertical Padding Scale Applied');
+    const width = parseInt(target.value, 10);
+    this.config.set({ asideWidth: width });
+    this.logCurrentConfiguration('📏 Aside Width Applied');
   }
 
   onSortByDateChange(event: Event): void {
@@ -291,14 +257,9 @@ export class UnifiedControlComponent {
     this.logCurrentConfiguration('👤 Profile Font Scale Applied');
   }
 
-  setPaddingScale(scale: number): void {
-    this.config.set({ paddingScale: scale });
-    this.logCurrentConfiguration('📏 Padding Scale Applied');
-  }
-
-  setVerticalPaddingScale(scale: number): void {
-    this.config.set({ verticalPaddingScale: scale });
-    this.logCurrentConfiguration('📐 Vertical Padding Scale Applied');
+  setAsideWidth(width: number): void {
+    this.config.set({ asideWidth: width });
+    this.logCurrentConfiguration('📏 Aside Width Applied');
   }
 
   notifySortingChange(): void {
@@ -335,13 +296,9 @@ export class UnifiedControlComponent {
           value: this.profileFontScale,
           percentage: Math.round(this.profileFontScale * 100) + '%',
         },
-        paddingScale: {
-          value: this.paddingScale,
-          percentage: Math.round(this.paddingScale * 100) + '%',
-        },
-        verticalPaddingScale: {
-          value: this.verticalPaddingScale,
-          percentage: Math.round(this.verticalPaddingScale * 100) + '%',
+        asideWidth: {
+          value: this.asideWidth,
+          unit: 'rem',
         },
         layout: {
           sortByDate: this.sortByDate,
@@ -355,8 +312,7 @@ export class UnifiedControlComponent {
     console.log('📋 Copy this configuration for print styles:', {
       fontScale: this.fontScale,
       profileFontScale: this.profileFontScale,
-      paddingScale: this.paddingScale,
-      verticalPaddingScale: this.verticalPaddingScale,
+      asideWidth: this.asideWidth,
       sortByDate: this.sortByDate,
       photoOnTop: this.photoOnTop,
       sortByDateLabel: layoutHuman.sortByDate,

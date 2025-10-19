@@ -19,6 +19,8 @@ export class CvContentComponent implements OnInit, OnDestroy {
   @Input() profileImage!: string;
   combinedEntries: any[] = [];
   photoOnTop = false;
+  asideWidth = 20;
+  asideWidthPercent = 40;
 
   constructor(
     public translate: TranslateService,
@@ -30,11 +32,15 @@ export class CvContentComponent implements OnInit, OnDestroy {
     // Apply initial configuration (sort and layout) from global config
     const initial = this.config.state;
     this.photoOnTop = initial.photoOnTop;
+    this.asideWidth = initial.asideWidth ?? 20;
+    this.asideWidthPercent = Math.round((this.asideWidth / 50) * 100); // 20rem/50rem = 40%
     this.combineEntries(initial.sortByDate);
 
     // Subscribe to future changes
     this.config.state$.subscribe((cfg) => {
       this.photoOnTop = cfg.photoOnTop;
+      this.asideWidth = cfg.asideWidth ?? 20;
+      this.asideWidthPercent = Math.round((this.asideWidth / 50) * 100);
       this.combineEntries(cfg.sortByDate);
     });
 

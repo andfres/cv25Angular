@@ -37,7 +37,10 @@
     <!-- Original layout -->
     <!-- Aside (columna izquierda 40%) -->
     <div class="flexaf">
-      <aside class="profile-personal-info-group flex flex-col basis-2/5 max-w-[40%] afborder">
+      <aside
+        class="profile-personal-info-group flex flex-col afborder"
+        [ngStyle]="{ width: asideWidth + 'rem', maxWidth: asideWidthPercent + '%' }"
+      >
         <div
           class="profile-image-container flex justify-center mb-4 w-full max-w-[calc(210mm/3)] h-[calc(210mm/3)]"
         >
@@ -66,8 +69,11 @@
         <!-- <app-skills [skills]="cvData.skills"></app-skills> -->
       </aside>
 
-      <!-- Main content (columna derecha 60%) -->
-      <section class="main-content afborder">
+      <!-- Main content (columna derecha) -->
+      <section
+        class="main-content afborder"
+        [ngStyle]="{ width: 'calc(100% - ' + asideWidth + 'rem)' }"
+      >
         <app-timeline [entries]="combinedEntries"></app-timeline>
       </section>
     </div>
