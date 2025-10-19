@@ -15,7 +15,7 @@ import { UnifiedControlComponent } from './components/unified-control/unified-co
   styleUrl: './app.scss',
 })
 export class App implements OnInit {
-  protected readonly title = signal('my-angular-app');
+  protected readonly title = signal('cv25Angular');
   cvData: any; // Se cargará dinámicamente
   profileImage: string = '/assets/yo2.jpg'; // Ruta estática de la imagen de perfil
   currentLanguageDisplay: string = ''; // Nueva propiedad para mostrar el idioma actual

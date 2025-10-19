@@ -3,7 +3,8 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-angular-app": {
+    "cv25Angular": {
+      
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -29,7 +30,9 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.css", "src/app/app.scss"]
+            "styles": ["src/styles.css", "src/app/app.scss"],
+            "outputPath": "docs",
+            "baseHref": "/cv25Angular/"
           },
           "configurations": {
             "production": {
@@ -59,10 +62,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-angular-app:build:production"
+              "buildTarget": "cv25Angular:build:production"
             },
             "development": {
-              "buildTarget": "my-angular-app:build:development"
+              "buildTarget": "cv25Angular:build:development"
             }
           },
           "defaultConfiguration": "development"
