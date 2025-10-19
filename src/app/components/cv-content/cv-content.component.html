@@ -1,70 +1,75 @@
 <main [class]="'a4-page  pt-4'">
   @if (photoOnTop) {
-  <!-- Layout alternativo -->
+    <!-- Layout alternativo -->
 
-
-  <div class="profile-and-info flex flex-row gap-4 mb-4">
-    <div class="profile-image-container flex justify-center w-48 h-48 flex-shrink-0">
-      <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}"
-        class="profile-image rounded-full object-cover w-full h-full" />
-    </div>
-
-    <div class="personal-info ">
-      <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
-      <p class="title">{{ 'personalInfo.title' | translate }}</p>
-      <p class="location">{{ 'personalInfo.location' | translate }}</p>
-      <p class="email">{{ 'personalInfo.email' | translate }}</p>
-    </div>
-  </div>
-
-  <div class="flexaf ">
-    <aside class="profile-personal-info-group flex flex-col afborder ">
-
-      <div class="about-me-section p-md mb-4">
-        <h2 class="section-title text-xl font-bold mb-2">About Me</h2>
-        <p class="objective text-sm leading-relaxed" [innerHtml]="sanitizedObjective"></p>
-      </div>
-      <app-languages [languages]="cvData.languages"></app-languages>
-    </aside>
-
-    <!-- Main content (columna derecha 60%) -->
-    <section class="main-content">
-      <app-timeline [entries]="combinedEntries"></app-timeline>
-    </section>
-  </div>
-  } @else {
-  <!-- Original layout -->
-  <!-- Aside (columna izquierda 40%) -->
-  <div class="flexaf">
-    <aside class="profile-personal-info-group flex flex-col basis-2/5 max-w-[40%] afborder">
-      <div class="profile-image-container flex justify-center mb-4 w-full max-w-[calc(210mm/3)] h-[calc(210mm/3)]">
-        <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}"
-          class="profile-image rounded-full object-cover w-full h-full" />
+    <div class="profile-and-info flex flex-row gap-4 mb-4">
+      <div class="profile-image-container flex justify-center w-48 h-48 flex-shrink-0">
+        <img
+          [src]="profileImage"
+          alt="{{ 'profile.picture' | translate }}"
+          class="profile-image rounded-full object-cover w-full h-full"
+        />
       </div>
 
-      <section class="personal-info p-md afborder2">
-        <div class=" mb-4 afborder2">
-          <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
-          <p class="title">{{ 'personalInfo.title' | translate }}</p>
-          <p class="location">{{ 'personalInfo.location' | translate }}</p>
-          <p class="email">{{ 'personalInfo.email' | translate }}</p>
-        </div>
+      <div class="personal-info">
+        <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
+        <p class="title">{{ 'personalInfo.title' | translate }}</p>
+        <p class="location">{{ 'personalInfo.location' | translate }}</p>
+        <p class="email">{{ 'personalInfo.email' | translate }}</p>
+      </div>
+    </div>
 
-        <div class=" afborder2 mb-4"> 
+    <div class="flexaf">
+      <aside class="profile-personal-info-group flex flex-col afborder">
+        <div class="about-me-section p-md mb-4">
           <h2 class="section-title text-xl font-bold mb-2">About Me</h2>
-          <p class="objective" [innerHtml]="sanitizedObjective"></p>
+          <p class="objective text-sm leading-relaxed" [innerHtml]="sanitizedObjective"></p>
+        </div>
+        <app-languages [languages]="cvData.languages"></app-languages>
+      </aside>
+
+      <!-- Main content (columna derecha 60%) -->
+      <section class="main-content">
+        <app-timeline [entries]="combinedEntries"></app-timeline>
+      </section>
+    </div>
+  } @else {
+    <!-- Original layout -->
+    <!-- Aside (columna izquierda 40%) -->
+    <div class="flexaf">
+      <aside class="profile-personal-info-group flex flex-col basis-2/5 max-w-[40%] afborder">
+        <div
+          class="profile-image-container flex justify-center mb-4 w-full max-w-[calc(210mm/3)] h-[calc(210mm/3)]"
+        >
+          <img
+            [src]="profileImage"
+            alt="{{ 'profile.picture' | translate }}"
+            class="profile-image rounded-full object-cover w-full h-full"
+          />
         </div>
 
-        <app-languages [languages]="cvData.languages"></app-languages>
-      </section>
-      <!-- <app-skills [skills]="cvData.skills"></app-skills> -->
-   
-    </aside>
+        <section class="personal-info p-md afborder2">
+          <div class="mb-4 afborder2">
+            <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
+            <p class="title">{{ 'personalInfo.title' | translate }}</p>
+            <p class="location">{{ 'personalInfo.location' | translate }}</p>
+            <p class="email">{{ 'personalInfo.email' | translate }}</p>
+          </div>
 
-    <!-- Main content (columna derecha 60%) -->
-    <section class="main-content afborder">
-      <app-timeline [entries]="combinedEntries"></app-timeline>
-    </section>
-  </div>
+          <div class="afborder2 mb-4">
+            <h2 class="section-title text-xl font-bold mb-2">About Me</h2>
+            <p class="objective" [innerHtml]="sanitizedObjective"></p>
+          </div>
+
+          <app-languages [languages]="cvData.languages"></app-languages>
+        </section>
+        <!-- <app-skills [skills]="cvData.skills"></app-skills> -->
+      </aside>
+
+      <!-- Main content (columna derecha 60%) -->
+      <section class="main-content afborder">
+        <app-timeline [entries]="combinedEntries"></app-timeline>
+      </section>
+    </div>
   }
 </main>

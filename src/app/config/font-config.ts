@@ -1,9 +1,9 @@
 /**
  * Font and Padding Configuration
- * 
+ *
  * This file controls the global font and padding scaling for the entire application.
  * Change the FONT_SCALE and PADDING_SCALE values to adjust all text sizes and paddings proportionally.
- * 
+ *
  * Examples:
  * - 0.8 = 80% of original size (smaller)
  * - 0.9 = 90% of original size (smaller)
@@ -16,7 +16,7 @@ export const FONT_CONFIG = {
   // Global font scale factor
   // Change this value to scale all fonts in the application
   FONT_SCALE: 0.85, // 85% of original size - good for A4 format
-  
+
   // Alternative scale values for testing:
   // FONT_SCALE: 0.8,  // 80% - very small
   // FONT_SCALE: 0.9,  // 90% - small
@@ -29,7 +29,7 @@ export const PADDING_CONFIG = {
   // Global padding scale factor
   // Change this value to scale all paddings in the application
   PADDING_SCALE: 0.8, // 80% of original size - good for A4 format
-  
+
   // Alternative scale values for testing:
   // PADDING_SCALE: 0.6,  // 60% - very tight
   // PADDING_SCALE: 0.7,  // 70% - tight
@@ -43,7 +43,7 @@ export const PROFILE_FONT_CONFIG = {
   // Profile font scale factor (for name and title)
   // Change this value to scale profile fonts independently
   PROFILE_FONT_SCALE: 1.0, // 100% of original size
-  
+
   // Alternative scale values for testing:
   // PROFILE_FONT_SCALE: 0.8,  // 80% - smaller
   // PROFILE_FONT_SCALE: 0.9,  // 90% - slightly smaller
@@ -64,8 +64,7 @@ export function applyFontScale(scale: number): void {
  * Get current font scale
  */
 export function getCurrentFontScale(): number {
-  const scale = getComputedStyle(document.documentElement)
-    .getPropertyValue('--font-scale');
+  const scale = getComputedStyle(document.documentElement).getPropertyValue('--font-scale');
   return parseFloat(scale) || 1.0;
 }
 
@@ -81,8 +80,7 @@ export function applyPaddingScale(scale: number): void {
  * Get current padding scale
  */
 export function getCurrentPaddingScale(): number {
-  const scale = getComputedStyle(document.documentElement)
-    .getPropertyValue('--padding-scale');
+  const scale = getComputedStyle(document.documentElement).getPropertyValue('--padding-scale');
   return parseFloat(scale) || 1.0;
 }
 
@@ -98,7 +96,6 @@ export function applyProfileFontScale(scale: number): void {
  * Get current profile font scale
  */
 export function getCurrentProfileFontScale(): number {
-  const scale = getComputedStyle(document.documentElement)
-    .getPropertyValue('--profile-font-scale');
+  const scale = getComputedStyle(document.documentElement).getPropertyValue('--profile-font-scale');
   return parseFloat(scale) || 1.0;
 }

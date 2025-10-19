@@ -51,7 +51,7 @@ export class TimelineComponent implements OnInit, OnChanges, OnDestroy {
     this.sortedEntries = [...this.entries];
 
     // Si es una experiencia, ordenar también los roles por fecha (más reciente primero)
-    this.sortedEntries.forEach(entry => {
+    this.sortedEntries.forEach((entry) => {
       if (isExperience(entry) && entry.roles) {
         entry.roles.sort((a, b) => {
           const dateA = a.startDate ? new Date(a.startDate) : new Date(0);
@@ -63,8 +63,10 @@ export class TimelineComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   // Use the utility function directly in the template
-  protected readonly formatPeriod = (startDate: string | undefined, endDate: string | 'present' | undefined) =>
-    formatPeriod(startDate, endDate, this.translate);
+  protected readonly formatPeriod = (
+    startDate: string | undefined,
+    endDate: string | 'present' | undefined,
+  ) => formatPeriod(startDate, endDate, this.translate);
 
   getExperienceRoles(entry: Experience | Education): Role[] | undefined {
     if (isExperience(entry)) {

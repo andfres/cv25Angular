@@ -1,7 +1,7 @@
 .language-switcher {
   position: fixed;
   top: 20px;
-  right: calc(50% - 210mm/2 - 100px);
+  right: calc(50% - 210mm / 2 - 100px);
   z-index: 50;
   display: flex;
   gap: 10px;
@@ -24,5 +24,3 @@
 .lang-button img {
   display: block;
 }
-
-

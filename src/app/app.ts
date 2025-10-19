@@ -20,7 +20,10 @@ export class App implements OnInit {
   profileImage: string = '/assets/yo2.jpg'; // Ruta estática de la imagen de perfil
   currentLanguageDisplay: string = ''; // Nueva propiedad para mostrar el idioma actual
 
-  constructor(public translate: TranslateService, private http: HttpClient) {
+  constructor(
+    public translate: TranslateService,
+    private http: HttpClient,
+  ) {
     console.log('App Constructor - translate service initialized');
   }
 
@@ -32,7 +35,7 @@ export class App implements OnInit {
 
     // Usar el idioma por defecto del navegador o 'en' si no se detecta
     const browserLang = this.translate.getBrowserLang();
-    const initialLang = (browserLang && browserLang.match(/en|es/)) ? browserLang : 'en';
+    const initialLang = browserLang && browserLang.match(/en|es/) ? browserLang : 'en';
     console.log(`App ngOnInit - Initializing with language: ${initialLang}`);
 
     // Cargar las traducciones para el idioma inicial y luego cargar los datos del CV

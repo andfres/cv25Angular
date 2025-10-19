@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,93 +8,182 @@
 /* Font Size Control System */
 :root {
   --font-scale: 0.85; /* Global font scale - change this to adjust all text sizes (85% for A4) */
-  --profile-font-scale: 1.0; /* Profile font scale - change this to adjust profile text sizes (name, title) */
-  
+  --profile-font-scale: 1; /* Profile font scale - change this to adjust profile text sizes (name, title) */
+
   /* Base font sizes (will be multiplied by --font-scale) */
-  --font-xs: calc(0.75rem * var(--font-scale));     /* 12px * scale */
-  --font-sm: calc(0.875rem * var(--font-scale));     /* 14px * scale */
-  --font-base: calc(1rem * var(--font-scale));       /* 16px * scale */
-  --font-lg: calc(1.125rem * var(--font-scale));     /* 18px * scale */
-  --font-xl: calc(1.25rem * var(--font-scale));     /* 20px * scale */
-  --font-2xl: calc(1.5rem * var(--font-scale));      /* 24px * scale */
-  --font-3xl: calc(1.875rem * var(--font-scale));    /* 30px * scale */
-  --font-4xl: calc(2.25rem * var(--font-scale));     /* 36px * scale */
+  --font-xs: calc(0.75rem * var(--font-scale)); /* 12px * scale */
+  --font-sm: calc(0.875rem * var(--font-scale)); /* 14px * scale */
+  --font-base: calc(1rem * var(--font-scale)); /* 16px * scale */
+  --font-lg: calc(1.125rem * var(--font-scale)); /* 18px * scale */
+  --font-xl: calc(1.25rem * var(--font-scale)); /* 20px * scale */
+  --font-2xl: calc(1.5rem * var(--font-scale)); /* 24px * scale */
+  --font-3xl: calc(1.875rem * var(--font-scale)); /* 30px * scale */
+  --font-4xl: calc(2.25rem * var(--font-scale)); /* 36px * scale */
 }
 
 /* Padding Control System */
 :root {
   --padding-scale: 0.8; /* Global padding scale - change this to adjust all paddings (80% for A4) */
-  
+
   /* Base paddings (will be multiplied by --padding-scale) */
-  --padding-xs: calc(0.25rem * var(--padding-scale));    /* 4px * scale */
-  --padding-sm: calc(0.5rem * var(--padding-scale));     /* 8px * scale */
-  --padding-md: calc(1rem * var(--padding-scale));        /* 16px * scale */
-  --padding-lg: calc(1.5rem * var(--padding-scale));      /* 24px * scale */
-  --padding-xl: calc(2rem * var(--padding-scale));        /* 32px * scale */
-  --padding-2xl: calc(3rem * var(--padding-scale));       /* 48px * scale */
+  --padding-xs: calc(0.25rem * var(--padding-scale)); /* 4px * scale */
+  --padding-sm: calc(0.5rem * var(--padding-scale)); /* 8px * scale */
+  --padding-md: calc(1rem * var(--padding-scale)); /* 16px * scale */
+  --padding-lg: calc(1.5rem * var(--padding-scale)); /* 24px * scale */
+  --padding-xl: calc(2rem * var(--padding-scale)); /* 32px * scale */
+  --padding-2xl: calc(3rem * var(--padding-scale)); /* 48px * scale */
 }
 
 /* Vertical Padding Control System */
 :root {
   --vertical-padding-scale: 0.7; /* Global vertical padding scale - change this to adjust vertical spacing (70% for A4) */
-  
+
   /* Vertical paddings (will be multiplied by --vertical-padding-scale) */
-  --vertical-padding-xs: calc(0.25rem * var(--vertical-padding-scale));    /* 4px * scale */
-  --vertical-padding-sm: calc(0.5rem * var(--vertical-padding-scale));     /* 8px * scale */
-  --vertical-padding-md: calc(1rem * var(--vertical-padding-scale));        /* 16px * scale */
-  --vertical-padding-lg: calc(1.5rem * var(--vertical-padding-scale));      /* 24px * scale */
-  --vertical-padding-xl: calc(2rem * var(--vertical-padding-scale));        /* 32px * scale */
-  --vertical-padding-2xl: calc(3rem * var(--vertical-padding-scale));       /* 48px * scale */
+  --vertical-padding-xs: calc(0.25rem * var(--vertical-padding-scale)); /* 4px * scale */
+  --vertical-padding-sm: calc(0.5rem * var(--vertical-padding-scale)); /* 8px * scale */
+  --vertical-padding-md: calc(1rem * var(--vertical-padding-scale)); /* 16px * scale */
+  --vertical-padding-lg: calc(1.5rem * var(--vertical-padding-scale)); /* 24px * scale */
+  --vertical-padding-xl: calc(2rem * var(--vertical-padding-scale)); /* 32px * scale */
+  --vertical-padding-2xl: calc(3rem * var(--vertical-padding-scale)); /* 48px * scale */
 }
 
 /* Font Size Classes */
-.font-xs { font-size: var(--font-xs); }
-.font-sm { font-size: var(--font-sm); }
-.font-base { font-size: var(--font-base); }
-.font-lg { font-size: var(--font-lg); }
-.font-xl { font-size: var(--font-xl); }
-.font-2xl { font-size: var(--font-2xl); }
-.font-3xl { font-size: var(--font-3xl); }
-.font-4xl { font-size: var(--font-4xl); }
+.font-xs {
+  font-size: var(--font-xs);
+}
+.font-sm {
+  font-size: var(--font-sm);
+}
+.font-base {
+  font-size: var(--font-base);
+}
+.font-lg {
+  font-size: var(--font-lg);
+}
+.font-xl {
+  font-size: var(--font-xl);
+}
+.font-2xl {
+  font-size: var(--font-2xl);
+}
+.font-3xl {
+  font-size: var(--font-3xl);
+}
+.font-4xl {
+  font-size: var(--font-4xl);
+}
 
 /* Padding Classes */
-.p-xs { padding: var(--padding-xs); }
-.p-sm { padding: var(--padding-sm); }
-.p-md { padding: var(--padding-md); }
-.p-lg { padding: var(--padding-lg); }
-.p-xl { padding: var(--padding-xl); }
-.p-2xl { padding: var(--padding-2xl); }
+.p-xs {
+  padding: var(--padding-xs);
+}
+.p-sm {
+  padding: var(--padding-sm);
+}
+.p-md {
+  padding: var(--padding-md);
+}
+.p-lg {
+  padding: var(--padding-lg);
+}
+.p-xl {
+  padding: var(--padding-xl);
+}
+.p-2xl {
+  padding: var(--padding-2xl);
+}
 
 /* Padding X (horizontal) */
-.px-xs { padding-left: var(--padding-xs); padding-right: var(--padding-xs); }
-.px-sm { padding-left: var(--padding-sm); padding-right: var(--padding-sm); }
-.px-md { padding-left: var(--padding-md); padding-right: var(--padding-md); }
-.px-lg { padding-left: var(--padding-lg); padding-right: var(--padding-lg); }
-.px-xl { padding-left: var(--padding-xl); padding-right: var(--padding-xl); }
+.px-xs {
+  padding-left: var(--padding-xs);
+  padding-right: var(--padding-xs);
+}
+.px-sm {
+  padding-left: var(--padding-sm);
+  padding-right: var(--padding-sm);
+}
+.px-md {
+  padding-left: var(--padding-md);
+  padding-right: var(--padding-md);
+}
+.px-lg {
+  padding-left: var(--padding-lg);
+  padding-right: var(--padding-lg);
+}
+.px-xl {
+  padding-left: var(--padding-xl);
+  padding-right: var(--padding-xl);
+}
 
 /* Padding Y (vertical) */
-.py-xs { padding-top: var(--padding-xs); padding-bottom: var(--padding-xs); }
-.py-sm { padding-top: var(--padding-sm); padding-bottom: var(--padding-sm); }
-.py-md { padding-top: var(--padding-md); padding-bottom: var(--padding-md); }
-.py-lg { padding-top: var(--padding-lg); padding-bottom: var(--padding-lg); }
-.py-xl { padding-top: var(--padding-xl); padding-bottom: var(--padding-xl); }
+.py-xs {
+  padding-top: var(--padding-xs);
+  padding-bottom: var(--padding-xs);
+}
+.py-sm {
+  padding-top: var(--padding-sm);
+  padding-bottom: var(--padding-sm);
+}
+.py-md {
+  padding-top: var(--padding-md);
+  padding-bottom: var(--padding-md);
+}
+.py-lg {
+  padding-top: var(--padding-lg);
+  padding-bottom: var(--padding-lg);
+}
+.py-xl {
+  padding-top: var(--padding-xl);
+  padding-bottom: var(--padding-xl);
+}
 
 /* Vertical Padding Classes (for experience spacing) */
-.vy-xs { padding-top: var(--vertical-padding-xs); padding-bottom: var(--vertical-padding-xs); }
-.vy-sm { padding-top: var(--vertical-padding-sm); padding-bottom: var(--vertical-padding-sm); }
-.vy-md { padding-top: var(--vertical-padding-md); padding-bottom: var(--vertical-padding-md); }
-.vy-lg { padding-top: var(--vertical-padding-lg); padding-bottom: var(--vertical-padding-lg); }
-.vy-xl { padding-top: var(--vertical-padding-xl); padding-bottom: var(--vertical-padding-xl); }
+.vy-xs {
+  padding-top: var(--vertical-padding-xs);
+  padding-bottom: var(--vertical-padding-xs);
+}
+.vy-sm {
+  padding-top: var(--vertical-padding-sm);
+  padding-bottom: var(--vertical-padding-sm);
+}
+.vy-md {
+  padding-top: var(--vertical-padding-md);
+  padding-bottom: var(--vertical-padding-md);
+}
+.vy-lg {
+  padding-top: var(--vertical-padding-lg);
+  padding-bottom: var(--vertical-padding-lg);
+}
+.vy-xl {
+  padding-top: var(--vertical-padding-xl);
+  padding-bottom: var(--vertical-padding-xl);
+}
 
 /* Margin Y (vertical) for spacing between elements */
-.my-xs { margin-top: var(--vertical-padding-xs); margin-bottom: var(--vertical-padding-xs); }
-.my-sm { margin-top: var(--vertical-padding-sm); margin-bottom: var(--vertical-padding-sm); }
-.my-md { margin-top: var(--vertical-padding-md); margin-bottom: var(--vertical-padding-md); }
-.my-lg { margin-top: var(--vertical-padding-lg); margin-bottom: var(--vertical-padding-lg); }
-.my-xl { margin-top: var(--vertical-padding-xl); margin-bottom: var(--vertical-padding-xl); }
+.my-xs {
+  margin-top: var(--vertical-padding-xs);
+  margin-bottom: var(--vertical-padding-xs);
+}
+.my-sm {
+  margin-top: var(--vertical-padding-sm);
+  margin-bottom: var(--vertical-padding-sm);
+}
+.my-md {
+  margin-top: var(--vertical-padding-md);
+  margin-bottom: var(--vertical-padding-md);
+}
+.my-lg {
+  margin-top: var(--vertical-padding-lg);
+  margin-bottom: var(--vertical-padding-lg);
+}
+.my-xl {
+  margin-top: var(--vertical-padding-xl);
+  margin-bottom: var(--vertical-padding-xl);
+}
 
 /* Base Styles */
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
 }

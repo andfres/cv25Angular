@@ -10,15 +10,16 @@ import { ConfigService } from '../../services/config.service';
     <div class="unified-control-panel print:hidden">
       <!-- Font Control -->
       <div class="control-section">
-        <label class="control-label">Font Scale: {{ fontScale | number:'1.2-2' }}</label>
-        <input 
-          type="range" 
-          [value]="fontScale" 
+        <label class="control-label">Font Scale: {{ fontScale | number: '1.2-2' }}</label>
+        <input
+          type="range"
+          [value]="fontScale"
           (input)="onFontScaleChange($event)"
-          min="0.6" 
-          max="1.4" 
+          min="0.6"
+          max="1.4"
           step="0.05"
-          class="control-slider">
+          class="control-slider"
+        />
         <div class="control-buttons">
           <button (click)="setFontScale(0.8)" class="control-btn">80%</button>
           <button (click)="setFontScale(0.85)" class="control-btn">85%</button>
@@ -30,15 +31,18 @@ import { ConfigService } from '../../services/config.service';
 
       <!-- Profile Font Control -->
       <div class="control-section">
-        <label class="control-label">Profile Font Scale: {{ profileFontScale | number:'1.2-2' }}</label>
-        <input 
-          type="range" 
-          [value]="profileFontScale" 
+        <label class="control-label"
+          >Profile Font Scale: {{ profileFontScale | number: '1.2-2' }}</label
+        >
+        <input
+          type="range"
+          [value]="profileFontScale"
           (input)="onProfileFontScaleChange($event)"
-          min="0.6" 
-          max="1.6" 
+          min="0.6"
+          max="1.6"
           step="0.05"
-          class="control-slider">
+          class="control-slider"
+        />
         <div class="control-buttons">
           <button (click)="setProfileFontScale(0.8)" class="control-btn">80%</button>
           <button (click)="setProfileFontScale(0.9)" class="control-btn">90%</button>
@@ -50,15 +54,16 @@ import { ConfigService } from '../../services/config.service';
 
       <!-- Padding Control -->
       <div class="control-section">
-        <label class="control-label">Padding Scale: {{ paddingScale | number:'1.2-2' }}</label>
-        <input 
-          type="range" 
-          [value]="paddingScale" 
+        <label class="control-label">Padding Scale: {{ paddingScale | number: '1.2-2' }}</label>
+        <input
+          type="range"
+          [value]="paddingScale"
           (input)="onPaddingScaleChange($event)"
-          min="0.5" 
-          max="1.3" 
+          min="0.5"
+          max="1.3"
           step="0.05"
-          class="control-slider">
+          class="control-slider"
+        />
         <div class="control-buttons">
           <button (click)="setPaddingScale(0.6)" class="control-btn">60%</button>
           <button (click)="setPaddingScale(0.7)" class="control-btn">70%</button>
@@ -70,15 +75,18 @@ import { ConfigService } from '../../services/config.service';
 
       <!-- Vertical Padding Control -->
       <div class="control-section">
-        <label class="control-label">Vertical Padding: {{ verticalPaddingScale | number:'1.2-2' }}</label>
-        <input 
-          type="range" 
-          [value]="verticalPaddingScale" 
+        <label class="control-label"
+          >Vertical Padding: {{ verticalPaddingScale | number: '1.2-2' }}</label
+        >
+        <input
+          type="range"
+          [value]="verticalPaddingScale"
           (input)="onVerticalPaddingScaleChange($event)"
-          min="0.4" 
-          max="1.2" 
+          min="0.4"
+          max="1.2"
           step="0.05"
-          class="control-slider">
+          class="control-slider"
+        />
         <div class="control-buttons">
           <button (click)="setVerticalPaddingScale(0.5)" class="control-btn">50%</button>
           <button (click)="setVerticalPaddingScale(0.6)" class="control-btn">60%</button>
@@ -92,11 +100,12 @@ import { ConfigService } from '../../services/config.service';
       <div class="control-section">
         <label class="control-label">Sort by Date:</label>
         <div class="checkbox-container">
-          <input 
-            type="checkbox" 
-            [checked]="sortByDate" 
+          <input
+            type="checkbox"
+            [checked]="sortByDate"
             (change)="onSortByDateChange($event)"
-            class="control-checkbox">
+            class="control-checkbox"
+          />
           <span class="checkbox-label">Chronological order (newest first)</span>
         </div>
       </div>
@@ -105,93 +114,96 @@ import { ConfigService } from '../../services/config.service';
       <div class="control-section">
         <label class="control-label">Layout:</label>
         <div class="checkbox-container">
-          <input 
-            type="checkbox" 
-            [checked]="photoOnTop" 
+          <input
+            type="checkbox"
+            [checked]="photoOnTop"
             (change)="onPhotoOnTopChange($event)"
-            class="control-checkbox">
+            class="control-checkbox"
+          />
           <span class="checkbox-label">Photo and About Me on top</span>
         </div>
       </div>
     </div>
   `,
-  styles: [`
-    .unified-control-panel {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      z-index: 1000;
-      font-size: 12px;
-      width: 200px;
-    }
-    
-    .control-section {
-      margin-bottom: 15px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #eee;
-    }
-    
-    .control-section:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-    }
-    
-    .control-label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      font-size: 11px;
-    }
-    
-    .control-slider {
-      width: 100%;
-      margin-bottom: 8px;
-    }
-    
-    .control-buttons {
-      display: flex;
-      gap: 3px;
-      flex-wrap: wrap;
-    }
-    
-    .control-btn {
-      padding: 2px 4px;
-      border: 1px solid #ccc;
-      background: #f5f5f5;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 9px;
-      min-width: 25px;
-    }
-    
-    .control-btn:hover {
-      background: #e5e5e5;
-    }
-    
-    .checkbox-container {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 5px;
-    }
-    
-    .control-checkbox {
-      width: 16px;
-      height: 16px;
-      cursor: pointer;
-    }
-    
-    .checkbox-label {
-      font-size: 10px;
-      color: #374151;
-      cursor: pointer;
-    }
-  `]
+  styles: [
+    `
+      .unified-control-panel {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        font-size: 12px;
+        width: 200px;
+      }
+
+      .control-section {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .control-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      .control-label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 11px;
+      }
+
+      .control-slider {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+
+      .control-buttons {
+        display: flex;
+        gap: 3px;
+        flex-wrap: wrap;
+      }
+
+      .control-btn {
+        padding: 2px 4px;
+        border: 1px solid #ccc;
+        background: #f5f5f5;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 9px;
+        min-width: 25px;
+      }
+
+      .control-btn:hover {
+        background: #e5e5e5;
+      }
+
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 5px;
+      }
+
+      .control-checkbox {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+
+      .checkbox-label {
+        font-size: 10px;
+        color: #374151;
+        cursor: pointer;
+      }
+    `,
+  ],
 })
 export class UnifiedControlComponent {
   fontScale = 1;
@@ -214,7 +226,7 @@ export class UnifiedControlComponent {
     this.config.init();
 
     // subscribe to changes
-    this.config.state$.subscribe(cfg => {
+    this.config.state$.subscribe((cfg) => {
       this.fontScale = cfg.fontScale;
       this.profileFontScale = cfg.profileFontScale;
       this.paddingScale = cfg.paddingScale;
@@ -291,16 +303,16 @@ export class UnifiedControlComponent {
 
   notifySortingChange(): void {
     // Emit event to parent component or use a service to communicate with timeline
-    const event = new CustomEvent('sortingChanged', { 
-      detail: { sortByDate: this.sortByDate } 
+    const event = new CustomEvent('sortingChanged', {
+      detail: { sortByDate: this.sortByDate },
     });
     window.dispatchEvent(event);
   }
 
   notifyLayoutChange(): void {
     // Emit event to communicate layout changes
-    const event = new CustomEvent('layoutChanged', { 
-      detail: { photoOnTop: this.photoOnTop } 
+    const event = new CustomEvent('layoutChanged', {
+      detail: { photoOnTop: this.photoOnTop },
     });
     window.dispatchEvent(event);
   }
@@ -308,7 +320,7 @@ export class UnifiedControlComponent {
   private logCurrentConfiguration(action: string): void {
     const layoutHuman = {
       sortByDate: this.sortByDate ? 'Chronological order (newest first)' : 'No sorting',
-      photoOnTop: this.photoOnTop ? 'Photo and About Me on top' : 'Original layout'
+      photoOnTop: this.photoOnTop ? 'Photo and About Me on top' : 'Original layout',
     };
 
     const config = {
@@ -317,26 +329,26 @@ export class UnifiedControlComponent {
       configuration: {
         fontScale: {
           value: this.fontScale,
-          percentage: Math.round(this.fontScale * 100) + '%'
+          percentage: Math.round(this.fontScale * 100) + '%',
         },
         profileFontScale: {
           value: this.profileFontScale,
-          percentage: Math.round(this.profileFontScale * 100) + '%'
+          percentage: Math.round(this.profileFontScale * 100) + '%',
         },
         paddingScale: {
           value: this.paddingScale,
-          percentage: Math.round(this.paddingScale * 100) + '%'
+          percentage: Math.round(this.paddingScale * 100) + '%',
         },
         verticalPaddingScale: {
           value: this.verticalPaddingScale,
-          percentage: Math.round(this.verticalPaddingScale * 100) + '%'
+          percentage: Math.round(this.verticalPaddingScale * 100) + '%',
         },
         layout: {
           sortByDate: this.sortByDate,
-          photoOnTop: this.photoOnTop
+          photoOnTop: this.photoOnTop,
         },
-        layoutHuman: layoutHuman
-      }
+        layoutHuman: layoutHuman,
+      },
     };
 
     console.log('🎛️ CV Configuration Applied:', config);
@@ -348,9 +360,7 @@ export class UnifiedControlComponent {
       sortByDate: this.sortByDate,
       photoOnTop: this.photoOnTop,
       sortByDateLabel: layoutHuman.sortByDate,
-      layoutLabel: layoutHuman.photoOnTop
+      layoutLabel: layoutHuman.photoOnTop,
     });
   }
-
 }
-

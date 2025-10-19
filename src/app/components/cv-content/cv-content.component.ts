@@ -20,7 +20,11 @@ export class CvContentComponent implements OnInit, OnDestroy {
   combinedEntries: any[] = [];
   photoOnTop = false;
 
-  constructor(public translate: TranslateService, private sanitizer: DomSanitizer, private config: ConfigService) { }
+  constructor(
+    public translate: TranslateService,
+    private sanitizer: DomSanitizer,
+    private config: ConfigService,
+  ) {}
 
   ngOnInit(): void {
     // Apply initial configuration (sort and layout) from global config
@@ -29,7 +33,7 @@ export class CvContentComponent implements OnInit, OnDestroy {
     this.combineEntries(initial.sortByDate);
 
     // Subscribe to future changes
-    this.config.state$.subscribe(cfg => {
+    this.config.state$.subscribe((cfg) => {
       this.photoOnTop = cfg.photoOnTop;
       this.combineEntries(cfg.sortByDate);
     });

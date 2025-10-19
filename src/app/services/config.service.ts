@@ -16,7 +16,7 @@ const DEFAULT: CvConfig = {
   paddingScale: 0.8,
   verticalPaddingScale: 0.8,
   sortByDate: true,
-  photoOnTop: false
+  photoOnTop: false,
 };
 
 @Injectable({ providedIn: 'root' })
@@ -38,17 +38,31 @@ export class ConfigService {
 
   apply(cfg: CvConfig) {
     document.documentElement.style.setProperty('--font-scale', String(cfg.fontScale));
-    document.documentElement.style.setProperty('--profile-font-scale', String(cfg.profileFontScale));
+    document.documentElement.style.setProperty(
+      '--profile-font-scale',
+      String(cfg.profileFontScale),
+    );
     document.documentElement.style.setProperty('--padding-scale', String(cfg.paddingScale));
-    document.documentElement.style.setProperty('--vertical-padding-scale', String(cfg.verticalPaddingScale));
+    document.documentElement.style.setProperty(
+      '--vertical-padding-scale',
+      String(cfg.verticalPaddingScale),
+    );
   }
 
   private save(cfg: CvConfig) {
-    try { localStorage.setItem(this.key, JSON.stringify(cfg)); } catch { /* ignore */ }
+    try {
+      localStorage.setItem(this.key, JSON.stringify(cfg));
+    } catch {
+      /* ignore */
+    }
   }
 
   private load(): CvConfig | null {
-    try { return JSON.parse(localStorage.getItem(this.key) || 'null'); } catch { return null; }
+    try {
+      return JSON.parse(localStorage.getItem(this.key) || 'null');
+    } catch {
+      return null;
+    }
   }
 
   init() {
