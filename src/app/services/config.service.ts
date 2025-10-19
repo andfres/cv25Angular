@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 export interface CvConfig {
   fontScale: number;
   profileFontScale: number;
+  verticalPaddingScale: number;
   sortByDate: boolean;
   photoOnTop: boolean;
   asideWidth: number; // Width of the aside in rem units
@@ -12,6 +13,7 @@ export interface CvConfig {
 const DEFAULT: CvConfig = {
   fontScale: 0.85,
   profileFontScale: 1.05,
+  verticalPaddingScale: 0.8,
   sortByDate: true,
   photoOnTop: false,
   asideWidth: 20,
@@ -40,7 +42,10 @@ export class ConfigService {
       '--profile-font-scale',
       String(cfg.profileFontScale),
     );
-    document.documentElement.style.setProperty('--aside-width', String(cfg.asideWidth));
+    document.documentElement.style.setProperty(
+      '--vertical-padding-scale',
+      String(cfg.verticalPaddingScale),
+    );
   }
 
   private save(cfg: CvConfig) {

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Experience, Role, TimelineEntry, Education } from '../../models/cv.model';
+import { Experience, Role, Education } from '../../models/cv.model';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { formatPeriod } from '../../utils/date-format.utility'; // Import the utility function
 import { isExperience } from '../../utils/timeline-type.utility'; // Import isExperience type guard
