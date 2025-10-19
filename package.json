@@ -4,9 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-
-    "build": "ng build && node move-to-docs.js",
-    "build:original": "ng build",
+    "build": "ng build",
+    "build-hash": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "tailwind:watch": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
