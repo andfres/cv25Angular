@@ -17,7 +17,7 @@ import { UnifiedControlComponent } from './components/unified-control/unified-co
 export class App implements OnInit {
   protected readonly title = signal('cv25Angular');
   cvData: any; // Se cargará dinámicamente
-  profileImage: string = '/assets/yo2.jpg'; // Ruta estática de la imagen de perfil
+  profileImage: string = './assets/yo2.jpg'; // Ruta estática de la imagen de perfil
   currentLanguageDisplay: string = ''; // Nueva propiedad para mostrar el idioma actual
 
   constructor(
@@ -56,7 +56,7 @@ export class App implements OnInit {
   private loadAndSetCvData(): void {
     console.log('App loadAndSetCvData - Attempting to load CV data.');
     const currentLang = this.translate.currentLang; // Get the currently active language
-    this.http.get(`/assets/i18n/${currentLang}.json`).subscribe((data: any) => {
+    this.http.get(`./assets/i18n/${currentLang}.json`).subscribe((data: any) => {
       console.log('App loadAndSetCvData - CV data received:', data);
       this.cvData = data;
       console.log('App loadAndSetCvData - cvData assigned:', this.cvData);

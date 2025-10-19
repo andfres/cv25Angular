@@ -7,7 +7,8 @@ export class CustomTranslateLoader implements TranslateLoader {
   constructor(private http: HttpClient) {}
 
   getTranslation(lang: string): Observable<any> {
-    return this.http.get(`/assets/i18n/${lang}.json`).pipe(map((response: any) => response));
+    // Usar path relativo para que funcione en cualquier base path
+    return this.http.get(`./assets/i18n/${lang}.json`).pipe(map((response: any) => response));
   }
 }
 
