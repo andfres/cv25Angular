@@ -531,18 +531,71 @@ body {
    RESPONSIVE - Para pantallas pequeñas
    ======================================== */
 @media screen and (max-width: 768px) {
+  /* Ajustar contenedor A4 */
   .a4-page {
     width: 100vw;
     min-height: 100vh;
     padding: 1rem;
+    box-shadow: none;
+    border-radius: 0;
   }
 
+  /* Cambiar a layout vertical */
   .flexaf {
     flex-direction: column;
   }
 
+  /* Forzar 100% de ancho en todas las secciones */
   .profile-personal-info-group,
   .main-content {
     width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+
+  /* Asegurar que About Me ocupe todo el ancho */
+  .about-me-section {
+    width: 100% !important;
+  }
+
+  /* Información personal a 100% */
+  .personal-info {
+    width: 100% !important;
+  }
+
+  /* Ajustar imagen de perfil en móvil */
+  .profile-image-container {
+    width: 150px !important;
+    height: 150px !important;
+    margin: 0 auto;
+  }
+
+  /* Centrar contenido en móvil */
+  .profile-and-info {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Ajustar tamaños de fuente para móvil */
+  .name {
+    font-size: 1.5rem !important;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.1rem !important;
+    text-align: center;
+  }
+
+  /* Ocultar barra lateral de idiomas en posición fija */
+  .language-switcher {
+    position: static;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  /* Ajustar bordes de desarrollo en móvil */
+  .afborder {
+    border: none;
   }
 }
