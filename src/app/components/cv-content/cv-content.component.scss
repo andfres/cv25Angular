@@ -10,6 +10,36 @@
   margin-bottom: var(--padding-xs);
 }
 
+// Estilos para enlaces de LinkedIn y GitHub
+.linkedin,
+.github {
+  font-size: calc(var(--font-base) * var(--profile-font-scale, 1));
+  margin-top: var(--padding-xs);
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.2s;
+    
+    &:hover {
+      color: #0052a3;
+      text-decoration: underline;
+    }
+    
+    &:visited {
+      color: #551a8b;
+    }
+  }
+}
+
+@media print {
+  .linkedin a,
+  .github a {
+    color: #000;
+    text-decoration: underline;
+  }
+}
+
 .a4-page {
   width: 210mm;
   min-height: 297mm;
@@ -60,13 +90,35 @@
   }
 
   .a4-page {
-    margin: 0;
-    border: initial;
-    border-radius: initial;
-    width: initial;
-    min-height: initial;
-    box-shadow: none;
-    background: initial;
-    page-break-after: always;
+    margin: 0 !important;
+    padding: 10mm !important;
+    border: none !important;
+    border-radius: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    box-shadow: none !important;
+    background: white !important;
+    page-break-after: auto !important;
+    overflow: hidden !important;
+  }
+
+  /* Quitar colores de enlaces */
+  .linkedin a,
+  .github a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+
+  /* Optimizar espacios */
+  .flexaf {
+    gap: 0.5rem !important;
+  }
+
+  .profile-image {
+    padding: 0.5rem !important;
+  }
+
+  .mb-4 {
+    margin-bottom: 0.5rem !important;
   }
 }

@@ -16,6 +16,20 @@
         <p class="title">{{ 'personalInfo.title' | translate }}</p>
         <p class="location">{{ 'personalInfo.location' | translate }}</p>
         <p class="email">{{ 'personalInfo.email' | translate }}</p>
+        @if ('personalInfo.linkedin' | translate; as linkedin) {
+          @if (linkedin && linkedin !== 'personalInfo.linkedin') {
+            <p class="linkedin">
+              <a [href]="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </p>
+          }
+        }
+        @if ('personalInfo.github' | translate; as github) {
+          @if (github && github !== 'personalInfo.github') {
+            <p class="github">
+              <a [href]="github" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </p>
+          }
+        }
       </div>
     </div>
 
@@ -46,7 +60,7 @@
             [src]="profileImage"
             alt="{{ 'profile.picture' | translate }}"
             class="profile-image rounded-full object-cover w-full h-auto aspect-square"
-            style="max-width: 100%; max-height: 100%;"
+            style="max-width: 100%; max-height: 100%"
           />
         </div>
 
@@ -56,6 +70,20 @@
             <p class="title">{{ 'personalInfo.title' | translate }}</p>
             <p class="location">{{ 'personalInfo.location' | translate }}</p>
             <p class="email">{{ 'personalInfo.email' | translate }}</p>
+            @if ('personalInfo.linkedin' | translate; as linkedin) {
+              @if (linkedin && linkedin !== 'personalInfo.linkedin') {
+                <p class="linkedin">
+                  <a [href]="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </p>
+              }
+            }
+            @if ('personalInfo.github' | translate; as github) {
+              @if (github && github !== 'personalInfo.github') {
+                <p class="github">
+                  <a [href]="github" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </p>
+              }
+            }
           </div>
 
           <div class="afborder2 mb-4">

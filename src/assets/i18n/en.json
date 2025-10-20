@@ -17,6 +17,8 @@
     "title": "Fullstack Engineer",
     "location": "Valladolid, Spain",
     "email": "andfres@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/your-profile",
+    "github": "https://github.com/andres",
     "objective": "Passionate Fullstack Engineer with experience in building scalable and maintainable applications. I learn quickly and adapt to new technologies with ease. I am actively seeking opportunities to grow both technically and linguistically. I have some experience working with Angular, including a short-term project for a major electric company (Red Eléctrica Española). This CV itself has been developed using Angular 20, and the full project can be viewed on <a href='https://github.com/andres/CV25' target='_blank' rel='noopener noreferrer'>https://github.com/andres/CV25</a>."
   },
   "experience": [

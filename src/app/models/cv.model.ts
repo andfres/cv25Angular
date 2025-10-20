@@ -3,6 +3,8 @@ export interface PersonalInfo {
   title: string;
   location: string;
   email: string;
+  linkedin?: string;
+  github?: string;
   objective: string;
   image: string;
 }
