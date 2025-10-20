@@ -30,7 +30,7 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.css", "src/app/app.scss"],
+            "styles": ["src/styles.css"],
             "outputPath": "docs",
             "baseHref": "/cv25Angular/"
           },
@@ -86,6 +86,7 @@
               }
             ],
             "styles": ["src/styles.css", "src/app/app.scss"]
+            "styles": ["src/styles.css"]
           }
         }
       }

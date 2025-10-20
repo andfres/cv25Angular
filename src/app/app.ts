@@ -12,7 +12,6 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
   standalone: true,
   imports: [TranslateModule, CvContentComponent, CommonModule, ToolbarComponent],
   templateUrl: './app.html',
-  styleUrl: './app.scss',
 })
 export class App implements OnInit {
   protected readonly title = signal('cv25Angular');

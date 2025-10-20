@@ -12,7 +12,6 @@ import { ConfigService } from '../../services/config.service';
   standalone: true,
   imports: [CommonModule, LanguagesComponent, TranslateModule, TimelineComponent],
   templateUrl: './cv-content.component.html',
-  styleUrl: './cv-content.component.scss',
 })
 export class CvContentComponent implements OnInit, OnDestroy {
   @Input() cvData!: CvData;

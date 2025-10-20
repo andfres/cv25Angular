@@ -10,7 +10,6 @@ import { isExperience } from '../../utils/timeline-type.utility'; // Import isEx
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './timeline.component.html',
-  styleUrl: './timeline.component.scss',
 })
 export class TimelineComponent implements OnInit, OnChanges, OnDestroy {
   @Input() entries!: (Experience | Education)[]; // Aceptar ambos tipos

@@ -8,7 +8,6 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './languages.component.html',
-  styleUrl: './languages.component.scss',
 })
 export class LanguagesComponent {
   @Input() languages!: Language[];
