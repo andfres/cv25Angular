@@ -8,6 +8,10 @@ import { ConfigService } from '../../services/config.service';
   imports: [CommonModule],
   template: `
     <div class="unified-control-panel print:hidden">
+      <!-- Version -->
+      <div class="version-info">
+        <span class="version-label">v1.0.0</span>
+      </div>
       <!-- Font Control -->
       <div class="control-section">
         <label class="control-label">Font Scale: {{ fontScale | number: '1.2-2' }}</label>
@@ -191,6 +195,20 @@ import { ConfigService } from '../../services/config.service';
         font-size: 10px;
         color: #374151;
         cursor: pointer;
+      }
+
+      .version-info {
+        text-align: center;
+        padding: 8px;
+        margin-bottom: 10px;
+        background: #f8f9fa;
+        border-radius: 4px;
+      }
+
+      .version-label {
+        font-size: 10px;
+        color: #6b7280;
+        font-weight: 600;
       }
     `,
   ],
