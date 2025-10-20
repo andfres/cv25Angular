@@ -6,9 +6,9 @@
   (print)="printPage()"
 ></app-toolbar>
 
-<main class="flex justify-center items-start print:block mt-[10mm] border-t-[1px] border-[#d3d3d3]">
+<main class="main-container">
   @if (cvData) {
   <app-cv-content [cvData]="cvData" [profileImage]="profileImage"></app-cv-content>
-  <div class="red-guide w-4 h-[297mm] bg-red-500 opacity-50 print:hidden ml-4"></div>
+  <div class="red-guide"></div>
   }
 </main>

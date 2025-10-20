@@ -1,14 +1,10 @@
-<main [class]="'a4-page  pt-4'">
+<main class="a4-page">
   @if (photoOnTop) {
     <!-- Layout alternativo -->
 
-    <div class="profile-and-info flex flex-row gap-4 mb-4">
-      <div class="profile-image-container flex justify-center w-48 h-48 flex-shrink-0">
-        <img
-          [src]="profileImage"
-          alt="{{ 'profile.picture' | translate }}"
-          class="profile-image rounded-full object-cover w-full h-full"
-        />
+    <div class="profile-and-info">
+      <div class="profile-image-container profile-image-top">
+        <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}" class="profile-image" />
       </div>
 
       <div class="personal-info">
@@ -34,10 +30,10 @@
     </div>
 
     <div class="flexaf">
-      <aside class="profile-personal-info-group flex flex-col afborder">
-        <div class="about-me-section p-md mb-4">
-          <h2 class="section-title text-xl font-bold mb-2">About Me</h2>
-          <p class="objective text-sm leading-relaxed" [innerHtml]="sanitizedObjective"></p>
+      <aside class="profile-personal-info-group afborder">
+        <div class="about-me-section">
+          <h2 class="section-title">About Me</h2>
+          <p class="objective" [innerHtml]="sanitizedObjective"></p>
         </div>
         <app-languages [languages]="cvData.languages"></app-languages>
       </aside>
@@ -52,20 +48,20 @@
     <!-- Aside (columna izquierda 40%) -->
     <div class="flexaf">
       <aside
-        class="profile-personal-info-group flex flex-col afborder"
+        class="profile-personal-info-group afborder"
         [ngStyle]="{ width: asideWidth + 'rem', maxWidth: asideWidthPercent + '%' }"
       >
-        <div class="profile-image-container flex justify-center w-full h-auto">
+        <div class="profile-image-container">
           <img
             [src]="profileImage"
             alt="{{ 'profile.picture' | translate }}"
-            class="profile-image rounded-full object-cover w-full h-auto aspect-square"
+            class="profile-image"
             style="max-width: 100%; max-height: 100%"
           />
         </div>
 
-        <section class="personal-info p-md afborder2">
-          <div class="mb-4 afborder2">
+        <section class="personal-info afborder2">
+          <div class="personal-info-block afborder2">
             <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
             <p class="title">{{ 'personalInfo.title' | translate }}</p>
             <p class="location">{{ 'personalInfo.location' | translate }}</p>
@@ -86,8 +82,8 @@
             }
           </div>
 
-          <div class="afborder2 mb-4">
-            <h2 class="section-title text-xl font-bold mb-2">About Me</h2>
+          <div class="about-me-block afborder2">
+            <h2 class="section-title">About Me</h2>
             <p class="summary-text" [innerHtml]="sanitizedObjective"></p>
           </div>
 
