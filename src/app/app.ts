@@ -5,12 +5,12 @@ import { CvContentComponent } from './components/cv-content/cv-content.component
 import { CvData } from './models/cv.model'; // Import CvData interface
 import { CommonModule } from '@angular/common'; // Import CommonModule
 import { routes } from './app.routes';
-import { UnifiedControlComponent } from './components/unified-control/unified-control.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TranslateModule, CvContentComponent, CommonModule, UnifiedControlComponent],
+  imports: [TranslateModule, CvContentComponent, CommonModule, ToolbarComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

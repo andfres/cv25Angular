@@ -126,17 +126,9 @@ import { ConfigService } from '../../services/config.service';
   styles: [
     `
       .unified-control-panel {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        background: white;
-        border: 1px solid #ccc;
-        border-radius: 8px;
         padding: 15px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
         font-size: 12px;
-        width: 200px;
+        background: white;
       }
 
       .control-section {
