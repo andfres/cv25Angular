@@ -9,6 +9,7 @@ export interface CvConfig {
   photoOnTop: boolean;
   asideWidth: number; // Width of the aside in rem units
   experienceTheme: string;
+  educationTheme: string;
 }
 
 const DEFAULT: CvConfig = {
@@ -19,9 +20,10 @@ const DEFAULT: CvConfig = {
   photoOnTop: false,
   asideWidth: 20,
   experienceTheme: 'blue',
+  educationTheme: 'green',
 };
 
-const THEMES: { [key: string]: any } = {
+const EXPERIENCE_THEMES: { [key: string]: any } = {
   blue: {
     '--exp-bg-light': '#eff6ff', // blue-50
     '--exp-bg-medium': '#3b82f6', // blue-500
@@ -69,6 +71,34 @@ const THEMES: { [key: string]: any } = {
   }
 };
 
+const EDUCATION_THEMES: { [key: string]: any } = {
+  green: {
+    '--edu-bg-light': '#f0fdf4',
+    '--edu-border-dark': '#15803d',
+    '--edu-text': '#15803d',
+  },
+  blue: {
+    '--edu-bg-light': '#eff6ff',
+    '--edu-border-dark': '#1d4ed8',
+    '--edu-text': '#1e3a8a',
+  },
+  purple: {
+    '--edu-bg-light': '#f3e8ff',
+    '--edu-border-dark': '#7e22ce',
+    '--edu-text': '#581c87',
+  },
+  orange: {
+    '--edu-bg-light': '#fff7ed',
+    '--edu-border-dark': '#c2410c',
+    '--edu-text': '#7c2d12',
+  },
+  pink: {
+    '--edu-bg-light': '#fdf2f8',
+    '--edu-border-dark': '#be185d',
+    '--edu-text': '#831843',
+  }
+};
+
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
   private key = 'cv_config_v3';
@@ -92,10 +122,16 @@ export class ConfigService {
     root.style.setProperty('--profile-font-scale', String(cfg.profileFontScale));
     root.style.setProperty('--vertical-padding-scale', String(cfg.verticalPaddingScale));
 
-    // Apply theme colors
-    const theme = THEMES[cfg.experienceTheme] || THEMES['blue'];
-    Object.keys(theme).forEach(key => {
-      root.style.setProperty(key, theme[key]);
+    // Apply experience theme colors
+    const expTheme = EXPERIENCE_THEMES[cfg.experienceTheme] || EXPERIENCE_THEMES['blue'];
+    Object.keys(expTheme).forEach(key => {
+      root.style.setProperty(key, expTheme[key]);
+    });
+
+    // Apply education theme colors
+    const eduTheme = EDUCATION_THEMES[cfg.educationTheme] || EDUCATION_THEMES['green'];
+    Object.keys(eduTheme).forEach(key => {
+      root.style.setProperty(key, eduTheme[key]);
     });
   }
 

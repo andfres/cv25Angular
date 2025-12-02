@@ -26,82 +26,113 @@
   border-color: var(--exp-dot-border);
 }
 
-/* Education Theme Classes (Green - fixed for now) */
+/* Education Theme Classes */
 .education-card {
-  background-color: #f0fdf4; /* green-50 */
-  border-color: #15803d; /* green-700 */
+  background-color: var(--edu-bg-light);
+  border-color: var(--edu-border-dark);
 }
 
 .education-text {
-  color: #15803d; /* green-700 */
+  color: var(--edu-text);
 }
 
 /* You can add global styles to this file, and also import other style files */
 
 /* Font Size Control System */
 :root {
-  --font-scale: 0.85; /* Global font scale - change this to adjust all text sizes (85% for A4) */
-  --profile-font-scale: 1; /* Profile font scale - change this to adjust profile text sizes (name, title) */
+  --font-scale: 0.85;
+  /* Global font scale - change this to adjust all text sizes (85% for A4) */
+  --profile-font-scale: 1;
+  /* Profile font scale - change this to adjust profile text sizes (name, title) */
 
   /* Base font sizes (will be multiplied by --font-scale) */
-  --font-xs: calc(0.75rem * var(--font-scale)); /* 12px * scale */
-  --font-sm: calc(0.875rem * var(--font-scale)); /* 14px * scale */
-  --font-base: calc(1rem * var(--font-scale)); /* 16px * scale */
-  --font-lg: calc(1.125rem * var(--font-scale)); /* 18px * scale */
-  --font-xl: calc(1.25rem * var(--font-scale)); /* 20px * scale */
-  --font-2xl: calc(1.5rem * var(--font-scale)); /* 24px * scale */
-  --font-3xl: calc(1.875rem * var(--font-scale)); /* 30px * scale */
-  --font-4xl: calc(2.25rem * var(--font-scale)); /* 36px * scale */
+  --font-xs: calc(0.75rem * var(--font-scale));
+  /* 12px * scale */
+  --font-sm: calc(0.875rem * var(--font-scale));
+  /* 14px * scale */
+  --font-base: calc(1rem * var(--font-scale));
+  /* 16px * scale */
+  --font-lg: calc(1.125rem * var(--font-scale));
+  /* 18px * scale */
+  --font-xl: calc(1.25rem * var(--font-scale));
+  /* 20px * scale */
+  --font-2xl: calc(1.5rem * var(--font-scale));
+  /* 24px * scale */
+  --font-3xl: calc(1.875rem * var(--font-scale));
+  /* 30px * scale */
+  --font-4xl: calc(2.25rem * var(--font-scale));
+  /* 36px * scale */
 }
 
 /* Padding Control System */
 :root {
-  --padding-scale: 0.8; /* Global padding scale - change this to adjust all paddings (80% for A4) */
+  --padding-scale: 0.8;
+  /* Global padding scale - change this to adjust all paddings (80% for A4) */
 
   /* Base paddings (will be multiplied by --padding-scale) */
-  --padding-xs: calc(0.25rem * var(--padding-scale)); /* 4px * scale */
-  --padding-sm: calc(0.5rem * var(--padding-scale)); /* 8px * scale */
-  --padding-md: calc(1rem * var(--padding-scale)); /* 16px * scale */
-  --padding-lg: calc(1.5rem * var(--padding-scale)); /* 24px * scale */
-  --padding-xl: calc(2rem * var(--padding-scale)); /* 32px * scale */
-  --padding-2xl: calc(3rem * var(--padding-scale)); /* 48px * scale */
+  --padding-xs: calc(0.25rem * var(--padding-scale));
+  /* 4px * scale */
+  --padding-sm: calc(0.5rem * var(--padding-scale));
+  /* 8px * scale */
+  --padding-md: calc(1rem * var(--padding-scale));
+  /* 16px * scale */
+  --padding-lg: calc(1.5rem * var(--padding-scale));
+  /* 24px * scale */
+  --padding-xl: calc(2rem * var(--padding-scale));
+  /* 32px * scale */
+  --padding-2xl: calc(3rem * var(--padding-scale));
+  /* 48px * scale */
 }
 
 /* Vertical Padding Control System */
 :root {
-  --vertical-padding-scale: 0.7; /* Global vertical padding scale - change this to adjust vertical spacing (70% for A4) */
+  --vertical-padding-scale: 0.7;
+  /* Global vertical padding scale - change this to adjust vertical spacing (70% for A4) */
 
   /* Vertical paddings (will be multiplied by --vertical-padding-scale) */
-  --vertical-padding-xs: calc(0.25rem * var(--vertical-padding-scale)); /* 4px * scale */
-  --vertical-padding-sm: calc(0.5rem * var(--vertical-padding-scale)); /* 8px * scale */
-  --vertical-padding-md: calc(1rem * var(--vertical-padding-scale)); /* 16px * scale */
-  --vertical-padding-lg: calc(1.5rem * var(--vertical-padding-scale)); /* 24px * scale */
-  --vertical-padding-xl: calc(2rem * var(--vertical-padding-scale)); /* 32px * scale */
-  --vertical-padding-2xl: calc(3rem * var(--vertical-padding-scale)); /* 48px * scale */
+  --vertical-padding-xs: calc(0.25rem * var(--vertical-padding-scale));
+  /* 4px * scale */
+  --vertical-padding-sm: calc(0.5rem * var(--vertical-padding-scale));
+  /* 8px * scale */
+  --vertical-padding-md: calc(1rem * var(--vertical-padding-scale));
+  /* 16px * scale */
+  --vertical-padding-lg: calc(1.5rem * var(--vertical-padding-scale));
+  /* 24px * scale */
+  --vertical-padding-xl: calc(2rem * var(--vertical-padding-scale));
+  /* 32px * scale */
+  --vertical-padding-2xl: calc(3rem * var(--vertical-padding-scale));
+  /* 48px * scale */
 }
 
 /* Font Size Classes */
 .font-xs {
   font-size: var(--font-xs);
 }
+
 .font-sm {
   font-size: var(--font-sm);
 }
+
 .font-base {
   font-size: var(--font-base);
 }
+
 .font-lg {
   font-size: var(--font-lg);
 }
+
 .font-xl {
   font-size: var(--font-xl);
 }
+
 .font-2xl {
   font-size: var(--font-2xl);
 }
+
 .font-3xl {
   font-size: var(--font-3xl);
 }
+
 .font-4xl {
   font-size: var(--font-4xl);
 }
@@ -110,18 +141,23 @@
 .p-xs {
   padding: var(--padding-xs);
 }
+
 .p-sm {
   padding: var(--padding-sm);
 }
+
 .p-md {
   padding: var(--padding-md);
 }
+
 .p-lg {
   padding: var(--padding-lg);
 }
+
 .p-xl {
   padding: var(--padding-xl);
 }
+
 .p-2xl {
   padding: var(--padding-2xl);
 }
@@ -131,18 +167,22 @@
   padding-left: var(--padding-xs);
   padding-right: var(--padding-xs);
 }
+
 .px-sm {
   padding-left: var(--padding-sm);
   padding-right: var(--padding-sm);
 }
+
 .px-md {
   padding-left: var(--padding-md);
   padding-right: var(--padding-md);
 }
+
 .px-lg {
   padding-left: var(--padding-lg);
   padding-right: var(--padding-lg);
 }
+
 .px-xl {
   padding-left: var(--padding-xl);
   padding-right: var(--padding-xl);
@@ -153,18 +193,22 @@
   padding-top: var(--padding-xs);
   padding-bottom: var(--padding-xs);
 }
+
 .py-sm {
   padding-top: var(--padding-sm);
   padding-bottom: var(--padding-sm);
 }
+
 .py-md {
   padding-top: var(--padding-md);
   padding-bottom: var(--padding-md);
 }
+
 .py-lg {
   padding-top: var(--padding-lg);
   padding-bottom: var(--padding-lg);
 }
+
 .py-xl {
   padding-top: var(--padding-xl);
   padding-bottom: var(--padding-xl);
@@ -175,18 +219,22 @@
   padding-top: var(--vertical-padding-xs);
   padding-bottom: var(--vertical-padding-xs);
 }
+
 .vy-sm {
   padding-top: var(--vertical-padding-sm);
   padding-bottom: var(--vertical-padding-sm);
 }
+
 .vy-md {
   padding-top: var(--vertical-padding-md);
   padding-bottom: var(--vertical-padding-md);
 }
+
 .vy-lg {
   padding-top: var(--vertical-padding-lg);
   padding-bottom: var(--vertical-padding-lg);
 }
+
 .vy-xl {
   padding-top: var(--vertical-padding-xl);
   padding-bottom: var(--vertical-padding-xl);
@@ -197,18 +245,22 @@
   margin-top: var(--vertical-padding-xs);
   margin-bottom: var(--vertical-padding-xs);
 }
+
 .my-sm {
   margin-top: var(--vertical-padding-sm);
   margin-bottom: var(--vertical-padding-sm);
 }
+
 .my-md {
   margin-top: var(--vertical-padding-md);
   margin-bottom: var(--vertical-padding-md);
 }
+
 .my-lg {
   margin-top: var(--vertical-padding-lg);
   margin-bottom: var(--vertical-padding-lg);
 }
+
 .my-xl {
   margin-top: var(--vertical-padding-xl);
   margin-bottom: var(--vertical-padding-xl);
@@ -219,21 +271,25 @@ html,
 body {
   margin: 0;
   height: 100%;
-  overflow-x: hidden; /* Prevenir scroll horizontal */
+  overflow-x: hidden;
+  /* Prevenir scroll horizontal */
 }
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f2f5; /* Light grey background for the body */
+  background-color: #f0f2f5;
+  /* Light grey background for the body */
 }
 
 /* Prevenir overflow en móvil */
 @media screen and (max-width: 768px) {
-  html, body {
+
+  html,
+  body {
     width: 100%;
     overflow-x: hidden;
   }
-  
+
   * {
     max-width: 100vw;
   }
@@ -243,16 +299,22 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 0.35rem 0.75rem;
-  background-color: #e0f2fe; /* blue-100 */
-  color: #0c4a6e; /* sky-800 */
-  border-radius: 9999px; /* full rounded */
-  font-size: 0.75rem; /* text-xs */
-  font-weight: 500; /* font-medium */
+  background-color: #e0f2fe;
+  /* blue-100 */
+  color: #0c4a6e;
+  /* sky-800 */
+  border-radius: 9999px;
+  /* full rounded */
+  font-size: 0.75rem;
+  /* text-xs */
+  font-weight: 500;
+  /* font-medium */
   white-space: nowrap;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: #bfdbfe; /* blue-200 */
+    background-color: #bfdbfe;
+    /* blue-200 */
     cursor: pointer;
   }
 }
@@ -261,8 +323,10 @@ body {
 .section-title {
   font-size: var(--font-xl);
   font-weight: 700;
-  color: #1f2937; /* text-gray-800 */
-  margin: 0 0 var(--vertical-padding-md) 0; /* consistent bottom spacing */
+  color: #1f2937;
+  /* text-gray-800 */
+  margin: 0 0 var(--vertical-padding-md) 0;
+  /* consistent bottom spacing */
   line-height: 1.2;
 }
 
@@ -270,6 +334,7 @@ body {
    PRINT STYLES - Para impresión en A4
    ======================================== */
 @media print {
+
   /* Ocultar título y URL del navegador */
   @page {
     margin: 0;
@@ -277,7 +342,8 @@ body {
   }
 
   /* Reset body para impresión */
-  html, body {
+  html,
+  body {
     width: 210mm;
     height: 297mm;
     margin: 0 !important;
@@ -351,7 +417,12 @@ body {
   }
 
   /* Reducir márgenes generales */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-top: 0.5rem !important;
     margin-bottom: 0.3rem !important;
   }
@@ -386,7 +457,7 @@ body {
     margin: 0;
     border: none;
   }
-  
+
   .red-guide {
     display: none;
   }
@@ -664,6 +735,7 @@ body {
    RESPONSIVE - Para pantallas pequeñas
    ======================================== */
 @media screen and (max-width: 768px) {
+
   /* Ajustar contenedor A4 */
   .a4-page {
     width: 100% !important;
@@ -740,16 +812,16 @@ body {
   }
 
   @media screen and (max-width: 768px) {
-  body::after {
-    content: 'MODO MÓVIL ACTIVADO';
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background: red;
-    color: white;
-    padding: 4px 8px;
-    font-size: 0.8rem;
-    z-index: 9999;
+    body::after {
+      content: 'MODO MÓVIL ACTIVADO';
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: red;
+      color: white;
+      padding: 4px 8px;
+      font-size: 0.8rem;
+      z-index: 9999;
+    }
   }
-}
 }

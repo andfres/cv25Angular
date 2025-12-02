@@ -112,39 +112,86 @@ import { ConfigService } from '../../services/config.service';
         </div>
       </div>
 
-      <!-- Experience Theme Control -->
+      <!-- Experience Color Control -->
       <div class="control-section">
-        <label class="control-label">Experience Theme:</label>
+        <label class="control-label">Experience Color:</label>
         <div class="theme-buttons">
           <button 
             (click)="setTheme('blue')" 
-            class="theme-btn blue" 
+            class="theme-btn" 
             [class.active]="experienceTheme === 'blue'"
             title="Blue"
+            style="background-color: #3b82f6;"
           ></button>
           <button 
             (click)="setTheme('purple')" 
-            class="theme-btn purple" 
+            class="theme-btn" 
             [class.active]="experienceTheme === 'purple'"
             title="Purple"
+            style="background-color: #a855f7;"
           ></button>
           <button 
             (click)="setTheme('teal')" 
-            class="theme-btn teal" 
+            class="theme-btn" 
             [class.active]="experienceTheme === 'teal'"
             title="Teal"
+            style="background-color: #14b8a6;"
           ></button>
           <button 
             (click)="setTheme('red')" 
-            class="theme-btn red" 
+            class="theme-btn" 
             [class.active]="experienceTheme === 'red'"
             title="Red"
+            style="background-color: #ef4444;"
           ></button>
           <button 
             (click)="setTheme('gray')" 
-            class="theme-btn gray" 
+            class="theme-btn" 
             [class.active]="experienceTheme === 'gray'"
             title="Gray"
+            style="background-color: #6b7280;"
+          ></button>
+        </div>
+      </div>
+
+      <!-- Education Color Control -->
+      <div class="control-section">
+        <label class="control-label">Education Color:</label>
+        <div class="theme-buttons">
+          <button 
+            (click)="setEducationTheme('green')" 
+            class="theme-btn" 
+            [class.active]="educationTheme === 'green'"
+            title="Green"
+            style="background-color: #22c55e;"
+          ></button>
+          <button 
+            (click)="setEducationTheme('blue')" 
+            class="theme-btn" 
+            [class.active]="educationTheme === 'blue'"
+            title="Blue"
+            style="background-color: #3b82f6;"
+          ></button>
+          <button 
+            (click)="setEducationTheme('purple')" 
+            class="theme-btn" 
+            [class.active]="educationTheme === 'purple'"
+            title="Purple"
+            style="background-color: #a855f7;"
+          ></button>
+          <button 
+            (click)="setEducationTheme('orange')" 
+            class="theme-btn" 
+            [class.active]="educationTheme === 'orange'"
+            title="Orange"
+            style="background-color: #f97316;"
+          ></button>
+          <button 
+            (click)="setEducationTheme('pink')" 
+            class="theme-btn" 
+            [class.active]="educationTheme === 'pink'"
+            title="Pink"
+            style="background-color: #ec4899;"
           ></button>
         </div>
       </div>
@@ -252,17 +299,16 @@ import { ConfigService } from '../../services/config.service';
       .theme-buttons {
         display: flex;
         gap: 8px;
+        flex-wrap: wrap;
       }
 
       .theme-btn {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
         border-radius: 50%;
         border: 2px solid transparent;
         cursor: pointer;
         transition: transform 0.2s, border-color 0.2s;
-        position: relative;
-        overflow: hidden;
       }
 
       .theme-btn:hover {
@@ -271,24 +317,8 @@ import { ConfigService } from '../../services/config.service';
 
       .theme-btn.active {
         border-color: #333;
-        transform: scale(1.1);
-      }
-
-      /* Split circle - left half work color, right half education (green) */
-      .theme-btn.blue { 
-        background: linear-gradient(90deg, #3b82f6 50%, #15803d 50%);
-      }
-      .theme-btn.purple { 
-        background: linear-gradient(90deg, #a855f7 50%, #15803d 50%);
-      }
-      .theme-btn.teal { 
-        background: linear-gradient(90deg, #14b8a6 50%, #15803d 50%);
-      }
-      .theme-btn.red { 
-        background: linear-gradient(90deg, #ef4444 50%, #15803d 50%);
-      }
-      .theme-btn.gray { 
-        background: linear-gradient(90deg, #6b7280 50%, #15803d 50%);
+        border-width: 3px;
+        transform: scale(1.15);
       }
     `,
   ],
@@ -301,6 +331,7 @@ export class UnifiedControlComponent {
   sortByDate = true;
   photoOnTop = false;
   experienceTheme = 'blue';
+  educationTheme = 'green';
 
   constructor(private config: ConfigService) {
     const s = this.config.state;
@@ -312,6 +343,7 @@ export class UnifiedControlComponent {
     this.sortByDate = s.sortByDate;
     this.photoOnTop = s.photoOnTop;
     this.experienceTheme = s.experienceTheme || 'blue';
+    this.educationTheme = s.educationTheme || 'green';
 
     // ensure CSS vars applied
     this.config.init();
@@ -326,6 +358,7 @@ export class UnifiedControlComponent {
       this.sortByDate = cfg.sortByDate;
       this.photoOnTop = cfg.photoOnTop;
       this.experienceTheme = cfg.experienceTheme || 'blue';
+      this.educationTheme = cfg.educationTheme || 'green';
     });
   }
 
@@ -375,7 +408,12 @@ export class UnifiedControlComponent {
 
   setTheme(theme: string): void {
     this.config.set({ experienceTheme: theme });
-    this.logCurrentConfiguration('🎨 Theme Applied: ' + theme);
+    this.logCurrentConfiguration('🎨 Experience Theme: ' + theme);
+  }
+
+  setEducationTheme(theme: string): void {
+    this.config.set({ educationTheme: theme });
+    this.logCurrentConfiguration('🎓 Education Theme: ' + theme);
   }
 
   // Add direct setter methods used by template buttons
