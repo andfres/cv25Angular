@@ -6,7 +6,7 @@
     "languages": "Languages",
     "skills": "Skills",
     "experience": "Experience",
-    "experienceTitle": "Experiencia",
+    "experienceTitle": "Experience",
     "education": "Education",
     "present": "Present",
     "noExperience": "No experience entries to display.",
@@ -25,7 +25,7 @@
     {
       "type": "experience",
       "company": "NTT Data",
-      "location": "Valladolid, España",
+      "location": "Valladolid, Spain",
       "position": "Mid-Senior Frontend Developer",
       "startDate": "2024-04-01T00:00:00.000Z",
       "endDate": "present",
@@ -72,7 +72,7 @@
     {
       "type": "experience",
       "company": "NTT Prueba roles",
-      "location": "Valladolid, España",
+      "location": "Valladolid, Spain",
       "position": "Fullstack Engineer",
       "startDate": "2023-01-01T00:00:00.000Z",
       "endDate": "2024-03-31T23:59:59.999Z",
@@ -139,7 +139,7 @@
     {
       "type": "experience",
       "company": "Friul Intagli",
-      "location": "Patra di Pordenone, Italy",
+      "location": "Prata di Pordenone, Italy",
       "position": "Factory Operator",
       "startDate": "2019-01-01T00:00:00.000Z",
       "endDate": "2019-12-31T23:59:59.999Z",
@@ -163,7 +163,7 @@
     {
       "type": "experience",
       "company": "Alcañiz Fresnos",
-      "location": "Valladolid, España",
+      "location": "Valladolid, Spain",
       "position": "Official Newsletter Layout Designer",
       "startDate": "2010-01-01T00:00:00.000Z",
       "endDate": "2019-12-31T23:59:59.999Z",
@@ -181,11 +181,11 @@
           "level": 70
         },
         {
-          "name": "Expresiones regulares",
+          "name": "Regular Expressions",
           "level": 75
         },
         {
-          "name": "Accesibilidad",
+          "name": "Accessibility",
           "level": 70
         }
       ]
@@ -193,7 +193,7 @@
     {
       "type": "experience",
       "company": "Alcañiz Fresnos",
-      "location": "Valladolid, España",
+      "location": "Valladolid, Spain",
       "position": "Newsletter Project (Canarias)",
       "startDate": "2020-09-01T00:00:00.000Z",
       "endDate": "2021-01-31T23:59:59.999Z",
@@ -218,7 +218,7 @@
       "type": "education",
       "company": "Vocational Training in Web Application Development",
       "position": "IES Ribera de Castilla",
-      "location": "Valladolid, España",
+      "location": "Valladolid, Spain",
       "startDate": "2020-01-01T00:00:00.000Z",
       "endDate": "2023-12-31T23:59:59.999Z",
       "show": true,
@@ -249,7 +249,7 @@
       "type": "education",
       "company": "Specialization Course in AI & Big Data",
       "position": "IES Ribera de Castilla",
-      "location": "Valladolid, España",
+      "location": "Valladolid, Spain",
       "startDate": "2025-01-01T00:00:00.000Z",
       "endDate": "2025-06-30T23:59:59.999Z",
       "show": true,

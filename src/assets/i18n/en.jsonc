@@ -1,0 +1,145 @@
+{
+  "profile": {
+    "picture": "Profile Picture"
+  },
+  "sections": {
+    "languages": "Languages",
+    "skills": "Skills",
+    "experience": "Experience",
+    "experienceTitle": "Experience",
+    "education": "Education",
+    "present": "Present",
+    "noExperience": "No experience entries to display.",
+    "noEducation": "No education entries to display."
+  },
+  "personalInfo": {
+    "name": "Andrés Fresno Bausela",
+    "title": "Fullstack Engineer",
+    "location": "Valladolid, Spain",
+    "email": "andfres@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/your-profile",
+    "github": "https://github.com/andres",
+    "objective": "Frontend technical lead with experience in Vue.js, Angular, and React (legacy and hooks), building applications from scratch and maintaining existing projects. Experienced with Spring Boot, expanding APIs and migrating authentication to JWT on both frontend and backend. Passionate about the Vue ecosystem, especially Pinia for state management, and always looking to improve developer experience."
+  },
+  "experience": [
+    {
+      "company": "NTT Data",
+      "location": "Valladolid, Spain",
+      "roles": [
+        {
+          "title": "Engineer",
+          "startDate": "2024-03-01",
+          "endDate": "present",
+          "summary": "Frontend technical lead, making architectural decisions and overseeing accessibility and security. Developing new applications and maintaining existing ones. Mentoring and sharing knowledge, always seeking to simplify work and improve developer experience."
+        },
+        {
+          "title": "Junior Developer",
+          "startDate": "2023-04-01",
+          "endDate": "2024-03-31",
+          "summary": "Developed features in Vue 3, Angular, and React (legacy and hooks). Migrated Spring Boot 2 to 3, modified templates in JasperReports and Thymeleaf, and migrated app authentication to Azure AD using JWT on both frontend and backend. Conducted technical analysis and project estimations."
+        },
+        {
+          "title": "Intern",
+          "startDate": "2023-01-01",
+          "endDate": "2023-03-31",
+          "summary": "3-month internship assisting in frontend and backend tasks, learning internal processes and tools."
+        }
+      ],
+      "technologies": [
+        "Vue 3",
+        "Pinia",
+        "Vuex",
+        "Vite",
+        "React",
+        "Redux",
+        "Angular",
+        "TypeScript",
+        "Tailwind",
+        "FormKit",
+        "Spring Boot",
+        "JWT",
+        "Azure AD",
+        "JasperReports",
+        "Thymeleaf",
+        "SQL",
+        "Git",
+        "S3 AWS"
+      ]
+    },
+    // {
+    //   "company": "Friul Intagli",
+    //   "location": "Prata di Pordenone, Italy",
+    //   "technologies": [
+    //     "Teamwork",
+    //     "Italian Language"
+    //   ],
+    //   "roles": [
+    //     {
+    //       "title": "Factory Operator",
+    //       "startDate": "2019-01-01",
+    //       "endDate": "2019-12-31",
+    //       "summary": "Worked as a factory operator."
+    //     }
+    //   ]
+    // },
+    {
+      "company": "Alcañiz Fresnos",
+      "location": "Valladolid, Spain",
+      "roles": [
+        {
+          "title": "Official Newsletter Layout Designer",
+          "startDate": "2010-01-01",
+          "endDate": "2019-12-31",
+          "summary": "Worked to launch the official newsletter for Canarias region."
+        },
+        {
+          "title": "Newsletter Project (Canarias)",
+          "startDate": "2020-09-01",
+          "endDate": "2021-01-31",
+          "summary": "Designed and laid out official newsletters. Managed content formatting and presentation."
+        }
+      ],
+      "technologies": [
+        "InDesign",
+        "Photoshop",
+        "ExtendScript",
+        "Regular Expressions",
+        "Accessibility",
+        "Project Management"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Vocational Training in Web Application Development",
+      "institution": "IES Ribera de Castilla",
+      "location": "Valladolid, Spain",
+      "startDate": "2020-01-01",
+      "endDate": "2023-12-31",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "MySQL"
+      ]
+    },
+    {
+      "degree": "Specialization Course in AI & Big Data",
+      "institution": "IES Ribera de Castilla",
+      "location": "Valladolid, Spain",
+      "startDate": "2025-01-01",
+      "endDate": "2025-06-30",
+      "technologies": [
+        "Python",
+        "TensorFlow",
+        "BigQuery"
+      ]
+    }
+  ],
+  "languages": [
+    "English",
+    "Spanish",
+    "Italian"
+  ]
+}
