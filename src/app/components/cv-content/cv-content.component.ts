@@ -25,7 +25,7 @@ export class CvContentComponent implements OnInit, OnDestroy {
     public translate: TranslateService,
     private sanitizer: DomSanitizer,
     private config: ConfigService,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     // Apply initial configuration (sort and layout) from global config
@@ -88,10 +88,13 @@ export class CvContentComponent implements OnInit, OnDestroy {
         return normalize(b) - normalize(a);
       });
     } else {
-      // Default: experience first (original order), then education (original order)
-      const exp = (this.cvData.experience || []).slice();
-      const edu = (this.cvData.education || []).slice();
-      this.combinedEntries = [...exp, ...edu];
+      // Default: sort by 'order' property if present, otherwise fallback to original order
+      const all = [...(this.cvData.experience || []), ...(this.cvData.education || [])];
+      this.combinedEntries = all.sort((a, b) => {
+        const orderA = (a as any).order ?? 999;
+        const orderB = (b as any).order ?? 999;
+        return orderA - orderB;
+      });
     }
   }
 

@@ -14,14 +14,14 @@ const DEFAULT: CvConfig = {
   fontScale: 0.85,
   profileFontScale: 1.05,
   verticalPaddingScale: 0.8,
-  sortByDate: true,
+  sortByDate: false,
   photoOnTop: false,
   asideWidth: 20,
 };
 
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
-  private key = 'cv_config_v1';
+  private key = 'cv_config_v2';
   private subj = new BehaviorSubject<CvConfig>(this.load() || DEFAULT);
   state$ = this.subj.asObservable();
 

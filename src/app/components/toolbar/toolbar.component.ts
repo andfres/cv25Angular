@@ -8,9 +8,20 @@ import { UnifiedControlComponent } from '../unified-control/unified-control.comp
   standalone: true,
   imports: [CommonModule, TranslateModule, UnifiedControlComponent],
   template: `
-    <div class="toolbar-container print:hidden">
+    <!-- Botón para mostrar toolbar cuando está oculto -->
+    @if (!isVisible) {
+      <button class="show-toolbar-btn print:hidden" (click)="toggleVisibility()" title="Mostrar menú">
+        ☰
+      </button>
+    }
+
+    <!-- Toolbar principal -->
+    <div class="toolbar-container print:hidden" [class.hidden-toolbar]="!isVisible">
       <!-- Header con banderas y botón de imprimir - siempre visible -->
       <div class="toolbar-header">
+        <!-- Botón cerrar (X) -->
+        <button class="close-btn" (click)="toggleVisibility()" title="Ocultar menú">✕</button>
+
         <!-- Banderas -->
         <div class="language-flags">
           @for (lang of availableLanguages; track lang) {
@@ -66,13 +77,62 @@ import { UnifiedControlComponent } from '../unified-control/unified-control.comp
       z-index: 1000;
       min-width: 220px;
       overflow: hidden;
-      transition: box-shadow 0.2s;
+      transition: transform 0.3s ease-in-out, opacity 0.3s;
+    }
+
+    .toolbar-container.hidden-toolbar {
+      transform: translateX(120%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .show-toolbar-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+
+    .show-toolbar-btn:hover {
+      transform: scale(1.1);
+      background: #f0f0f0;
     }
 
     .toolbar-header {
       padding: 10px;
       background: #f8f9fa;
       border-bottom: 1px solid #e0e0e0;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: transparent;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+      color: #666;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .close-btn:hover {
+      background: #eee;
+      color: #333;
     }
 
     /* Banderas */
@@ -81,6 +141,7 @@ import { UnifiedControlComponent } from '../unified-control/unified-control.comp
       gap: 8px;
       margin-bottom: 8px;
       justify-content: center;
+      margin-top: 10px; /* Espacio para el botón de cerrar */
     }
 
     .flag-button {
@@ -178,6 +239,10 @@ import { UnifiedControlComponent } from '../unified-control/unified-control.comp
         top: 5px;
         min-width: 180px;
       }
+      .show-toolbar-btn {
+        right: 5px;
+        top: 5px;
+      }
     }
   `]
 })
@@ -188,9 +253,14 @@ export class ToolbarComponent {
   @Output() print = new EventEmitter<void>();
 
   isExpanded = false;
+  isVisible = true;
 
   toggleControls(): void {
     this.isExpanded = !this.isExpanded;
+  }
+
+  toggleVisibility(): void {
+    this.isVisible = !this.isVisible;
   }
 
   onLanguageChange(lang: string): void {

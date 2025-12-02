@@ -28,6 +28,7 @@ export interface TimelineEntry {
   startDate?: string;
   endDate?: string | 'present';
   show?: boolean;
+  order?: number;
 }
 
 export interface Experience extends TimelineEntry {
