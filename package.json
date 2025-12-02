@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && mv docs/browser/* docs/ && rmdir docs/browser",
     "build-hash": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",

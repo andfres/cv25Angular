@@ -1,3 +1,11 @@
+export interface Profile {
+  picture: string;
+}
+
+export interface Sections {
+  [key: string]: string;
+}
+
 export interface PersonalInfo {
   name: string;
   title: string;
@@ -6,64 +14,41 @@ export interface PersonalInfo {
   linkedin?: string;
   github?: string;
   objective: string;
-  image: string;
 }
 
 export interface Role {
   title: string;
   startDate: string;
-  endDate: string | 'present'; // Allow 'present' string
+  endDate: string | 'present';
   summary: string;
-  technologies?: TechnologySkill[];
-}
-
-export interface TechnologySkill {
-  name: string;
-  level: number;
 }
 
 export interface TimelineEntry {
   type: 'experience' | 'education';
   startDate?: string;
   endDate?: string | 'present';
-  show?: boolean; // Para ocultar entradas si show: false
+  show?: boolean;
 }
 
 export interface Experience extends TimelineEntry {
   company: string;
   location: string;
-  position: string;
-  logo?: string; // Add this line
-  logoAlt?: string; // Add this line for accessibility
-  logoStyle?: 'default' | 'full' | 'no-border'; // Add logo style configuration
-  roles?: Role[];
-  summary?: string;
-  technologies?: TechnologySkill[];
-  showLogo?: boolean; // If true, show company logo
+  roles: Role[];
+  technologies: string[];
 }
 
 export interface Education extends TimelineEntry {
-  company: string;
-  position: string;
+  degree: string;
+  institution: string;
   location: string;
-  summary?: string;
-  technologies?: TechnologySkill[];
-}
-
-export interface Skill {
-  name: string;
-  level: number;
-}
-
-export interface Language {
-  name: string;
-  level: number;
+  technologies: string[];
 }
 
 export interface CvData {
+  profile: Profile;
+  sections: Sections;
   personalInfo: PersonalInfo;
   experience: Experience[];
   education: Education[];
-  skills: Skill[];
-  languages: Language[];
+  languages: string[];
 }

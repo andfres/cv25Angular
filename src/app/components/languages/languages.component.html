@@ -1,8 +1,8 @@
 <section class="languages-section afborder">
   <h2 class="section-title">{{ 'sections.languages' | translate }}</h2>
   <ul class="list-none p-0">
-    @for (language of languages; track language.name) {
-      <li class="language-item">{{ language.name }} ({{ language.level }}%)</li>
+    @for (language of languages; track language) {
+      <li class="language-item">{{ language }}</li>
     }
   </ul>
 </section>

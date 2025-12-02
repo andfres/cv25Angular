@@ -16,7 +16,7 @@ export class TimelineComponent implements OnInit, OnChanges, OnDestroy {
   sortedEntries: (Experience | Education)[] = [];
   sortByDate = false;
 
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService) { }
 
   ngOnInit(): void {
     // console.log('TimelineComponent entries on init:', this.entries);
@@ -73,15 +73,5 @@ export class TimelineComponent implements OnInit, OnChanges, OnDestroy {
     }
     return undefined;
   }
-  protected readonly isExperience = isExperience; // Expose isExperience to the template
-
-  getLogoClass(entry: Experience | Education): string {
-    if (isExperience(entry)) {
-      const experience = entry as Experience;
-      if (experience.logoStyle === 'full') {
-        return 'company-logo-full';
-      }
-    }
-    return 'company-logo';
-  }
+  protected readonly isExperience = isExperience;
 }

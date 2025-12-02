@@ -54,7 +54,7 @@ export class App implements OnInit {
 
   private loadAndSetCvData(): void {
     console.log('App loadAndSetCvData - Attempting to load CV data.');
-    const currentLang = this.translate.currentLang; // Get the currently active language
+    const currentLang = this.translate.currentLang;
     this.http.get(`./assets/i18n/${currentLang}.json`).subscribe((data: any) => {
       console.log('App loadAndSetCvData - CV data received:', data);
       this.cvData = data;

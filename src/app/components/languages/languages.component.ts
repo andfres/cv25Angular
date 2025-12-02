@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Language } from '../../models/cv.model';
+
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -10,5 +10,5 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './languages.component.html',
 })
 export class LanguagesComponent {
-  @Input() languages!: Language[];
+  @Input() languages!: string[];
 }
