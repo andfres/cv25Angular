@@ -112,6 +112,43 @@ import { ConfigService } from '../../services/config.service';
         </div>
       </div>
 
+      <!-- Experience Theme Control -->
+      <div class="control-section">
+        <label class="control-label">Experience Theme:</label>
+        <div class="theme-buttons">
+          <button 
+            (click)="setTheme('blue')" 
+            class="theme-btn blue" 
+            [class.active]="experienceTheme === 'blue'"
+            title="Blue"
+          ></button>
+          <button 
+            (click)="setTheme('purple')" 
+            class="theme-btn purple" 
+            [class.active]="experienceTheme === 'purple'"
+            title="Purple"
+          ></button>
+          <button 
+            (click)="setTheme('teal')" 
+            class="theme-btn teal" 
+            [class.active]="experienceTheme === 'teal'"
+            title="Teal"
+          ></button>
+          <button 
+            (click)="setTheme('red')" 
+            class="theme-btn red" 
+            [class.active]="experienceTheme === 'red'"
+            title="Red"
+          ></button>
+          <button 
+            (click)="setTheme('gray')" 
+            class="theme-btn gray" 
+            [class.active]="experienceTheme === 'gray'"
+            title="Gray"
+          ></button>
+        </div>
+      </div>
+
       <!-- Layout Control -->
       <div class="control-section">
         <label class="control-label">Layout:</label>
@@ -210,6 +247,49 @@ import { ConfigService } from '../../services/config.service';
         color: #6b7280;
         font-weight: 600;
       }
+
+      /* Theme Buttons */
+      .theme-buttons {
+        display: flex;
+        gap: 8px;
+      }
+
+      .theme-btn {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: transform 0.2s, border-color 0.2s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .theme-btn:hover {
+        transform: scale(1.1);
+      }
+
+      .theme-btn.active {
+        border-color: #333;
+        transform: scale(1.1);
+      }
+
+      /* Split circle - left half work color, right half education (green) */
+      .theme-btn.blue { 
+        background: linear-gradient(90deg, #3b82f6 50%, #15803d 50%);
+      }
+      .theme-btn.purple { 
+        background: linear-gradient(90deg, #a855f7 50%, #15803d 50%);
+      }
+      .theme-btn.teal { 
+        background: linear-gradient(90deg, #14b8a6 50%, #15803d 50%);
+      }
+      .theme-btn.red { 
+        background: linear-gradient(90deg, #ef4444 50%, #15803d 50%);
+      }
+      .theme-btn.gray { 
+        background: linear-gradient(90deg, #6b7280 50%, #15803d 50%);
+      }
     `,
   ],
 })
@@ -220,6 +300,7 @@ export class UnifiedControlComponent {
   verticalPaddingScale = 1;
   sortByDate = true;
   photoOnTop = false;
+  experienceTheme = 'blue';
 
   constructor(private config: ConfigService) {
     const s = this.config.state;
@@ -230,6 +311,7 @@ export class UnifiedControlComponent {
 
     this.sortByDate = s.sortByDate;
     this.photoOnTop = s.photoOnTop;
+    this.experienceTheme = s.experienceTheme || 'blue';
 
     // ensure CSS vars applied
     this.config.init();
@@ -243,6 +325,7 @@ export class UnifiedControlComponent {
 
       this.sortByDate = cfg.sortByDate;
       this.photoOnTop = cfg.photoOnTop;
+      this.experienceTheme = cfg.experienceTheme || 'blue';
     });
   }
 
@@ -288,6 +371,11 @@ export class UnifiedControlComponent {
     this.config.set({ photoOnTop: checked });
     this.logCurrentConfiguration('🖼️ Layout Toggled');
     this.notifyLayoutChange();
+  }
+
+  setTheme(theme: string): void {
+    this.config.set({ experienceTheme: theme });
+    this.logCurrentConfiguration('🎨 Theme Applied: ' + theme);
   }
 
   // Add direct setter methods used by template buttons
@@ -345,11 +433,11 @@ export class UnifiedControlComponent {
           value: this.profileFontScale,
           percentage: Math.round(this.profileFontScale * 100) + '%',
         },
-         asideWidth: {
+        asideWidth: {
           value: this.asideWidth,
           unit: 'rem',
         },
-     
+
         verticalPaddingScale: {
           value: this.verticalPaddingScale,
           percentage: Math.round(this.verticalPaddingScale * 100) + '%',
@@ -358,6 +446,7 @@ export class UnifiedControlComponent {
           sortByDate: this.sortByDate,
           photoOnTop: this.photoOnTop,
         },
+        theme: this.experienceTheme,
         layoutHuman: layoutHuman,
       },
     };
@@ -369,6 +458,7 @@ export class UnifiedControlComponent {
       asideWidth: this.asideWidth,
       sortByDate: this.sortByDate,
       photoOnTop: this.photoOnTop,
+      experienceTheme: this.experienceTheme,
       sortByDateLabel: layoutHuman.sortByDate,
       layoutLabel: layoutHuman.photoOnTop,
     });

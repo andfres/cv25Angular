@@ -8,6 +8,7 @@ export interface CvConfig {
   sortByDate: boolean;
   photoOnTop: boolean;
   asideWidth: number; // Width of the aside in rem units
+  experienceTheme: string;
 }
 
 const DEFAULT: CvConfig = {
@@ -17,11 +18,60 @@ const DEFAULT: CvConfig = {
   sortByDate: false,
   photoOnTop: false,
   asideWidth: 20,
+  experienceTheme: 'blue',
+};
+
+const THEMES: { [key: string]: any } = {
+  blue: {
+    '--exp-bg-light': '#eff6ff', // blue-50
+    '--exp-bg-medium': '#3b82f6', // blue-500
+    '--exp-border-light': '#93c5fd', // blue-300
+    '--exp-border-medium': '#60a5fa', // blue-400
+    '--exp-border-dark': '#1d4ed8', // blue-700
+    '--exp-text-dark': '#1e3a8a', // blue-900
+    '--exp-dot-border': '#ffffff',
+  },
+  purple: {
+    '--exp-bg-light': '#f3e8ff', // purple-50
+    '--exp-bg-medium': '#a855f7', // purple-500
+    '--exp-border-light': '#d8b4fe', // purple-300
+    '--exp-border-medium': '#c084fc', // purple-400
+    '--exp-border-dark': '#7e22ce', // purple-700
+    '--exp-text-dark': '#581c87', // purple-900
+    '--exp-dot-border': '#ffffff',
+  },
+  teal: {
+    '--exp-bg-light': '#f0fdfa', // teal-50
+    '--exp-bg-medium': '#14b8a6', // teal-500
+    '--exp-border-light': '#5eead4', // teal-300
+    '--exp-border-medium': '#2dd4bf', // teal-400
+    '--exp-border-dark': '#0f766e', // teal-700
+    '--exp-text-dark': '#134e4a', // teal-900
+    '--exp-dot-border': '#ffffff',
+  },
+  red: {
+    '--exp-bg-light': '#fef2f2', // red-50
+    '--exp-bg-medium': '#ef4444', // red-500
+    '--exp-border-light': '#fca5a5', // red-300
+    '--exp-border-medium': '#f87171', // red-400
+    '--exp-border-dark': '#b91c1c', // red-700
+    '--exp-text-dark': '#7f1d1d', // red-900
+    '--exp-dot-border': '#ffffff',
+  },
+  gray: {
+    '--exp-bg-light': '#f9fafb', // gray-50
+    '--exp-bg-medium': '#6b7280', // gray-500
+    '--exp-border-light': '#d1d5db', // gray-300
+    '--exp-border-medium': '#9ca3af', // gray-400
+    '--exp-border-dark': '#374151', // gray-700
+    '--exp-text-dark': '#111827', // gray-900
+    '--exp-dot-border': '#ffffff',
+  }
 };
 
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
-  private key = 'cv_config_v2';
+  private key = 'cv_config_v3';
   private subj = new BehaviorSubject<CvConfig>(this.load() || DEFAULT);
   state$ = this.subj.asObservable();
 
@@ -37,15 +87,16 @@ export class ConfigService {
   }
 
   apply(cfg: CvConfig) {
-    document.documentElement.style.setProperty('--font-scale', String(cfg.fontScale));
-    document.documentElement.style.setProperty(
-      '--profile-font-scale',
-      String(cfg.profileFontScale),
-    );
-    document.documentElement.style.setProperty(
-      '--vertical-padding-scale',
-      String(cfg.verticalPaddingScale),
-    );
+    const root = document.documentElement;
+    root.style.setProperty('--font-scale', String(cfg.fontScale));
+    root.style.setProperty('--profile-font-scale', String(cfg.profileFontScale));
+    root.style.setProperty('--vertical-padding-scale', String(cfg.verticalPaddingScale));
+
+    // Apply theme colors
+    const theme = THEMES[cfg.experienceTheme] || THEMES['blue'];
+    Object.keys(theme).forEach(key => {
+      root.style.setProperty(key, theme[key]);
+    });
   }
 
   private save(cfg: CvConfig) {

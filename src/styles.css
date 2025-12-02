@@ -3,6 +3,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Experience Theme Classes */
+.experience-card {
+  background-color: var(--exp-bg-light);
+  border-color: var(--exp-border-dark);
+}
+
+.experience-title {
+  color: var(--exp-text-dark);
+}
+
+.experience-role-border {
+  border-color: var(--exp-border-medium);
+}
+
+.experience-role-title {
+  color: var(--exp-text-dark);
+}
+
+.experience-dot {
+  background-color: var(--exp-bg-medium);
+  border-color: var(--exp-dot-border);
+}
+
+/* Education Theme Classes (Green - fixed for now) */
+.education-card {
+  background-color: #f0fdf4; /* green-50 */
+  border-color: #15803d; /* green-700 */
+}
+
+.education-text {
+  color: #15803d; /* green-700 */
+}
+
 /* You can add global styles to this file, and also import other style files */
 
 /* Font Size Control System */
