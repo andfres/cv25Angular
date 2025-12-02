@@ -7,9 +7,10 @@ export interface CvConfig {
   verticalPaddingScale: number;
   sortByDate: boolean;
   photoOnTop: boolean;
-  asideWidth: number; // Width of the aside in rem units
+  asideWidth: number;
   experienceTheme: string;
   educationTheme: string;
+  cardStyle: 'filled' | 'outlined' | 'subtle';
 }
 
 const DEFAULT: CvConfig = {
@@ -21,6 +22,7 @@ const DEFAULT: CvConfig = {
   asideWidth: 20,
   experienceTheme: 'blue',
   educationTheme: 'green',
+  cardStyle: 'outlined',
 };
 
 const EXPERIENCE_THEMES: { [key: string]: any } = {
@@ -121,6 +123,9 @@ export class ConfigService {
     root.style.setProperty('--font-scale', String(cfg.fontScale));
     root.style.setProperty('--profile-font-scale', String(cfg.profileFontScale));
     root.style.setProperty('--vertical-padding-scale', String(cfg.verticalPaddingScale));
+
+    // Apply card style
+    root.setAttribute('data-card-style', cfg.cardStyle);
 
     // Apply experience theme colors
     const expTheme = EXPERIENCE_THEMES[cfg.experienceTheme] || EXPERIENCE_THEMES['blue'];

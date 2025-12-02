@@ -98,6 +98,28 @@ import { ConfigService } from '../../services/config.service';
         </div>
       </div>
 
+      <!-- Card Style Control -->
+      <div class="control-section">
+        <label class="control-label">Card Style:</label>
+        <div class="control-buttons">
+          <button 
+            (click)="setCardStyle('filled')" 
+            [class.active-style]="cardStyle === 'filled'"
+            class="control-btn"
+          >Filled</button>
+          <button 
+            (click)="setCardStyle('subtle')" 
+            [class.active-style]="cardStyle === 'subtle'"
+            class="control-btn"
+          >Subtle</button>
+          <button 
+            (click)="setCardStyle('outlined')" 
+            [class.active-style]="cardStyle === 'outlined'"
+            class="control-btn"
+          >Outlined</button>
+        </div>
+      </div>
+
       <!-- Date Sorting Control -->
       <div class="control-section">
         <label class="control-label">Sort by Date:</label>
@@ -262,6 +284,12 @@ import { ConfigService } from '../../services/config.service';
         background: #e5e5e5;
       }
 
+      .control-btn.active-style {
+        background: #2196F3;
+        color: white;
+        border-color: #1976D2;
+      }
+
       .checkbox-container {
         display: flex;
         align-items: center;
@@ -332,6 +360,7 @@ export class UnifiedControlComponent {
   photoOnTop = false;
   experienceTheme = 'blue';
   educationTheme = 'green';
+  cardStyle: 'filled' | 'outlined' | 'subtle' = 'outlined';
 
   constructor(private config: ConfigService) {
     const s = this.config.state;
@@ -344,6 +373,7 @@ export class UnifiedControlComponent {
     this.photoOnTop = s.photoOnTop;
     this.experienceTheme = s.experienceTheme || 'blue';
     this.educationTheme = s.educationTheme || 'green';
+    this.cardStyle = s.cardStyle || 'outlined';
 
     // ensure CSS vars applied
     this.config.init();
@@ -359,6 +389,7 @@ export class UnifiedControlComponent {
       this.photoOnTop = cfg.photoOnTop;
       this.experienceTheme = cfg.experienceTheme || 'blue';
       this.educationTheme = cfg.educationTheme || 'green';
+      this.cardStyle = cfg.cardStyle || 'outlined';
     });
   }
 
@@ -414,6 +445,11 @@ export class UnifiedControlComponent {
   setEducationTheme(theme: string): void {
     this.config.set({ educationTheme: theme });
     this.logCurrentConfiguration('🎓 Education Theme: ' + theme);
+  }
+
+  setCardStyle(style: 'filled' | 'outlined' | 'subtle'): void {
+    this.config.set({ cardStyle: style });
+    this.logCurrentConfiguration('🎴 Card Style: ' + style);
   }
 
   // Add direct setter methods used by template buttons
