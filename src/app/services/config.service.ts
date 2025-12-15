@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 export interface CvConfig {
-  fontScale: number;
-  profileFontScale: number;
+  nameScale: number;
+  sectionTitleScale: number;
   verticalPaddingScale: number;
   sortByDate: boolean;
   photoOnTop: boolean;
@@ -14,8 +14,8 @@ export interface CvConfig {
 }
 
 const DEFAULT: CvConfig = {
-  fontScale: 0.85,
-  profileFontScale: 1.05,
+  nameScale: 1.0,
+  sectionTitleScale: 1.0,
   verticalPaddingScale: 0.8,
   sortByDate: false,
   photoOnTop: false,
@@ -120,8 +120,8 @@ export class ConfigService {
 
   apply(cfg: CvConfig) {
     const root = document.documentElement;
-    root.style.setProperty('--font-scale', String(cfg.fontScale));
-    root.style.setProperty('--profile-font-scale', String(cfg.profileFontScale));
+    root.style.setProperty('--name-scale', String(cfg.nameScale));
+    root.style.setProperty('--section-title-scale', String(cfg.sectionTitleScale));
     root.style.setProperty('--vertical-padding-scale', String(cfg.verticalPaddingScale));
 
     // Apply card style

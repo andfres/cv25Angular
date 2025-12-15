@@ -12,47 +12,49 @@ import { ConfigService } from '../../services/config.service';
       <div class="version-info">
         <span class="version-label">v1.0.0</span>
       </div>
-      <!-- Font Control -->
-      <div class="control-section">
-        <label class="control-label">Font Scale: {{ fontScale | number: '1.2-2' }}</label>
-        <input
-          type="range"
-          [value]="fontScale"
-          (input)="onFontScaleChange($event)"
-          min="0.6"
-          max="1.4"
-          step="0.05"
-          class="control-slider"
-        />
-        <div class="control-buttons">
-          <button (click)="setFontScale(0.8)" class="control-btn">80%</button>
-          <button (click)="setFontScale(0.85)" class="control-btn">85%</button>
-          <button (click)="setFontScale(0.9)" class="control-btn">90%</button>
-          <button (click)="setFontScale(1.0)" class="control-btn">100%</button>
-          <button (click)="setFontScale(1.1)" class="control-btn">110%</button>
-        </div>
-      </div>
 
-      <!-- Profile Font Control -->
+      <!-- Name Font Control -->
       <div class="control-section">
         <label class="control-label"
-          >Profile Font Scale: {{ profileFontScale | number: '1.2-2' }}</label
+          >Name Scale: {{ nameScale | number: '1.2-2' }}</label
         >
         <input
           type="range"
-          [value]="profileFontScale"
-          (input)="onProfileFontScaleChange($event)"
-          min="0.6"
-          max="1.6"
+          [value]="nameScale"
+          (input)="onNameScaleChange($event)"
+          min="0.8"
+          max="2.0"
           step="0.05"
           class="control-slider"
         />
         <div class="control-buttons">
-          <button (click)="setProfileFontScale(0.8)" class="control-btn">80%</button>
-          <button (click)="setProfileFontScale(0.9)" class="control-btn">90%</button>
-          <button (click)="setProfileFontScale(1.0)" class="control-btn">100%</button>
-          <button (click)="setProfileFontScale(1.2)" class="control-btn">120%</button>
-          <button (click)="setProfileFontScale(1.4)" class="control-btn">140%</button>
+          <button (click)="setNameScale(0.9)" class="control-btn">90%</button>
+          <button (click)="setNameScale(1.0)" class="control-btn">100%</button>
+          <button (click)="setNameScale(1.2)" class="control-btn">120%</button>
+          <button (click)="setNameScale(1.5)" class="control-btn">150%</button>
+        </div>
+      </div>
+
+      <!-- Section Title Font Control -->
+      <div class="control-section">
+        <label class="control-label"
+          >Section Titles Scale: {{ sectionTitleScale | number: '1.2-2' }}</label
+        >
+        <input
+          type="range"
+          [value]="sectionTitleScale"
+          (input)="onSectionTitleScaleChange($event)"
+          min="0.8"
+          max="2.5"
+          step="0.05"
+          class="control-slider"
+        />
+        <div class="control-buttons">
+          <button (click)="setSectionTitleScale(0.9)" class="control-btn">90%</button>
+          <button (click)="setSectionTitleScale(1.0)" class="control-btn">100%</button>
+          <button (click)="setSectionTitleScale(1.3)" class="control-btn">130%</button>
+          <button (click)="setSectionTitleScale(1.6)" class="control-btn">160%</button>
+          <button (click)="setSectionTitleScale(2.0)" class="control-btn">200%</button>
         </div>
       </div>
 
@@ -352,8 +354,8 @@ import { ConfigService } from '../../services/config.service';
   ],
 })
 export class UnifiedControlComponent {
-  fontScale = 1;
-  profileFontScale = 1;
+  nameScale = 1;
+  sectionTitleScale = 1;
   asideWidth = 20;
   verticalPaddingScale = 1;
   sortByDate = true;
@@ -364,8 +366,8 @@ export class UnifiedControlComponent {
 
   constructor(private config: ConfigService) {
     const s = this.config.state;
-    this.fontScale = s.fontScale;
-    this.profileFontScale = s.profileFontScale;
+    this.nameScale = s.nameScale || 1;
+    this.sectionTitleScale = s.sectionTitleScale || 1;
     this.asideWidth = s.asideWidth ?? 20;
     this.verticalPaddingScale = s.verticalPaddingScale;
 
@@ -380,8 +382,8 @@ export class UnifiedControlComponent {
 
     // subscribe to changes
     this.config.state$.subscribe((cfg) => {
-      this.fontScale = cfg.fontScale;
-      this.profileFontScale = cfg.profileFontScale;
+      this.nameScale = cfg.nameScale || 1;
+      this.sectionTitleScale = cfg.sectionTitleScale || 1;
       this.asideWidth = cfg.asideWidth ?? 20;
       this.verticalPaddingScale = cfg.verticalPaddingScale;
 
@@ -393,18 +395,18 @@ export class UnifiedControlComponent {
     });
   }
 
-  onFontScaleChange(event: Event): void {
+  onNameScaleChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     const scale = parseFloat(target.value);
-    this.config.set({ fontScale: scale });
-    this.logCurrentConfiguration('🔤 Font Scale Applied');
+    this.config.set({ nameScale: scale });
+    this.logCurrentConfiguration('👤 Name Scale Applied');
   }
 
-  onProfileFontScaleChange(event: Event): void {
+  onSectionTitleScaleChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     const scale = parseFloat(target.value);
-    this.config.set({ profileFontScale: scale });
-    this.logCurrentConfiguration('👤 Profile Font Scale Applied');
+    this.config.set({ sectionTitleScale: scale });
+    this.logCurrentConfiguration('📑 Section Title Scale Applied');
   }
 
   onAsideWidthChange(event: Event): void {
@@ -453,14 +455,14 @@ export class UnifiedControlComponent {
   }
 
   // Add direct setter methods used by template buttons
-  setFontScale(scale: number): void {
-    this.config.set({ fontScale: scale });
-    this.logCurrentConfiguration('🔤 Font Scale Applied');
+  setNameScale(scale: number): void {
+    this.config.set({ nameScale: scale });
+    this.logCurrentConfiguration('👤 Name Scale Applied');
   }
 
-  setProfileFontScale(scale: number): void {
-    this.config.set({ profileFontScale: scale });
-    this.logCurrentConfiguration('👤 Profile Font Scale Applied');
+  setSectionTitleScale(scale: number): void {
+    this.config.set({ sectionTitleScale: scale });
+    this.logCurrentConfiguration('📑 Section Title Scale Applied');
   }
 
   setAsideWidth(width: number): void {
@@ -498,14 +500,14 @@ export class UnifiedControlComponent {
     const config = {
       action: action,
       timestamp: new Date().toLocaleTimeString(),
-      configuration: {
-        fontScale: {
-          value: this.fontScale,
-          percentage: Math.round(this.fontScale * 100) + '%',
+      scales: {
+        nameScale: {
+          value: this.nameScale,
+          percentage: Math.round(this.nameScale * 100) + '%',
         },
-        profileFontScale: {
-          value: this.profileFontScale,
-          percentage: Math.round(this.profileFontScale * 100) + '%',
+        sectionTitleScale: {
+          value: this.sectionTitleScale,
+          percentage: Math.round(this.sectionTitleScale * 100) + '%',
         },
         asideWidth: {
           value: this.asideWidth,
@@ -527,8 +529,8 @@ export class UnifiedControlComponent {
 
     console.log('🎛️ CV Configuration Applied:', config);
     console.log('📋 Copy this configuration for print styles:', {
-      fontScale: this.fontScale,
-      profileFontScale: this.profileFontScale,
+      nameScale: this.nameScale,
+      sectionTitleScale: this.sectionTitleScale,
       asideWidth: this.asideWidth,
       sortByDate: this.sortByDate,
       photoOnTop: this.photoOnTop,

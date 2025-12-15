@@ -18,6 +18,7 @@ export class App implements OnInit {
   cvData: any; // Se cargará dinámicamente
   profileImage: string = './assets/yo2.jpg'; // Ruta estática de la imagen de perfil
   currentLanguageDisplay: string = ''; // Nueva propiedad para mostrar el idioma actual
+  showRedGuide: boolean = false; // Controla la visibilidad de la guía roja
 
   constructor(
     public translate: TranslateService,
@@ -80,5 +81,9 @@ export class App implements OnInit {
 
   getAvailableLanguages(): readonly string[] {
     return this.translate.getLangs();
+  }
+
+  onControlsExpanded(isExpanded: boolean): void {
+    this.showRedGuide = isExpanded;
   }
 }

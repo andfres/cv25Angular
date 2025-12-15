@@ -64,30 +64,33 @@
 
 /* You can add global styles to this file, and also import other style files */
 
+/* Import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 /* Font Size Control System */
 :root {
-  --font-scale: 0.85;
-  /* Global font scale - change this to adjust all text sizes (85% for A4) */
-  --profile-font-scale: 1;
-  /* Profile font scale - change this to adjust profile text sizes (name, title) */
+  --name-scale: 1;
+  /* Name scale - change this to adjust the profile name and title size */
+  --section-title-scale: 1;
+  /* Section title scale - change this to adjust section titles (About Me, Experience, etc.) */
 
-  /* Base font sizes (will be multiplied by --font-scale) */
-  --font-xs: calc(0.75rem * var(--font-scale));
-  /* 12px * scale */
-  --font-sm: calc(0.875rem * var(--font-scale));
-  /* 14px * scale */
-  --font-base: calc(1rem * var(--font-scale));
-  /* 16px * scale */
-  --font-lg: calc(1.125rem * var(--font-scale));
-  /* 18px * scale */
-  --font-xl: calc(1.25rem * var(--font-scale));
-  /* 20px * scale */
-  --font-2xl: calc(1.5rem * var(--font-scale));
-  /* 24px * scale */
-  --font-3xl: calc(1.875rem * var(--font-scale));
-  /* 30px * scale */
-  --font-4xl: calc(2.25rem * var(--font-scale));
-  /* 36px * scale */
+  /* Base font sizes - fixed, not scaled */
+  --font-xs: 0.75rem;
+  /* 12px */
+  --font-sm: 0.875rem;
+  /* 14px */
+  --font-base: 1rem;
+  /* 16px */
+  --font-lg: 1.125rem;
+  /* 18px */
+  --font-xl: 1.25rem;
+  /* 20px */
+  --font-2xl: 1.5rem;
+  /* 24px */
+  --font-3xl: 1.875rem;
+  /* 30px */
+  --font-4xl: 2.25rem;
+  /* 36px */
 }
 
 /* Padding Control System */
@@ -302,7 +305,7 @@ body {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   background-color: #f0f2f5;
   /* Light grey background for the body */
 }
@@ -347,7 +350,7 @@ body {
 
 /* Global section title style used by About Me, Languages, Experience, etc. */
 .section-title {
-  font-size: var(--font-xl);
+  font-size: calc(var(--font-xl) * var(--section-title-scale));
   font-weight: 700;
   color: #1f2937;
   /* text-gray-800 */
@@ -551,19 +554,19 @@ body {
    CV CONTENT COMPONENT STYLES
    ======================================== */
 .name {
-  font-size: calc(var(--font-2xl) * var(--profile-font-scale, 1));
+  font-size: calc(var(--font-2xl) * var(--name-scale));
   font-weight: bold;
   margin-bottom: var(--padding-sm);
 }
 
 .title {
-  font-size: calc(var(--font-lg) * var(--profile-font-scale, 1));
+  font-size: calc(var(--font-lg) * var(--name-scale));
   margin-bottom: var(--padding-xs);
 }
 
 .linkedin,
 .github {
-  font-size: calc(var(--font-base) * var(--profile-font-scale, 1));
+  font-size: var(--font-base);
   margin-top: var(--padding-xs);
 }
 

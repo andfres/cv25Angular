@@ -251,16 +251,18 @@ export class ToolbarComponent {
   @Input() currentLanguage: string = 'en';
   @Output() languageChange = new EventEmitter<string>();
   @Output() print = new EventEmitter<void>();
+  @Output() controlsExpanded = new EventEmitter<boolean>();
 
-  isExpanded = false;
   isVisible = true;
-
-  toggleControls(): void {
-    this.isExpanded = !this.isExpanded;
-  }
+  isExpanded = false;
 
   toggleVisibility(): void {
     this.isVisible = !this.isVisible;
+  }
+
+  toggleControls(): void {
+    this.isExpanded = !this.isExpanded;
+    this.controlsExpanded.emit(this.isExpanded);
   }
 
   onLanguageChange(lang: string): void {

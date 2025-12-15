@@ -19,7 +19,7 @@
         "email": "andfres@gmail.com",
         "linkedin": "https://www.linkedin.com/in/your-profile",
         "github": "https://github.com/andres",
-        "objective": "Frontend technical lead with experience in Vue.js, Angular, and React (legacy and hooks), building applications from scratch and maintaining existing projects. Experienced with Spring Boot, expanding APIs and migrating authentication to JWT on both frontend and backend. Passionate about the Vue ecosystem, especially Pinia for state management, and always looking to improve developer experience."
+        "objective": "Hello, I’m Andrés, a proactive frontend engineer with strong experience in Vue.js, Angular, and React (legacy and hooks). I enjoy building scalable and maintainable applications, mentoring teams, improving workflows, and exploring new technologies. Highly collaborative, I value clear communication, problem-solving, and continuous learning."
     },
     "experience": [
         {
@@ -29,10 +29,10 @@
             "location": "Valladolid, Spain",
             "roles": [
                 {
-                    "title": "Engineer",
+                    "title": "Frontend technical lead",
                     "startDate": "2024-03-01",
                     "endDate": "present",
-                    "summary": "Frontend technical lead, making architectural decisions and overseeing accessibility and security. Developing new applications and maintaining existing ones. Mentoring and sharing knowledge, always seeking to simplify work and improve developer experience."
+                    "summary": "Making architectural decisions and overseeing accessibility and security while operating at near-senior level. Developing new applications and maintaining existing ones. Mentoring and sharing knowledge, always seeking to simplify work and improve developer experience."
                 },
                 {
                     "title": "Junior Developer",
@@ -49,23 +49,12 @@
             ],
             "technologies": [
                 "Vue 3",
-                "Pinia",
-                "Vuex",
-                "Vite",
                 "React",
-                "Redux",
-                "Angular",
                 "TypeScript",
                 "Tailwind",
                 "FormKit",
-                "Spring Boot",
-                "JWT",
-                "Azure AD",
-                "JasperReports",
-                "Thymeleaf",
-                "SQL",
-                "Git",
-                "S3 AWS"
+                "Vite",
+                "Spring Boot"
             ]
         },
         {
@@ -89,7 +78,6 @@
             ],
             "technologies": [
                 "InDesign",
-                "Photoshop",
                 "ExtendScript",
                 "Regular Expressions",
                 "Accessibility",
@@ -111,7 +99,8 @@
                 "CSS",
                 "JavaScript",
                 "PHP",
-                "MySQL"
+                "SQL",
+                "Git"
             ]
         },
         {
