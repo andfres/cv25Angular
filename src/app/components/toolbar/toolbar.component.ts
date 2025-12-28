@@ -229,7 +229,8 @@ import { UnifiedControlComponent } from '../unified-control/unified-control.comp
     }
 
     .controls-panel.expanded {
-      max-height: 800px;
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
     }
 
     /* Responsive */

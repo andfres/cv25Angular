@@ -69,6 +69,8 @@
 
 /* Font Size Control System */
 :root {
+  --base-font-scale: 1;
+  /* Base font scale - change this to adjust normal text size (not titles) */
   --name-scale: 1;
   /* Name scale - change this to adjust the profile name and title size */
   --section-title-scale: 1;
@@ -544,7 +546,7 @@ body {
 }
 
 .summary-text {
-  font-size: var(--font-base);
+  font-size: calc(var(--font-base) * var(--base-font-scale));
   color: #374151;
   line-height: 1.5;
   margin-bottom: 0.5rem;
@@ -562,11 +564,19 @@ body {
 .title {
   font-size: calc(var(--font-lg) * var(--name-scale));
   margin-bottom: var(--padding-xs);
+  color: var(--exp-text-dark);
+  /* Dynamic color based on Experience Color theme */
+  font-weight: 600;
+}
+
+.location,
+.email {
+  font-size: calc(var(--font-base) * var(--base-font-scale));
 }
 
 .linkedin,
 .github {
-  font-size: var(--font-base);
+  font-size: calc(var(--font-base) * var(--base-font-scale));
   margin-top: var(--padding-xs);
 }
 
@@ -619,7 +629,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .main-content {
@@ -671,6 +681,7 @@ body {
 
 .personal-info {
   padding: var(--padding-md);
+  padding-right: 0;
 }
 
 .personal-info-block {
@@ -682,7 +693,7 @@ body {
 }
 
 .objective {
-  font-size: var(--font-sm);
+  font-size: calc(var(--font-sm) * var(--base-font-scale));
   line-height: 1.6;
 }
 
@@ -742,7 +753,7 @@ body {
 }
 
 .role-summary {
-  font-size: var(--font-sm);
+  font-size: calc(var(--font-sm) * var(--base-font-scale));
 }
 
 .education-company {
@@ -775,9 +786,10 @@ body {
 }
 
 .languages-section .language-item {
-  font-size: var(--font-sm);
+  font-size: calc(var(--font-base) * var(--base-font-scale));
   color: #374151;
   margin-bottom: 0.5rem;
+  line-height: 1.6;
 }
 
 /* ========================================

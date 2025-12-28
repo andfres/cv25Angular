@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 export interface CvConfig {
+  baseFontScale: number;
   nameScale: number;
   sectionTitleScale: number;
   verticalPaddingScale: number;
@@ -14,13 +15,14 @@ export interface CvConfig {
 }
 
 const DEFAULT: CvConfig = {
+  baseFontScale: 1.0,
   nameScale: 1.0,
   sectionTitleScale: 1.0,
   verticalPaddingScale: 0.8,
   sortByDate: false,
   photoOnTop: false,
-  asideWidth: 20,
-  experienceTheme: 'blue',
+  asideWidth: 14,
+  experienceTheme: 'purple',
   educationTheme: 'green',
   cardStyle: 'outlined',
 };
@@ -103,8 +105,7 @@ const EDUCATION_THEMES: { [key: string]: any } = {
 
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
-  private key = 'cv_config_v3';
-  private subj = new BehaviorSubject<CvConfig>(this.load() || DEFAULT);
+  private subj = new BehaviorSubject<CvConfig>(DEFAULT);
   state$ = this.subj.asObservable();
 
   get state(): CvConfig {
@@ -114,12 +115,12 @@ export class ConfigService {
   set(partial: Partial<CvConfig>) {
     const next = { ...this.state, ...partial };
     this.subj.next(next);
-    this.save(next);
     this.apply(next);
   }
 
   apply(cfg: CvConfig) {
     const root = document.documentElement;
+    root.style.setProperty('--base-font-scale', String(cfg.baseFontScale));
     root.style.setProperty('--name-scale', String(cfg.nameScale));
     root.style.setProperty('--section-title-scale', String(cfg.sectionTitleScale));
     root.style.setProperty('--vertical-padding-scale', String(cfg.verticalPaddingScale));
@@ -140,24 +141,8 @@ export class ConfigService {
     });
   }
 
-  private save(cfg: CvConfig) {
-    try {
-      localStorage.setItem(this.key, JSON.stringify(cfg));
-    } catch {
-      /* ignore */
-    }
-  }
-
-  private load(): CvConfig | null {
-    try {
-      return JSON.parse(localStorage.getItem(this.key) || 'null');
-    } catch {
-      return null;
-    }
-  }
-
   init() {
-    // Apply saved or default config to document
+    // Apply default config to document
     this.apply(this.state);
   }
 }

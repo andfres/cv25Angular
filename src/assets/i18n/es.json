@@ -14,12 +14,12 @@
   },
   "personalInfo": {
     "name": "Andrés Fresno Bausela",
-    "title": "Ingeniero Fullstack",
+    "title": "Front-oriented Fullstack",
     "location": "Valladolid, España",
     "email": "andfres@gmail.com",
-    "linkedin": "https://www.linkedin.com/in/your-profile",
-    "github": "https://github.com/andres",
-    "objective": "Hola, soy Andrés, un ingeniero frontend proactivo con sólida experiencia en Vue.js, Angular y React (legacy y hooks). Disfruto construyendo aplicaciones escalables y mantenibles, mentorizando equipos, mejorando flujos de trabajo y explorando nuevas tecnologías. Altamente colaborativo, valoro la comunicación clara, la resolución de problemas y el aprendizaje continuo."
+    "linkedin": "https://www.linkedin.com/in/andres-fresno-bausela",
+    "github": "https://github.com/andfres",
+    "objective": "Ingeniero frontend proactivo con experiencia en Vue.js, Angular y React. Disfruto construyendo aplicaciones escalables, mentorizando equipos y explorando nuevas tecnologías. Valoro la comunicación clara y el aprendizaje continuo."
   },
   "experience": [
     {
@@ -51,7 +51,6 @@
         "Vue 3",
         "React",
         "TypeScript",
-        "Tailwind",
         "FormKit",
         "Vite",
         "Spring Boot"
@@ -119,8 +118,8 @@
     }
   ],
   "languages": [
-    "Inglés",
-    "Español",
-    "Italiano"
+    "Inglés - Intermedio",
+    "Español - Nativo",
+    "Italiano - Fluido"
   ]
 }

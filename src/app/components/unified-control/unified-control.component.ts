@@ -58,6 +58,28 @@ import { ConfigService } from '../../services/config.service';
         </div>
       </div>
 
+      <!-- Base Font Scale Control -->
+      <div class="control-section">
+        <label class="control-label"
+          >Base Font Scale: {{ baseFontScale | number: '1.2-2' }}</label
+        >
+        <input
+          type="range"
+          [value]="baseFontScale"
+          (input)="onBaseFontScaleChange($event)"
+          min="0.7"
+          max="1.3"
+          step="0.05"
+          class="control-slider"
+        />
+        <div class="control-buttons">
+          <button (click)="setBaseFontScale(0.8)" class="control-btn">80%</button>
+          <button (click)="setBaseFontScale(0.9)" class="control-btn">90%</button>
+          <button (click)="setBaseFontScale(1.0)" class="control-btn">100%</button>
+          <button (click)="setBaseFontScale(1.1)" class="control-btn">110%</button>
+        </div>
+      </div>
+
       <!-- Aside Width Control -->
       <div class="control-section">
         <label class="control-label">Aside Width: {{ asideWidth | number: '1.0-2' }}rem</label>
@@ -354,6 +376,7 @@ import { ConfigService } from '../../services/config.service';
   ],
 })
 export class UnifiedControlComponent {
+  baseFontScale = 1;
   nameScale = 1;
   sectionTitleScale = 1;
   asideWidth = 20;
@@ -366,6 +389,7 @@ export class UnifiedControlComponent {
 
   constructor(private config: ConfigService) {
     const s = this.config.state;
+    this.baseFontScale = s.baseFontScale || 1;
     this.nameScale = s.nameScale || 1;
     this.sectionTitleScale = s.sectionTitleScale || 1;
     this.asideWidth = s.asideWidth ?? 20;
@@ -382,6 +406,7 @@ export class UnifiedControlComponent {
 
     // subscribe to changes
     this.config.state$.subscribe((cfg) => {
+      this.baseFontScale = cfg.baseFontScale || 1;
       this.nameScale = cfg.nameScale || 1;
       this.sectionTitleScale = cfg.sectionTitleScale || 1;
       this.asideWidth = cfg.asideWidth ?? 20;
@@ -407,6 +432,13 @@ export class UnifiedControlComponent {
     const scale = parseFloat(target.value);
     this.config.set({ sectionTitleScale: scale });
     this.logCurrentConfiguration('📑 Section Title Scale Applied');
+  }
+
+  onBaseFontScaleChange(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const scale = parseFloat(target.value);
+    this.config.set({ baseFontScale: scale });
+    this.logCurrentConfiguration('📝 Base Font Scale Applied');
   }
 
   onAsideWidthChange(event: Event): void {
@@ -475,6 +507,11 @@ export class UnifiedControlComponent {
     this.logCurrentConfiguration('📐 Vertical Padding Scale Applied');
   }
 
+  setBaseFontScale(scale: number): void {
+    this.config.set({ baseFontScale: scale });
+    this.logCurrentConfiguration('📝 Base Font Scale Applied');
+  }
+
   notifySortingChange(): void {
     // Emit event to parent component or use a service to communicate with timeline
     const event = new CustomEvent('sortingChanged', {
@@ -501,6 +538,10 @@ export class UnifiedControlComponent {
       action: action,
       timestamp: new Date().toLocaleTimeString(),
       scales: {
+        baseFontScale: {
+          value: this.baseFontScale,
+          percentage: Math.round(this.baseFontScale * 100) + '%',
+        },
         nameScale: {
           value: this.nameScale,
           percentage: Math.round(this.nameScale * 100) + '%',

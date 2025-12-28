@@ -1,104 +1,95 @@
 <main class="a4-page">
   @if (photoOnTop) {
-    <!-- Layout alternativo -->
+  <!-- Layout alternativo -->
 
-    <div class="profile-and-info">
-      <div class="profile-image-container profile-image-top">
-        <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}" class="profile-image" />
-      </div>
-
-      <div class="personal-info">
-        <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
-        <p class="title">{{ 'personalInfo.title' | translate }}</p>
-        <p class="location">{{ 'personalInfo.location' | translate }}</p>
-        <p class="email">{{ 'personalInfo.email' | translate }}</p>
-        @if ('personalInfo.linkedin' | translate; as linkedin) {
-          @if (linkedin && linkedin !== 'personalInfo.linkedin') {
-            <p class="linkedin">
-              <a [href]="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </p>
-          }
-        }
-        @if ('personalInfo.github' | translate; as github) {
-          @if (github && github !== 'personalInfo.github') {
-            <p class="github">
-              <a [href]="github" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </p>
-          }
-        }
-      </div>
+  <div class="profile-and-info">
+    <div class="profile-image-container profile-image-top">
+      <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}" class="profile-image" />
     </div>
 
-    <div class="flexaf">
-      <aside class="profile-personal-info-group afborder">
-        <div class="about-me-section">
-          <h2 class="section-title">About Me</h2>
-          <p class="objective" [innerHtml]="sanitizedObjective"></p>
-        </div>
-        <app-languages [languages]="cvData.languages"></app-languages>
-      </aside>
-
-      <!-- Main content (columna derecha 60%) -->
-      <section class="main-content">
-        <app-timeline [entries]="combinedEntries"></app-timeline>
-      </section>
+    <div class="personal-info">
+      <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
+      <p class="title">{{ 'personalInfo.title' | translate }}</p>
+      <p class="location">{{ 'personalInfo.location' | translate }}</p>
+      <p class="email">{{ 'personalInfo.email' | translate }}</p>
+      @if ('personalInfo.linkedin' | translate; as linkedin) {
+      @if (linkedin && linkedin !== 'personalInfo.linkedin') {
+      <p class="linkedin">
+        <a [href]="linkedin" target="_blank" rel="noopener noreferrer">{{ linkedin }}</a>
+      </p>
+      }
+      }
+      @if ('personalInfo.github' | translate; as github) {
+      @if (github && github !== 'personalInfo.github') {
+      <p class="github">
+        <a [href]="github" target="_blank" rel="noopener noreferrer">{{ github }}</a>
+      </p>
+      }
+      }
     </div>
+  </div>
+
+  <div class="flexaf">
+    <aside class="profile-personal-info-group afborder">
+      <div class="about-me-section">
+        <h2 class="section-title">About Me</h2>
+        <p class="objective" [innerHtml]="sanitizedObjective"></p>
+      </div>
+      <app-languages [languages]="cvData.languages"></app-languages>
+    </aside>
+
+    <!-- Main content (columna derecha 60%) -->
+    <section class="main-content">
+      <app-timeline [entries]="combinedEntries"></app-timeline>
+    </section>
+  </div>
   } @else {
-    <!-- Original layout -->
-    <!-- Aside (columna izquierda 40%) -->
-    <div class="flexaf">
-      <aside
-        class="profile-personal-info-group afborder"
-        [ngStyle]="{ width: asideWidth + 'rem', maxWidth: asideWidthPercent + '%' }"
-      >
-        <div class="profile-image-container">
-          <img
-            [src]="profileImage"
-            alt="{{ 'profile.picture' | translate }}"
-            class="profile-image"
-            style="max-width: 100%; max-height: 100%"
-          />
+  <!-- Original layout -->
+  <!-- Aside (columna izquierda 40%) -->
+  <div class="flexaf">
+    <aside class="profile-personal-info-group afborder"
+      [ngStyle]="{ width: asideWidth + 'rem', maxWidth: asideWidthPercent + '%' }">
+      <div class="profile-image-container">
+        <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}" class="profile-image"
+          style="max-width: 100%; max-height: 100%" />
+      </div>
+
+      <section class="personal-info afborder2">
+        <div class="personal-info-block afborder2">
+          <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
+          <p class="title">{{ 'personalInfo.title' | translate }}</p>
+          <p class="location">{{ 'personalInfo.location' | translate }}</p>
+          <p class="email">{{ 'personalInfo.email' | translate }}</p>
+          @if ('personalInfo.linkedin' | translate; as linkedin) {
+          @if (linkedin && linkedin !== 'personalInfo.linkedin') {
+          <p class="linkedin">
+            <a [href]="linkedin" target="_blank" rel="noopener noreferrer">{{ linkedin }}</a>
+          </p>
+          }
+          }
+          @if ('personalInfo.github' | translate; as github) {
+          @if (github && github !== 'personalInfo.github') {
+          <p class="github">
+            <a [href]="github" target="_blank" rel="noopener noreferrer">{{ github }}</a>
+          </p>
+          }
+          }
         </div>
 
-        <section class="personal-info afborder2">
-          <div class="personal-info-block afborder2">
-            <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
-            <p class="title">{{ 'personalInfo.title' | translate }}</p>
-            <p class="location">{{ 'personalInfo.location' | translate }}</p>
-            <p class="email">{{ 'personalInfo.email' | translate }}</p>
-            @if ('personalInfo.linkedin' | translate; as linkedin) {
-              @if (linkedin && linkedin !== 'personalInfo.linkedin') {
-                <p class="linkedin">
-                  <a [href]="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </p>
-              }
-            }
-            @if ('personalInfo.github' | translate; as github) {
-              @if (github && github !== 'personalInfo.github') {
-                <p class="github">
-                  <a [href]="github" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </p>
-              }
-            }
-          </div>
+        <div class="about-me-block afborder2">
+          <h2 class="section-title">About Me</h2>
+          <p class="summary-text" [innerHtml]="sanitizedObjective"></p>
+        </div>
 
-          <div class="about-me-block afborder2">
-            <h2 class="section-title">About Me</h2>
-            <p class="summary-text" [innerHtml]="sanitizedObjective"></p>
-          </div>
-
-          <app-languages [languages]="cvData.languages"></app-languages>
-        </section>
-        <!-- <app-skills [skills]="cvData.skills"></app-skills> -->
-      </aside>
-
-      <!-- Main content (columna derecha) -->
-      <section
-        class="main-content afborder"
-        [ngStyle]="{ width: 'calc(100% - ' + asideWidth + 'rem)' }"
-      >
-        <app-timeline [entries]="combinedEntries"></app-timeline>
+        <app-languages [languages]="cvData.languages"></app-languages>
       </section>
-    </div>
+      <!-- <app-skills [skills]="cvData.skills"></app-skills> -->
+    </aside>
+
+    <!-- Main content (columna derecha) -->
+    <section class="main-content afborder" [ngStyle]="{ width: 'calc(100% - ' + asideWidth + 'rem)' }">
+      <app-timeline [entries]="combinedEntries"></app-timeline>
+    </section>
+  </div>
   }
 </main>
