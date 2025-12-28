@@ -43,5 +43,8 @@
     "@angular-eslint/eslint-plugin": "^17.0.0",
     "@angular-eslint/eslint-plugin-template": "^17.0.0",
     "@angular-eslint/template-parser": "^17.0.0"
+  },
+  "volta": {
+    "node": "22.19.0"
   }
 }

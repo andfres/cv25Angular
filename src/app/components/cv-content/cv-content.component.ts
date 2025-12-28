@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CvData } from '../../models/cv.model';
 import { LanguagesComponent } from '../languages/languages.component';
@@ -13,7 +13,7 @@ import { ConfigService } from '../../services/config.service';
   imports: [CommonModule, LanguagesComponent, TranslateModule, TimelineComponent],
   templateUrl: './cv-content.component.html',
 })
-export class CvContentComponent implements OnInit, OnDestroy {
+export class CvContentComponent implements OnInit, OnChanges, OnDestroy {
   @Input() cvData!: CvData;
   @Input() profileImage!: string;
   combinedEntries: any[] = [];
@@ -48,6 +48,14 @@ export class CvContentComponent implements OnInit, OnDestroy {
     window.addEventListener('layoutChanged', this.onLayoutChanged as EventListener);
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['cvData']) {
+      console.log('CvContent ngOnChanges:', this.cvData);
+      console.log('CvContent config state:', this.config.state);
+      this.combineEntries(this.config.state.sortByDate);
+    }
+  }
+
   ngOnDestroy(): void {
     window.removeEventListener('sortingChanged', this.onSortingChanged as EventListener);
     window.removeEventListener('layoutChanged', this.onLayoutChanged as EventListener);
@@ -64,10 +72,13 @@ export class CvContentComponent implements OnInit, OnDestroy {
   };
 
   private combineEntries(sortByDate: boolean = false): void {
+    console.log('CvContent combineEntries called. SortByDate:', sortByDate);
     if (!this.cvData) {
+      console.warn('CvContent combineEntries: No cvData');
       this.combinedEntries = [];
       return;
     }
+    console.log('CvContent cvData internal:', this.cvData);
     const all = [...(this.cvData.experience || []), ...(this.cvData.education || [])];
     if (sortByDate) {
       this.combinedEntries = all.sort((a, b) => {
