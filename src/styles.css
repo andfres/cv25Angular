@@ -388,25 +388,26 @@ body {
     display: none !important;
   }
 
-  /* Forzar todo a blanco y negro */
+  /* Permitir colores en impresión */
   * {
-    color: black !important;
-    background: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Restaurar sombras si son necesarias, o dejarlas quitadas si se prefiere limpieza */
+  * {
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
-  /* Enlaces en negro con subrayado */
+  /* Enlaces con su color original */
   a {
-    color: black !important;
-    text-decoration: underline !important;
+    text-decoration: none !important;
   }
 
-  /* Technology tabs en blanco y negro */
+  /* Technology tabs con su estilo original */
   .technology-tab {
-    background-color: #f0f0f0 !important;
-    color: black !important;
-    border: 1px solid #ccc !important;
+    border: 1px solid #e5e7eb !important;
   }
 
   /* Evitar saltos de página dentro de elementos */
@@ -425,7 +426,7 @@ body {
     max-width: 210mm !important;
     min-height: 297mm !important;
     margin: 0 !important;
-    padding: 12mm 10mm !important;
+    padding: 5mm 5mm !important;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
@@ -437,6 +438,7 @@ body {
   /* Ajustar imagen de perfil para impresión */
   .profile-image {
     filter: grayscale(100%) !important;
+    padding: 0 !important;
   }
 
   /* Optimizar espacios para que quepa todo */
@@ -779,10 +781,10 @@ body {
    LANGUAGES COMPONENT STYLES
    ======================================== */
 .languages-section .section-title {
-  font-size: var(--font-xl);
-  font-weight: bold;
+  font-size: calc(var(--font-xl) * var(--section-title-scale));
+  font-weight: 700;
   color: #1f2937;
-  margin-bottom: 1rem;
+  margin-bottom: var(--vertical-padding-md);
 }
 
 .languages-section .language-item {

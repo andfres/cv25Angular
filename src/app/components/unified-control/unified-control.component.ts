@@ -570,12 +570,16 @@ export class UnifiedControlComponent {
 
     console.log('🎛️ CV Configuration Applied:', config);
     console.log('📋 Copy this configuration for print styles:', {
+      baseFontScale: this.baseFontScale,
       nameScale: this.nameScale,
       sectionTitleScale: this.sectionTitleScale,
-      asideWidth: this.asideWidth,
+      verticalPaddingScale: this.verticalPaddingScale,
       sortByDate: this.sortByDate,
       photoOnTop: this.photoOnTop,
+      asideWidth: this.asideWidth,
       experienceTheme: this.experienceTheme,
+      educationTheme: this.educationTheme,
+      cardStyle: this.cardStyle,
       sortByDateLabel: layoutHuman.sortByDate,
       layoutLabel: layoutHuman.photoOnTop,
     });

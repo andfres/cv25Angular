@@ -17,9 +17,9 @@
     "title": "Front-oriented Fullstack",
     "location": "Valladolid, España",
     "email": "andfres@gmail.com",
-    "linkedin": "https://www.linkedin.com/in/andres-fresno-bausela",
+    "linkedin": "678294117",
     "github": "https://github.com/andfres",
-    "objective": "Ingeniero frontend proactivo con experiencia en Vue.js, Angular y React. Disfruto construyendo aplicaciones escalables, mentorizando equipos y explorando nuevas tecnologías. Valoro la comunicación clara y el aprendizaje continuo."
+    "objective": "Ingeniero fullstack orientado a frontend con experiencia en Vue.js, React y Spring Boot. Disfruto creando aplicaciones escalables, mentorando equipos y cuidando la calidad del código. Participo activamente en la resolución de errores de distinto tipo."
   },
   "experience": [
     {
@@ -32,13 +32,13 @@
           "title": "Líder Técnico Frontend",
           "startDate": "2024-03-01",
           "endDate": "present",
-          "summary": "Tomando decisiones arquitectónicas y supervisando accesibilidad y seguridad mientras opero a nivel casi senior. Desarrollando nuevas aplicaciones y manteniendo las existentes. Mentorizando y compartiendo conocimiento, siempre buscando simplificar el trabajo y mejorar la experiencia del desarrollador."
+          "summary": "Toma de decisiones arquitectónicas y análisis de accesibilidad y seguridad. Desarrollo de nuevas aplicaciones y mantenimiento de las existentes. Mentoría y compartición de conocimiento, fomentando el uso de herramientas internas de IA. Propuesta de mejoras en la arquitectura y en el entorno de desarrollo, promoviendo el uso de herramientas que facilitan el trabajo diario."
         },
         {
           "title": "Desarrollador Junior",
           "startDate": "2023-04-01",
           "endDate": "2024-03-31",
-          "summary": "Desarrollé funcionalidades en Vue 3, Angular y React (legacy y hooks). Migré Spring Boot 2 a 3, modifiqué plantillas en JasperReports y Thymeleaf, y migré la autenticación de apps a Azure AD usando JWT tanto en frontend como backend. Realicé análisis técnicos y estimaciones de proyectos."
+          "summary": "Desarrollo de funcionalidades en Vue 3 y React. Participación en carve-outs y mantenimiento de aplicaciones existentes. Participación en migraciones técnicas, incluyendo versiones de Node y Spring Boot. Migración de la autenticación a Azure AD usando JWT en frontend y backend. Análisis técnico y estimaciones de proyectos."
         },
         {
           "title": "Becario",
@@ -66,19 +66,18 @@
           "title": "Maquetador del Boletín Oficial",
           "startDate": "2010-01-01",
           "endDate": "2019-12-31",
-          "summary": "Trabajé en el lanzamiento del boletín oficial para la región de Canarias."
+          "summary": "Diseño y maquetación de boletines oficiales. Gestión de formato y presentación de contenidos."
         },
         {
           "title": "Proyecto Boletín (Canarias)",
           "startDate": "2020-09-01",
           "endDate": "2021-01-31",
-          "summary": "Diseño y maquetación de boletines oficiales. Gestión de formato y presentación de contenidos."
+          "summary": "Trabajé en el lanzamiento del boletín oficial para la región de Canarias."
         }
       ],
       "technologies": [
         "InDesign",
         "ExtendScript",
-        "Expresiones Regulares",
         "Accesibilidad",
         "Gestión de Proyectos"
       ]
