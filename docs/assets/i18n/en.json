@@ -4,6 +4,7 @@
     },
     "sections": {
         "languages": "Languages",
+        "aboutMe": "About Me",
         "skills": "Skills",
         "experience": "Experience",
         "experienceTitle": "Experience",
@@ -14,12 +15,12 @@
     },
     "personalInfo": {
         "name": "Andrés Fresno Bausela",
-        "title": "Fullstack Engineer",
+        "title": "Front-oriented Fullstack",
         "location": "Valladolid, Spain",
         "email": "andfres@gmail.com",
-        "linkedin": "https://www.linkedin.com/in/your-profile",
-        "github": "https://github.com/andres",
-        "objective": "Hello, I’m Andrés, a proactive frontend engineer with strong experience in Vue.js, Angular, and React (legacy and hooks). I enjoy building scalable and maintainable applications, mentoring teams, improving workflows, and exploring new technologies. Highly collaborative, I value clear communication, problem-solving, and continuous learning."
+        "linkedin": "https://www.linkedin.com/in/andres-fresno-bausela",
+        "github": "https://github.com/andfres",
+        "objective": "Proactive frontend engineer with experience in Vue.js, Angular, and React. I enjoy building scalable applications, mentoring teams, and exploring new technologies. I like trying new technologies; this CV is built with Angular 20. You can view it online at: https://andfres.github.io/cv25Angular/"
     },
     "experience": [
         {
@@ -51,7 +52,6 @@
                 "Vue 3",
                 "React",
                 "TypeScript",
-                "Tailwind",
                 "FormKit",
                 "Vite",
                 "Spring Boot"
@@ -67,13 +67,13 @@
                     "title": "Official Newsletter Layout Designer",
                     "startDate": "2010-01-01",
                     "endDate": "2019-12-31",
-                    "summary": "Worked to launch the official newsletter for Canarias region."
+                    "summary": "Designed and laid out official newsletters. Managed content formatting and presentation."
                 },
                 {
                     "title": "Newsletter Project (Canarias)",
                     "startDate": "2020-09-01",
                     "endDate": "2021-01-31",
-                    "summary": "Designed and laid out official newsletters. Managed content formatting and presentation."
+                    "summary": "Worked to launch the official newsletter for Canarias region."
                 }
             ],
             "technologies": [
@@ -119,8 +119,8 @@
         }
     ],
     "languages": [
-        "English",
-        "Spanish",
-        "Italian"
+        "English - Intermediate",
+        "Spanish - Native",
+        "Italian - Fluent"
     ]
 }

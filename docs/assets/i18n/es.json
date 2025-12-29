@@ -1,195 +1,119 @@
 {
-  "HELLO": "¡Hola mundo!",
-  "WELCOME": "¡Bienvenido a mi aplicación!",
-
   "profile": {
-    "picture": "Imagen de Perfil"
+    "picture": "Foto de Perfil"
   },
-
   "sections": {
     "languages": "Idiomas",
+    "aboutMe": "Sobre mí",
     "skills": "Habilidades",
     "experience": "Experiencia",
+    "experienceTitle": "Experiencia",
     "education": "Educación",
-    "roles": "Roles",
-    "present": "Presente",
+    "present": "Actualidad",
     "noExperience": "No hay entradas de experiencia para mostrar.",
     "noEducation": "No hay entradas de educación para mostrar."
   },
-
   "personalInfo": {
-    "name": "Andrés Fresno",
-    "title": "Ingeniero Fullstack / Analista",
+    "name": "Andrés Fresno Bausela",
+    "title": "Front-oriented Fullstack",
     "location": "Valladolid, España",
-    "email": "tu.email@example.com",
-    "linkedin": "https://www.linkedin.com/in/tu-perfil",
-    "github": "https://github.com/andres",
-    "objective": "Buscando oportunidades en desarrollo fullstack y análisis de aplicaciones."
+    "email": "andfres@gmail.com",
+    "linkedin": "678294117",
+    "github": "https://github.com/andfres",
+    "objective": "Ingeniero fullstack orientado a frontend con experiencia en Vue.js, React y Spring Boot. Disfruto creando aplicaciones escalables, mentorando equipos y cuidando la calidad del código. Me gusta probar nuevas tecnologías; este CV está desarrollado con Angular 20. Puedes verlo online en: https://andfres.github.io/cv25Angular/"
   },
-
   "experience": [
     {
       "type": "experience",
-      "company": "Moeve / Cepsa",
-      "location": "Madrid, España",
-      "position": "Desarrollador Frontend Mid-Senior",
-      "startDate": "2024-04-01T00:00:00.000Z",
-      "endDate": "presente",
-      "logo": "assets/logos/logo_moeve_cepsa.png",
-      "logoAlt": "Logo de Moeve / Cepsa",
-      "summary": "Encargado del desarrollo frontend, implementando nuevas funcionalidades y manteniendo las existentes. Trabajé con un stack tecnológico moderno.",
-      "technologies": [
-        { "name": "Angular", "level": 90 },
-        { "name": "TypeScript", "level": 85 },
-        { "name": "HTML", "level": 90 },
-        { "name": "CSS", "level": 80 },
-        { "name": "RxJS", "level": 75 },
-        { "name": "Nx", "level": 70 },
-        { "name": "Azure DevOps", "level": 70 }
-      ],
-      "showLogo": false
-    },
-    {
-      "type": "experience",
+      "order": 1,
       "company": "NTT Data",
       "location": "Valladolid, España",
-      "position": "Ingeniero Frontend Responsable",
-      "startDate": "2024-04-01T00:00:00.000Z",
-      "endDate": "presente",
-      "summary": "Liderar el desarrollo frontend para la aplicación web corporativa. Mentorizar a desarrolladores junior, definir la arquitectura y coordinar con los equipos de backend y UX.",
-      "technologies": [
-        { "name": "Vue 3", "level": 90 },
-        { "name": "Pinia", "level": 85 },
-        { "name": "React", "level": 80 },
-        { "name": "Spring Boot", "level": 80 },
-        { "name": "SQL", "level": 75 },
-        { "name": "CI/CD", "level": 70 },
-        { "name": "AWS", "level": 65 }
-      ],
-      "showLogo": true
-    },
-    {
-      "type": "experience",
-      "company": "NTT Data",
-      "location": "Valladolid, España",
-      "position": "Ingeniero Fullstack",
-      "startDate": "2023-01-01T00:00:00.000Z",
-      "endDate": "2024-03-31T23:59:59.999Z",
-      "logo": "assets/logos/logo_ntt2.png",
-      "logoAlt": "Logo de NTT Data",
       "roles": [
         {
-          "title": "Becario",
-          "startDate": "2023-01-01T00:00:00.000Z",
-          "endDate": "2023-03-31T23:59:59.999Z",
-          "summary": "3 meses de prácticas. Asistí en tareas de frontend y backend, aprendí procesos y herramientas internas.",
-          "technologies": [
-            { "name": "Angular", "level": 60 },
-            { "name": "TypeScript", "level": 50 },
-            { "name": "HTML", "level": 70 },
-            { "name": "CSS", "level": 50 }
-          ],
-          "showLogo": false
+          "title": "Líder Técnico Frontend",
+          "startDate": "2024-03-01",
+          "endDate": "present",
+          "summary": "Toma de decisiones arquitectónicas y análisis de accesibilidad y seguridad. Desarrollo de nuevas aplicaciones y mantenimiento de las existentes. Mentoría y transferencia de conocimiento, fomentando el uso de herramientas internas de IA. Propuesta de mejoras en la arquitectura y en el entorno de desarrollo, promoviendo el uso de herramientas que facilitan el trabajo diario."
         },
         {
           "title": "Desarrollador Junior",
-          "startDate": "2023-04-01T00:00:00.000Z",
-          "endDate": "2024-03-31T23:59:59.999Z",
-          "summary": "1 año como junior. Desarrollé funcionalidades en Vue 3, React, Spring Boot. Participé en revisiones de código y estimación de pequeñas aplicaciones.",
-          "technologies": [
-            { "name": "Vue 3", "level": 80 },
-            { "name": "React", "level": 70 },
-            { "name": "Spring Boot", "level": 70 },
-            { "name": "Java", "level": 65 },
-            { "name": "SQL", "level": 60 }
-          ],
-          "showLogo": false
+          "startDate": "2023-04-01",
+          "endDate": "2024-03-31",
+          "summary": "Desarrollo de funcionalidades en Vue 3 y React. Participación en carve-outs y mantenimiento de aplicaciones existentes. Participación en migraciones técnicas, incluyendo versiones de Node y Spring Boot. Migración de la autenticación a Azure AD usando JWT en frontend y backend. Análisis técnico y estimaciones de proyectos."
         }
+      ],
+      "technologies": [
+        "Vue 3",
+        "React",
+        "TypeScript",
+        "FormKit",
+        "Vite",
+        "Spring Boot"
       ]
     },
     {
       "type": "experience",
+      "order": 3,
       "company": "Alcañiz Fresnos",
       "location": "Valladolid, España",
-      "position": "Diseñador de Maquetación de Boletín Oficial",
-      "startDate": "2010-01-01T00:00:00.000Z",
-      "endDate": "2019-12-31T23:59:59.999Z",
-      "logo": "assets/logos/logo_af.png",
-      "logoAlt": "Logo de Alcañiz Fresnos",
-      "summary": "Diseñé y maqueté boletines oficiales. Gestioné el formato y la presentación del contenido.",
-      "technologies": [
-        { "name": "Newsletter Layout Design", "level": 70 },
-        { "name": "InDesign", "level": 80 },
-        { "name": "Photoshop", "level": 70 },
-        { "name": "Expresiones regulares", "level": 75 },
-        { "name": "OCR", "level": 65 },
-        { "name": "Accesibilidad", "level": 70 }
+      "roles": [
+        {
+          "title": "Maquetador del Boletín Oficial",
+          "startDate": "2007-01-01",
+          "endDate": "2017-12-31",
+          "summary": "Desarrollo de scripts (ExtendScript/RegEx) para automatizar el maquetado, ahorrando horas diarias de trabajo manual. Liderazgo de equipo en boletines oficiales (Junta y Cortes de CyL)."
+        },
+        {
+          "title": "Proyecto Boletín (Canarias)",
+          "startDate": "2020-09-01",
+          "endDate": "2021-01-31",
+          "summary": "Dirigí la implantación del boletín oficial para la región de Canarias."
+        }
       ],
-      "showLogo": false
-    },
-    {
-      "type": "experience",
-      "company": "Friul Intagli",
-      "location": "Patra di Pordenone, Italy",
-      "position": "Factory Operator",
-      "startDate": "2010-01-01T00:00:00.000Z",
-      "endDate": "2019-12-31T23:59:59.999Z",
-      "logo": "assets/logos/logo_fi.png",
-      "logoAlt": "Logo de Friul Intagli",
-      "summary": "Worked as a factory operator.",
       "technologies": [
-        { "name": "Teamwork", "level": 75 },
-        { "name": "Italian Language", "level": 60 }
-      ],
-      "showLogo": false
+        "InDesign",
+        "ExtendScript",
+        "Accesibilidad",
+        "Gestión de Proyectos"
+      ]
     }
   ],
-
   "education": [
     {
       "type": "education",
-      "company": "Instituto Ribera de Castilla",
-      "position": "Curso de Especialización en IA y Big Data",
-      "startDate": "2025-01-01T00:00:00.000Z",
-      "endDate": "2025-06-30T23:59:59.999Z",
+      "order": 2,
+      "degree": "Técnico Superior en Desarrollo de Aplicaciones Web",
+      "institution": "IES Ribera de Castilla",
+      "location": "Valladolid, España",
+      "startDate": "2020-01-01",
+      "endDate": "2023-12-31",
       "technologies": [
-        { "name": "Python", "level": 85 },
-        { "name": "TensorFlow", "level": 75 },
-        { "name": "BigQuery", "level": 70 },
-        { "name": "GCP", "level": 70 }
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "SQL",
+        "Git"
       ]
     },
     {
       "type": "education",
-      "company": "Instituto Ribera de Castilla",
-      "position": "Formación Profesional en Desarrollo de Aplicaciones Web",
-      "startDate": "2020-01-01T00:00:00.000Z",
-      "endDate": "2022-12-31T23:59:59.999Z",
+      "order": 2,
+      "degree": "Curso de Especialización en IA y Big Data (300h)",
+      "institution": "IES Ribera de Castilla",
+      "location": "Valladolid, España",
+      "startDate": "2025-01-01",
+      "endDate": "2025-06-30",
       "technologies": [
-        { "name": "HTML", "level": 80 },
-        { "name": "CSS", "level": 75 },
-        { "name": "JavaScript", "level": 70 },
-        { "name": "PHP", "level": 65 },
-        { "name": "MySQL", "level": 60 }
+        "Python",
+        "TensorFlow",
+        "BigQuery"
       ]
     }
   ],
-
-  "skills": [
-    { "name": "Vue 3", "level": 90 },
-    { "name": "React", "level": 85 },
-    { "name": "React Legacy", "level": 60 },
-    { "name": "Spring Boot", "level": 80 },
-    { "name": "SQL", "level": 75 },
-    { "name": "CI/CD", "level": 70 },
-    { "name": "Estimación y Definición de Aplicaciones", "level": 85 },
-    { "name": "Análisis de Proyectos", "level": 80 },
-    { "name": "Diseño de Maquetación de Boletines", "level": 70 }
-  ],
-
   "languages": [
-    { "name": "Inglés", "level": 90 },
-    { "name": "Español", "level": 100 },
-    { "name": "Italiano", "level": 60 }
+    "Español - Nativo",
+    "Italiano - Fluido (2 años viviendo y trabajando en Italia 2018-2019)",
+    "Inglés - Fluidez profesional"
   ]
 }
