@@ -4,6 +4,7 @@
   },
   "sections": {
     "languages": "Idiomas",
+    "aboutMe": "Sobre mí",
     "skills": "Habilidades",
     "experience": "Experiencia",
     "experienceTitle": "Experiencia",
@@ -19,7 +20,7 @@
     "email": "andfres@gmail.com",
     "linkedin": "678294117",
     "github": "https://github.com/andfres",
-    "objective": "Ingeniero fullstack orientado a frontend con experiencia en Vue.js, React y Spring Boot. Disfruto creando aplicaciones escalables, mentorando equipos y cuidando la calidad del código. Participo activamente en la resolución de errores de distinto tipo."
+    "objective": "Ingeniero fullstack orientado a frontend con experiencia en Vue.js, React y Spring Boot. Disfruto creando aplicaciones escalables, mentorando equipos y cuidando la calidad del código. Me gusta probar nuevas tecnologías; este CV está desarrollado con Angular 20. Puedes verlo online en: https://andfres.github.io/cv25Angular/"
   },
   "experience": [
     {
@@ -32,19 +33,13 @@
           "title": "Líder Técnico Frontend",
           "startDate": "2024-03-01",
           "endDate": "present",
-          "summary": "Toma de decisiones arquitectónicas y análisis de accesibilidad y seguridad. Desarrollo de nuevas aplicaciones y mantenimiento de las existentes. Mentoría y compartición de conocimiento, fomentando el uso de herramientas internas de IA. Propuesta de mejoras en la arquitectura y en el entorno de desarrollo, promoviendo el uso de herramientas que facilitan el trabajo diario."
+          "summary": "Toma de decisiones arquitectónicas y análisis de accesibilidad y seguridad. Desarrollo de nuevas aplicaciones y mantenimiento de las existentes. Mentoría y transferencia de conocimiento, fomentando el uso de herramientas internas de IA. Propuesta de mejoras en la arquitectura y en el entorno de desarrollo, promoviendo el uso de herramientas que facilitan el trabajo diario."
         },
         {
           "title": "Desarrollador Junior",
           "startDate": "2023-04-01",
           "endDate": "2024-03-31",
           "summary": "Desarrollo de funcionalidades en Vue 3 y React. Participación en carve-outs y mantenimiento de aplicaciones existentes. Participación en migraciones técnicas, incluyendo versiones de Node y Spring Boot. Migración de la autenticación a Azure AD usando JWT en frontend y backend. Análisis técnico y estimaciones de proyectos."
-        },
-        {
-          "title": "Becario",
-          "startDate": "2023-01-01",
-          "endDate": "2023-03-31",
-          "summary": "Prácticas de 3 meses asistiendo en tareas de frontend y backend, aprendiendo procesos y herramientas internas."
         }
       ],
       "technologies": [
@@ -66,13 +61,13 @@
           "title": "Maquetador del Boletín Oficial",
           "startDate": "2010-01-01",
           "endDate": "2019-12-31",
-          "summary": "Diseño y maquetación de boletines oficiales. Gestión de formato y presentación de contenidos."
+          "summary": "Desarrollo de scripts (ExtendScript/RegEx) para automatizar el maquetado, ahorrando horas diarias de trabajo manual. Liderazgo de equipo en boletines oficiales (Junta y Cortes de CyL)."
         },
         {
           "title": "Proyecto Boletín (Canarias)",
           "startDate": "2020-09-01",
           "endDate": "2021-01-31",
-          "summary": "Trabajé en el lanzamiento del boletín oficial para la región de Canarias."
+          "summary": "Dirigí la implantación del boletín oficial para la región de Canarias."
         }
       ],
       "technologies": [
@@ -104,7 +99,7 @@
     {
       "type": "education",
       "order": 2,
-      "degree": "Curso de Especialización en IA y Big Data",
+      "degree": "Curso de Especialización en IA y Big Data (300h)",
       "institution": "IES Ribera de Castilla",
       "location": "Valladolid, España",
       "startDate": "2025-01-01",
@@ -117,8 +112,8 @@
     }
   ],
   "languages": [
-    "Inglés - Intermedio",
     "Español - Nativo",
-    "Italiano - Fluido"
+    "Italiano - Fluido (2 años viviendo y trabajando en Italia)",
+    "Inglés - Fluidez profesional"
   ]
 }

@@ -21,7 +21,7 @@ const DEFAULT: CvConfig = {
   verticalPaddingScale: 0.8,
   sortByDate: false,
   photoOnTop: false,
-  asideWidth: 13,
+  asideWidth: 16,
   experienceTheme: 'purple',
   educationTheme: 'green',
   cardStyle: 'outlined',

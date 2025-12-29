@@ -32,7 +32,7 @@
   <div class="flexaf">
     <aside class="profile-personal-info-group afborder">
       <div class="about-me-section">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title">{{ 'sections.aboutMe' | translate }}</h2>
         <p class="objective" [innerHtml]="sanitizedObjective"></p>
       </div>
       <app-languages [languages]="cvData.languages"></app-languages>
@@ -77,7 +77,7 @@
         </div>
 
         <div class="about-me-block afborder2">
-          <h2 class="section-title">About Me</h2>
+          <h2 class="section-title">{{ 'sections.aboutMe' | translate }}</h2>
           <p class="summary-text" [innerHtml]="sanitizedObjective"></p>
         </div>
 

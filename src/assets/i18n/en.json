@@ -4,6 +4,7 @@
     },
     "sections": {
         "languages": "Languages",
+        "aboutMe": "About Me",
         "skills": "Skills",
         "experience": "Experience",
         "experienceTitle": "Experience",
@@ -19,7 +20,7 @@
         "email": "andfres@gmail.com",
         "linkedin": "https://www.linkedin.com/in/andres-fresno-bausela",
         "github": "https://github.com/andfres",
-        "objective": "Proactive frontend engineer with experience in Vue.js, Angular, and React. I enjoy building scalable applications, mentoring teams, and exploring new technologies. I value clear communication and continuous learning."
+        "objective": "Proactive frontend engineer with experience in Vue.js, Angular, and React. I enjoy building scalable applications, mentoring teams, and exploring new technologies. I like trying new technologies; this CV is built with Angular 20. You can view it online at: https://andfres.github.io/cv25Angular/"
     },
     "experience": [
         {
