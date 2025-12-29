@@ -144,19 +144,7 @@ import { ConfigService } from '../../services/config.service';
         </div>
       </div>
 
-      <!-- Date Sorting Control -->
-      <div class="control-section">
-        <label class="control-label">Sort by Date:</label>
-        <div class="checkbox-container">
-          <input
-            type="checkbox"
-            [checked]="sortByDate"
-            (change)="onSortByDateChange($event)"
-            class="control-checkbox"
-          />
-          <span class="checkbox-label">Chronological order (newest first)</span>
-        </div>
-      </div>
+
 
       <!-- Experience Color Control -->
       <div class="control-section">
@@ -381,7 +369,7 @@ export class UnifiedControlComponent {
   sectionTitleScale = 1;
   asideWidth = 20;
   verticalPaddingScale = 1;
-  sortByDate = true;
+
   photoOnTop = false;
   experienceTheme = 'blue';
   educationTheme = 'green';
@@ -395,7 +383,7 @@ export class UnifiedControlComponent {
     this.asideWidth = s.asideWidth ?? 20;
     this.verticalPaddingScale = s.verticalPaddingScale;
 
-    this.sortByDate = s.sortByDate;
+
     this.photoOnTop = s.photoOnTop;
     this.experienceTheme = s.experienceTheme || 'blue';
     this.educationTheme = s.educationTheme || 'green';
@@ -412,7 +400,7 @@ export class UnifiedControlComponent {
       this.asideWidth = cfg.asideWidth ?? 20;
       this.verticalPaddingScale = cfg.verticalPaddingScale;
 
-      this.sortByDate = cfg.sortByDate;
+
       this.photoOnTop = cfg.photoOnTop;
       this.experienceTheme = cfg.experienceTheme || 'blue';
       this.educationTheme = cfg.educationTheme || 'green';
@@ -455,13 +443,7 @@ export class UnifiedControlComponent {
     this.logCurrentConfiguration('📐 Vertical Padding Scale Applied');
   }
 
-  onSortByDateChange(event: Event): void {
-    const target = event.target as HTMLInputElement;
-    const checked = target.checked;
-    this.config.set({ sortByDate: checked });
-    this.logCurrentConfiguration('🔀 Sort By Date Toggled');
-    this.notifySortingChange();
-  }
+
 
   onPhotoOnTopChange(event: Event): void {
     const target = event.target as HTMLInputElement;
@@ -512,13 +494,7 @@ export class UnifiedControlComponent {
     this.logCurrentConfiguration('📝 Base Font Scale Applied');
   }
 
-  notifySortingChange(): void {
-    // Emit event to parent component or use a service to communicate with timeline
-    const event = new CustomEvent('sortingChanged', {
-      detail: { sortByDate: this.sortByDate },
-    });
-    window.dispatchEvent(event);
-  }
+
 
   notifyLayoutChange(): void {
     // Emit event to communicate layout changes
@@ -530,7 +506,7 @@ export class UnifiedControlComponent {
 
   private logCurrentConfiguration(action: string): void {
     const layoutHuman = {
-      sortByDate: this.sortByDate ? 'Chronological order (newest first)' : 'No sorting',
+
       photoOnTop: this.photoOnTop ? 'Photo and About Me on top' : 'Original layout',
     };
 
@@ -560,7 +536,7 @@ export class UnifiedControlComponent {
           percentage: Math.round(this.verticalPaddingScale * 100) + '%',
         },
         layout: {
-          sortByDate: this.sortByDate,
+
           photoOnTop: this.photoOnTop,
         },
         theme: this.experienceTheme,
@@ -573,14 +549,13 @@ export class UnifiedControlComponent {
       baseFontScale: this.baseFontScale,
       nameScale: this.nameScale,
       sectionTitleScale: this.sectionTitleScale,
-      verticalPaddingScale: this.verticalPaddingScale,
-      sortByDate: this.sortByDate,
+
       photoOnTop: this.photoOnTop,
       asideWidth: this.asideWidth,
       experienceTheme: this.experienceTheme,
       educationTheme: this.educationTheme,
       cardStyle: this.cardStyle,
-      sortByDateLabel: layoutHuman.sortByDate,
+
       layoutLabel: layoutHuman.photoOnTop,
     });
   }

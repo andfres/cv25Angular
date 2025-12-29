@@ -356,7 +356,7 @@ body {
   font-weight: 700;
   color: #1f2937;
   /* text-gray-800 */
-  margin: 0 0 var(--vertical-padding-md) 0;
+  margin: 2rem 0 var(--vertical-padding-md) 0;
   /* consistent bottom spacing */
   line-height: 1.2;
 }
@@ -548,7 +548,7 @@ body {
 }
 
 .summary-text {
-  font-size: calc(var(--font-base) * var(--base-font-scale));
+  font-size: calc(var(--font-sm) * var(--base-font-scale));
   color: #374151;
   line-height: 1.5;
   margin-bottom: 0.5rem;
@@ -573,12 +573,12 @@ body {
 
 .location,
 .email {
-  font-size: calc(var(--font-base) * var(--base-font-scale));
+  font-size: calc(var(--font-sm) * var(--base-font-scale));
 }
 
 .linkedin,
 .github {
-  font-size: calc(var(--font-base) * var(--base-font-scale));
+  font-size: calc(var(--font-sm) * var(--base-font-scale));
   margin-top: var(--padding-xs);
 }
 
@@ -683,7 +683,7 @@ body {
 
 .personal-info {
   padding: var(--padding-md);
-  padding-right: 0;
+
 }
 
 .personal-info-block {
@@ -788,7 +788,7 @@ body {
 }
 
 .languages-section .language-item {
-  font-size: calc(var(--font-base) * var(--base-font-scale));
+  font-size: calc(var(--font-sm) * var(--base-font-scale));
   color: #374151;
   margin-bottom: 0.5rem;
   line-height: 1.6;

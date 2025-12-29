@@ -6,7 +6,7 @@ export interface CvConfig {
   nameScale: number;
   sectionTitleScale: number;
   verticalPaddingScale: number;
-  sortByDate: boolean;
+
   photoOnTop: boolean;
   asideWidth: number;
   experienceTheme: string;
@@ -19,7 +19,7 @@ const DEFAULT: CvConfig = {
   nameScale: 1.35,
   sectionTitleScale: 1.3,
   verticalPaddingScale: 0.8,
-  sortByDate: false,
+
   photoOnTop: false,
   asideWidth: 16,
   experienceTheme: 'purple',

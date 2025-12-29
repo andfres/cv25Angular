@@ -1,5 +1,5 @@
-<section class="p-4">
-  <h2 class="section-title">{{ 'sections.experience' | translate }}</h2>
+<section class="">
+
 
   @if (sortedEntries && sortedEntries.length > 0) {
   @for (entry of sortedEntries; track entry.startDate) {
@@ -11,13 +11,13 @@
       <!-- Izquierda: Icono + Nombre -->
       <div class="flex items-center gap-2 flex-1 min-w-0">
         @if (isExperience(entry)) {
-        <img src="./assets/icons/briefcase.png" alt="Experience Icon" class="h-6 w-6 flex-shrink-0" />
+        <!-- <img src="./assets/icons/briefcase.png" alt="Experience Icon" class="h-6 w-6 flex-shrink-0" /> -->
         <h3 class="text-lg font-bold experience-title break-words">{{ $any(entry).company }}</h3>
         } @else {
-        <img src="./assets/icons/graduation-hat.png" alt="Education Icon" class="h-6 w-6 flex-shrink-0" />
+        <!-- <img src="./assets/icons/graduation-hat.png" alt="Education Icon" class="h-6 w-6 flex-shrink-0" /> -->
         <div class="flex flex-col min-w-0">
-          <h3 class="text-lg font-bold text-gray-800 break-words">{{ $any(entry).institution }}</h3>
-          <span class="text-sm font-medium text-gray-600 break-words">{{ $any(entry).degree }}</span>
+          <h3 class="text-md font-semibold text-gray-800 break-words">{{ $any(entry).degree }}</h3>
+          <span class="text-sm font-medium text-gray-600 break-words">{{ $any(entry).institution }}</span>
         </div>
         }
       </div>

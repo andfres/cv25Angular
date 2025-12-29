@@ -59,8 +59,8 @@
       "roles": [
         {
           "title": "Maquetador del Boletín Oficial",
-          "startDate": "2010-01-01",
-          "endDate": "2019-12-31",
+          "startDate": "2007-01-01",
+          "endDate": "2017-12-31",
           "summary": "Desarrollo de scripts (ExtendScript/RegEx) para automatizar el maquetado, ahorrando horas diarias de trabajo manual. Liderazgo de equipo en boletines oficiales (Junta y Cortes de CyL)."
         },
         {
@@ -113,7 +113,7 @@
   ],
   "languages": [
     "Español - Nativo",
-    "Italiano - Fluido (2 años viviendo y trabajando en Italia)",
+    "Italiano - Fluido (2 años viviendo y trabajando en Italia 2018-2019)",
     "Inglés - Fluidez profesional"
   ]
 }

@@ -14,26 +14,22 @@ import { isExperience } from '../../utils/timeline-type.utility'; // Import isEx
 export class TimelineComponent implements OnInit, OnChanges, OnDestroy {
   @Input() entries!: (Experience | Education)[]; // Aceptar ambos tipos
   sortedEntries: (Experience | Education)[] = [];
-  sortByDate = false;
+
 
   constructor(private translate: TranslateService) { }
 
   ngOnInit(): void {
     // console.log('TimelineComponent entries on init:', this.entries);
     // Listen for sorting changes from control panel
-    window.addEventListener('sortingChanged', this.onSortingChanged.bind(this) as EventListener);
+
   }
 
   ngOnDestroy(): void {
     // Clean up event listener
-    window.removeEventListener('sortingChanged', this.onSortingChanged.bind(this) as EventListener);
+
   }
 
-  onSortingChanged(event: Event): void {
-    const customEvent = event as CustomEvent;
-    this.sortByDate = customEvent.detail.sortByDate;
-    this.sortEntries();
-  }
+
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['entries'] && this.entries) {

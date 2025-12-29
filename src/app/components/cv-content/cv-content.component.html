@@ -40,7 +40,17 @@
 
     <!-- Main content (columna derecha 60%) -->
     <section class="main-content">
-      <app-timeline [entries]="combinedEntries"></app-timeline>
+      <!-- Experience Section -->
+      <div class="experience-section mb-2">
+        <h2 class="section-title">{{ 'sections.experience' | translate }}</h2>
+        <app-timeline [entries]="cvData.experience"></app-timeline>
+      </div>
+
+      <!-- Education Section -->
+      <div class="education-section">
+        <h2 class="section-title">{{ 'sections.education' | translate }}</h2>
+        <app-timeline [entries]="cvData.education"></app-timeline>
+      </div>
     </section>
   </div>
   } @else {
@@ -88,7 +98,17 @@
 
     <!-- Main content (columna derecha) -->
     <section class="main-content afborder" [ngStyle]="{ width: 'calc(100% - ' + asideWidth + 'rem)' }">
-      <app-timeline [entries]="combinedEntries"></app-timeline>
+      <!-- Experience Section -->
+      <div class="experience-section mb-2">
+        <h2 class="section-title">{{ 'sections.experience' | translate }}</h2>
+        <app-timeline [entries]="cvData.experience"></app-timeline>
+      </div>
+
+      <!-- Education Section -->
+      <div class="education-section">
+        <h2 class="section-title">{{ 'sections.education' | translate }}</h2>
+        <app-timeline [entries]="cvData.education"></app-timeline>
+      </div>
     </section>
   </div>
   }
