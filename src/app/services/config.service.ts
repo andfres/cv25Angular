@@ -15,13 +15,13 @@ export interface CvConfig {
 }
 
 const DEFAULT: CvConfig = {
-  baseFontScale: 0.95,
+  baseFontScale: 0.9,
   nameScale: 1.35,
   sectionTitleScale: 1.3,
   verticalPaddingScale: 0.8,
 
   photoOnTop: false,
-  asideWidth: 16,
+  asideWidth: 13,
   experienceTheme: 'purple',
   educationTheme: 'green',
   cardStyle: 'outlined',

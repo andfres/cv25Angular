@@ -297,6 +297,9 @@
   margin-bottom: var(--vertical-padding-xl);
 }
 
+/* Unified Border Style */
+.afborder {}
+
 /* Base Styles */
 html,
 body {
@@ -356,7 +359,7 @@ body {
   font-weight: 700;
   color: #1f2937;
   /* text-gray-800 */
-  margin: 2rem 0 var(--vertical-padding-md) 0;
+  margin: 1rem 0 var(--vertical-padding-md) 0;
   /* consistent bottom spacing */
   line-height: 1.2;
 }
@@ -426,7 +429,7 @@ body {
     max-width: 210mm !important;
     min-height: 297mm !important;
     margin: 0 !important;
-    padding: 5mm 5mm !important;
+    padding: 0 !important;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
@@ -436,9 +439,15 @@ body {
   }
 
   /* Ajustar imagen de perfil para impresión */
+  /* Ajustar imagen de perfil para impresión */
   .profile-image {
     filter: grayscale(100%) !important;
     padding: 0 !important;
+  }
+
+  /* Fix aside width in print */
+  .profile-personal-info-group {
+    flex: 0 0 auto !important;
   }
 
   /* Optimizar espacios para que quepa todo */
@@ -450,6 +459,12 @@ body {
     padding-bottom: calc(var(--vertical-padding-md) * 0.5) !important;
   }
 
+  /* Ensure section title top margin is respected in print */
+  .section-title {
+    margin-top: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
   /* Reducir márgenes generales */
   h1,
   h2,
@@ -459,6 +474,11 @@ body {
   h6 {
     margin-top: 0.3rem !important;
     margin-bottom: 0.2rem !important;
+  }
+
+  /* Restore margin for name in print */
+  .name {
+    margin-bottom: 0.8rem !important;
   }
 
   p {
@@ -631,11 +651,12 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 0;
 }
 
 .main-content {
   flex: 2;
+  padding: var(--padding-md);
 }
 
 .profile-personal-info-group {
@@ -644,7 +665,7 @@ body {
 
 .profile-image {
   filter: grayscale(100%);
-  padding: 1rem;
+  padding: 0;
   width: 100%;
   border-radius: 50%;
   object-fit: cover;
@@ -674,6 +695,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: var(--padding-md);
 }
 
 .about-me-section {
@@ -681,10 +703,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.personal-info {
-  padding: var(--padding-md);
 
-}
 
 .personal-info-block {
   margin-bottom: 1rem;
@@ -823,7 +842,7 @@ body {
     flex: none !important;
   }
 
-  /* Asegurar que About Me ocupe todo el ancho */
+
   .about-me-section {
     width: 100% !important;
   }
