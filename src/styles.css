@@ -381,7 +381,7 @@ body {
     width: 210mm;
     height: 297mm;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0.75rem !important;
     background: white !important;
     overflow: visible;
   }
@@ -485,11 +485,7 @@ body {
     margin: 0.1rem 0 !important;
   }
 
-  /* Reducir padding en secciones */
-  .about-me-section,
-  .personal-info {
-    padding: 0.4rem !important;
-  }
+
 
   /* Ajustar espaciado de timeline */
   .border-l-4 {
@@ -669,6 +665,13 @@ body {
   width: 100%;
   border-radius: 50%;
   object-fit: cover;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.personal-info {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .profile-image-container {
@@ -699,7 +702,7 @@ body {
 }
 
 .about-me-section {
-  padding: var(--padding-md);
+  padding: 0;
   margin-bottom: 1rem;
 }
 
@@ -840,6 +843,7 @@ body {
     width: 100% !important;
     max-width: 100% !important;
     flex: none !important;
+    margin: 1rem !important;
   }
 
 
