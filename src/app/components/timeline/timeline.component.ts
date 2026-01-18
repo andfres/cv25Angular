@@ -64,5 +64,10 @@ export class TimelineComponent implements OnInit, OnChanges, OnDestroy {
     }
     return undefined;
   }
+
+  isSummaryArray(summary: string | string[]): boolean {
+    return Array.isArray(summary);
+  }
+
   protected readonly isExperience = isExperience;
 }

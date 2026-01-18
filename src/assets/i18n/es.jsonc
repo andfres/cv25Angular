@@ -1,4 +1,5 @@
 {
+  // Comentario de prueba para verificar soporte JSONC
   "profile": {
     "picture": "Foto de Perfil"
   },
@@ -56,10 +57,23 @@
           "endDate": "2017-12-31",
           "summary": "Desarrollo de scripts (ExtendScript/RegEx) para automatizar el maquetado, ahorrando horas diarias de trabajo manual. Liderazgo de equipo en boletines oficiales (Junta y Cortes de CyL)."
         },
+        /* {
+          "title": "Maquetador del Boletín Oficial",
+          "startDate": "2007-01-01",
+          "endDate": "2021-01-31",
+                    //"dateText": "ene 2007 – dic 2017 (colaboración puntual a media jornada 2020–2021, durante estudios de Desarrollo de Aplicaciones Web)",
+
+          "summary": [
+            "Desarrollo de scripts en ExtendScript y uso de expresiones regulares para automatizar procesos de maquetación.",
+            "Automatización de flujos de trabajo en publicaciones oficiales, reduciendo el trabajo manual.",
+            "Coordinación de equipos en boletines oficiales institucionales."
+          ]
+        }, */
         {
           "title": "Proyecto Boletín (Canarias)",
           "startDate": "2020-09-01",
           "endDate": "2021-01-31",
+
           "summary": "Dirigí la implantación del boletín oficial para la región de Canarias."
         }
       ],

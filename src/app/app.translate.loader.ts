@@ -8,7 +8,24 @@ export class CustomTranslateLoader implements TranslateLoader {
 
   getTranslation(lang: string): Observable<any> {
     // Usar path relativo para que funcione en cualquier base path
-    return this.http.get(`./assets/i18n/${lang}.json`).pipe(map((response: any) => response));
+    // responseType: 'text' para poder quitar comentarios antes de parsear
+    return this.http.get(`./assets/i18n/${lang}.jsonc`, { responseType: 'text' }).pipe(
+      map((text: string) => {
+        const cleaned = this.stripComments(text);
+        try {
+          return JSON.parse(cleaned);
+        } catch (e) {
+          console.error(`Error parsing translation file ${lang}.json:`, e);
+          return {};
+        }
+      }),
+    );
+  }
+
+  private stripComments(text: string): string {
+    // Regex para quitar comentarios de línea (//) y multilínea (/*...*/)
+    // Precaución: Esto es una simplificación, pero suele ser suficiente para JSONC sencillo
+    return text.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '$1');
   }
 }
 

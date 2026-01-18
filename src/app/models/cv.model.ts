@@ -20,7 +20,8 @@ export interface Role {
   title: string;
   startDate: string;
   endDate: string | 'present';
-  summary: string;
+  summary: string | string[];
+  dateText?: string;
 }
 
 export interface TimelineEntry {

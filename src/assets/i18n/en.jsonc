@@ -59,14 +59,13 @@
         {
           "title": "Official Newsletter Layout Designer",
           "startDate": "2010-01-01",
-          "endDate": "2019-12-31",
-          "summary": "Designed and laid out official newsletters. Managed content formatting and presentation."
-        },
-        {
-          "title": "Newsletter Project (Canarias)",
-          "startDate": "2020-09-01",
           "endDate": "2021-01-31",
-          "summary": "Worked to launch the official newsletter for Canarias region."
+          "dateText": "Jan 2010 – Dec 2017 (occasional part-time collaboration 2020–2021, during Web Application Development studies)",
+          "summary": [
+            "Designed and laid out official newsletters using InDesign and ExtendScript.",
+            "Managed content formatting and presentation for official bulletins.",
+            "Worked to launch the official newsletter for Canarias region."
+          ]
         }
       ],
       "technologies": [
