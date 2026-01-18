@@ -42,14 +42,7 @@
           "summary": "Desarrollo de funcionalidades en Vue 3 y React. Participación en carve-outs y mantenimiento de aplicaciones existentes. Participación en migraciones técnicas, incluyendo versiones de Node y Spring Boot. Migración de la autenticación a Azure AD usando JWT en frontend y backend. Análisis técnico y estimaciones de proyectos."
         }
       ],
-      "technologies": [
-        "Vue 3",
-        "React",
-        "TypeScript",
-        "FormKit",
-        "Vite",
-        "Spring Boot"
-      ]
+      "technologies": ["Vue 3", "React", "TypeScript", "FormKit", "Vite", "Spring Boot"]
     },
     {
       "type": "experience",
@@ -70,12 +63,7 @@
           "summary": "Dirigí la implantación del boletín oficial para la región de Canarias."
         }
       ],
-      "technologies": [
-        "InDesign",
-        "ExtendScript",
-        "Accesibilidad",
-        "Gestión de Proyectos"
-      ]
+      "technologies": ["InDesign", "ExtendScript", "Accesibilidad", "Gestión de Proyectos"]
     }
   ],
   "education": [
@@ -87,14 +75,7 @@
       "location": "Valladolid, España",
       "startDate": "2020-01-01",
       "endDate": "2023-12-31",
-      "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "PHP",
-        "SQL",
-        "Git"
-      ]
+      "technologies": ["HTML", "CSS", "JavaScript", "PHP", "SQL", "Git"]
     },
     {
       "type": "education",
@@ -104,11 +85,7 @@
       "location": "Valladolid, España",
       "startDate": "2025-01-01",
       "endDate": "2025-06-30",
-      "technologies": [
-        "Python",
-        "TensorFlow",
-        "BigQuery"
-      ]
+      "technologies": ["Python", "TensorFlow", "BigQuery"]
     }
   ],
   "languages": [

@@ -72,7 +72,7 @@ const EXPERIENCE_THEMES: { [key: string]: any } = {
     '--exp-border-dark': '#374151', // gray-700
     '--exp-text-dark': '#111827', // gray-900
     '--exp-dot-border': '#ffffff',
-  }
+  },
 };
 
 const EDUCATION_THEMES: { [key: string]: any } = {
@@ -100,7 +100,7 @@ const EDUCATION_THEMES: { [key: string]: any } = {
     '--edu-bg-light': '#fdf2f8',
     '--edu-border-dark': '#be185d',
     '--edu-text': '#831843',
-  }
+  },
 };
 
 @Injectable({ providedIn: 'root' })
@@ -130,13 +130,13 @@ export class ConfigService {
 
     // Apply experience theme colors
     const expTheme = EXPERIENCE_THEMES[cfg.experienceTheme] || EXPERIENCE_THEMES['blue'];
-    Object.keys(expTheme).forEach(key => {
+    Object.keys(expTheme).forEach((key) => {
       root.style.setProperty(key, expTheme[key]);
     });
 
     // Apply education theme colors
     const eduTheme = EDUCATION_THEMES[cfg.educationTheme] || EDUCATION_THEMES['green'];
-    Object.keys(eduTheme).forEach(key => {
+    Object.keys(eduTheme).forEach((key) => {
       root.style.setProperty(key, eduTheme[key]);
     });
   }

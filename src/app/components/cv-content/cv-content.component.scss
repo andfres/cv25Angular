@@ -15,17 +15,17 @@
 .github {
   font-size: calc(var(--font-base) * var(--profile-font-scale, 1));
   margin-top: var(--padding-xs);
-  
+
   a {
     color: #0066cc;
     text-decoration: none;
     transition: color 0.2s;
-    
+
     &:hover {
       color: #0052a3;
       text-decoration: underline;
     }
-    
+
     &:visited {
       color: #551a8b;
     }
@@ -54,8 +54,6 @@
   align-items: center;
   position: relative;
 }
-
-
 
 .flexaf {
   display: flex;

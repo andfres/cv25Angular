@@ -15,21 +15,16 @@ export class TimelineComponent implements OnInit, OnChanges, OnDestroy {
   @Input() entries!: (Experience | Education)[]; // Aceptar ambos tipos
   sortedEntries: (Experience | Education)[] = [];
 
-
-  constructor(private translate: TranslateService) { }
+  constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
     // console.log('TimelineComponent entries on init:', this.entries);
     // Listen for sorting changes from control panel
-
   }
 
   ngOnDestroy(): void {
     // Clean up event listener
-
   }
-
-
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['entries'] && this.entries) {

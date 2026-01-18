@@ -1,13 +1,16 @@
 <!-- Toolbar unificado: banderas + botón imprimir + panel de controles expandible -->
-<app-toolbar [availableLanguages]="getAvailableLanguages()" [currentLanguage]="getCurrentLanguage()"
-  (languageChange)="changeLanguage($event)" (print)="printPage()"
-  (controlsExpanded)="onControlsExpanded($event)"></app-toolbar>
+<app-toolbar
+  [availableLanguages]="getAvailableLanguages()"
+  [currentLanguage]="getCurrentLanguage()"
+  (languageChange)="changeLanguage($event)"
+  (print)="printPage()"
+  (controlsExpanded)="onControlsExpanded($event)"
+></app-toolbar>
 
 <main class="main-container">
   @if (cvData) {
   <app-cv-content [cvData]="cvData" [profileImage]="profileImage"></app-cv-content>
   @if (showRedGuide) {
   <div class="red-guide"></div>
-  }
-  }
+  } }
 </main>

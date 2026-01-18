@@ -25,7 +25,7 @@ export class CvContentComponent implements OnInit, OnChanges, OnDestroy {
     public translate: TranslateService,
     private sanitizer: DomSanitizer,
     private config: ConfigService,
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     // Apply initial configuration (sort and layout) from global config
@@ -34,13 +34,11 @@ export class CvContentComponent implements OnInit, OnChanges, OnDestroy {
     this.asideWidth = initial.asideWidth ?? 20;
     this.asideWidthPercent = Math.round((this.asideWidth / 50) * 100); // 20rem/50rem = 40%
 
-
     // Subscribe to future changes
     this.config.state$.subscribe((cfg) => {
       this.photoOnTop = cfg.photoOnTop;
       this.asideWidth = cfg.asideWidth ?? 20;
       this.asideWidthPercent = Math.round((this.asideWidth / 50) * 100);
-
     });
 
     // Keep existing event listeners for compatibility
@@ -52,23 +50,17 @@ export class CvContentComponent implements OnInit, OnChanges, OnDestroy {
     if (changes['cvData']) {
       console.log('CvContent ngOnChanges:', this.cvData);
       console.log('CvContent config state:', this.config.state);
-
     }
   }
 
   ngOnDestroy(): void {
-
     window.removeEventListener('layoutChanged', this.onLayoutChanged as EventListener);
   }
-
-
 
   private onLayoutChanged = (evt: Event) => {
     const { photoOnTop } = (evt as CustomEvent).detail as { photoOnTop: boolean };
     this.photoOnTop = photoOnTop;
   };
-
-
 
   get sanitizedObjective(): SafeHtml {
     const objective = this.translate.instant('personalInfo.objective');

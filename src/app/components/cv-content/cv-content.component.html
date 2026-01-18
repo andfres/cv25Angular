@@ -1,67 +1,18 @@
 <main class="a4-page">
-  @if (photoOnTop) {
-  <!-- Layout alternativo -->
-
-  <div class="profile-and-info">
-    <div class="profile-image-container profile-image-top">
-      <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}" class="profile-image" />
-    </div>
-
-    <div class="personal-info">
-      <h2 class="name">{{ 'personalInfo.name' | translate }}</h2>
-      <p class="title">{{ 'personalInfo.title' | translate }}</p>
-      <p class="location">{{ 'personalInfo.location' | translate }}</p>
-      <p class="email">{{ 'personalInfo.email' | translate }}</p>
-      @if ('personalInfo.linkedin' | translate; as linkedin) {
-      @if (linkedin && linkedin !== 'personalInfo.linkedin') {
-      <p class="linkedin">
-        <a [href]="linkedin" target="_blank" rel="noopener noreferrer">{{ linkedin }}</a>
-      </p>
-      }
-      }
-      @if ('personalInfo.github' | translate; as github) {
-      @if (github && github !== 'personalInfo.github') {
-      <p class="github">
-        <a [href]="github" target="_blank" rel="noopener noreferrer">{{ github }}</a>
-      </p>
-      }
-      }
-    </div>
-  </div>
-
-  <div class="flexaf">
-    <aside class="profile-personal-info-group afborder">
-      <div class="about-me-section">
-        <h2 class="section-title">{{ 'sections.aboutMe' | translate }}</h2>
-        <p class="objective" [innerHtml]="sanitizedObjective"></p>
-      </div>
-      <app-languages [languages]="cvData.languages"></app-languages>
-    </aside>
-
-    <!-- Main content (columna derecha 60%) -->
-    <section class="main-content">
-      <!-- Experience Section -->
-      <div class="experience-section mb-4">
-        <h2 class="section-title">{{ 'sections.experience' | translate }}</h2>
-        <app-timeline [entries]="cvData.experience"></app-timeline>
-      </div>
-
-      <!-- Education Section -->
-      <div class="education-section">
-        <h2 class="section-title">{{ 'sections.education' | translate }}</h2>
-        <app-timeline [entries]="cvData.education"></app-timeline>
-      </div>
-    </section>
-  </div>
-  } @else {
   <!-- Original layout -->
   <!-- Aside (columna izquierda 40%) -->
   <div class="flexaf">
-    <aside class="profile-personal-info-group afborder"
-      [ngStyle]="{ width: asideWidth + 'rem', maxWidth: asideWidthPercent + '%' }">
+    <aside
+      class="profile-personal-info-group afborder"
+      [ngStyle]="{ width: asideWidth + 'rem', maxWidth: asideWidthPercent + '%' }"
+    >
       <div class="profile-image-container">
-        <img [src]="profileImage" alt="{{ 'profile.picture' | translate }}" class="profile-image"
-          style="max-width: 100%; max-height: 100%" />
+        <img
+          [src]="profileImage"
+          alt="{{ 'profile.picture' | translate }}"
+          class="profile-image"
+          style="max-width: 100%; max-height: 100%"
+        />
       </div>
 
       <section class="personal-info">
@@ -70,19 +21,19 @@
           <p class="title">{{ 'personalInfo.title' | translate }}</p>
           <p class="location">{{ 'personalInfo.location' | translate }}</p>
           <p class="email">{{ 'personalInfo.email' | translate }}</p>
-          @if ('personalInfo.linkedin' | translate; as linkedin) {
+
+          @let linkedin = 'personalInfo.linkedin' | translate;
           @if (linkedin && linkedin !== 'personalInfo.linkedin') {
-          <p class="linkedin">
-            <a [href]="linkedin" target="_blank" rel="noopener noreferrer">{{ linkedin }}</a>
-          </p>
+            <p class="linkedin">
+              <a [href]="linkedin" target="_blank" rel="noopener noreferrer">{{ linkedin }}</a>
+            </p>
           }
-          }
-          @if ('personalInfo.github' | translate; as github) {
+
+          @let github = 'personalInfo.github' | translate;
           @if (github && github !== 'personalInfo.github') {
-          <p class="github">
-            <a [href]="github" target="_blank" rel="noopener noreferrer">{{ github }}</a>
-          </p>
-          }
+            <p class="github">
+              <a [href]="github" target="_blank" rel="noopener noreferrer">{{ github }}</a>
+            </p>
           }
         </div>
 
@@ -93,11 +44,13 @@
 
         <app-languages [languages]="cvData.languages"></app-languages>
       </section>
-      <!-- <app-skills [skills]="cvData.skills"></app-skills> -->
     </aside>
 
     <!-- Main content (columna derecha) -->
-    <section class="main-content afborder" [ngStyle]="{ width: 'calc(100% - ' + asideWidth + 'rem)' }">
+    <section
+      class="main-content afborder"
+      [ngStyle]="{ width: 'calc(100% - ' + asideWidth + 'rem)' }"
+    >
       <!-- Experience Section -->
       <div class="experience-section mb-8">
         <h2 class="section-title">{{ 'sections.experience' | translate }}</h2>
@@ -111,5 +64,4 @@
       </div>
     </section>
   </div>
-  }
 </main>

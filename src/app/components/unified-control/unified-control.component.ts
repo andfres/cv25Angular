@@ -15,9 +15,7 @@ import { ConfigService } from '../../services/config.service';
 
       <!-- Name Font Control -->
       <div class="control-section">
-        <label class="control-label"
-          >Name Scale: {{ nameScale | number: '1.2-2' }}</label
-        >
+        <label class="control-label">Name Scale: {{ nameScale | number: '1.2-2' }}</label>
         <input
           type="range"
           [value]="nameScale"
@@ -60,9 +58,7 @@ import { ConfigService } from '../../services/config.service';
 
       <!-- Base Font Scale Control -->
       <div class="control-section">
-        <label class="control-label"
-          >Base Font Scale: {{ baseFontScale | number: '1.2-2' }}</label
-        >
+        <label class="control-label">Base Font Scale: {{ baseFontScale | number: '1.2-2' }}</label>
         <input
           type="range"
           [value]="baseFontScale"
@@ -93,7 +89,7 @@ import { ConfigService } from '../../services/config.service';
           class="control-slider"
         />
         <div class="control-buttons">
-           <button (click)="setAsideWidth(15)" class="control-btn">15</button>
+          <button (click)="setAsideWidth(15)" class="control-btn">15</button>
           <button (click)="setAsideWidth(20)" class="control-btn">20</button>
           <button (click)="setAsideWidth(25)" class="control-btn">25</button>
         </div>
@@ -126,61 +122,65 @@ import { ConfigService } from '../../services/config.service';
       <div class="control-section">
         <label class="control-label">Card Style:</label>
         <div class="control-buttons">
-          <button 
-            (click)="setCardStyle('filled')" 
+          <button
+            (click)="setCardStyle('filled')"
             [class.active-style]="cardStyle === 'filled'"
             class="control-btn"
-          >Filled</button>
-          <button 
-            (click)="setCardStyle('subtle')" 
+          >
+            Filled
+          </button>
+          <button
+            (click)="setCardStyle('subtle')"
             [class.active-style]="cardStyle === 'subtle'"
             class="control-btn"
-          >Subtle</button>
-          <button 
-            (click)="setCardStyle('outlined')" 
+          >
+            Subtle
+          </button>
+          <button
+            (click)="setCardStyle('outlined')"
             [class.active-style]="cardStyle === 'outlined'"
             class="control-btn"
-          >Outlined</button>
+          >
+            Outlined
+          </button>
         </div>
       </div>
-
-
 
       <!-- Experience Color Control -->
       <div class="control-section">
         <label class="control-label">Experience Color:</label>
         <div class="theme-buttons">
-          <button 
-            (click)="setTheme('blue')" 
-            class="theme-btn" 
+          <button
+            (click)="setTheme('blue')"
+            class="theme-btn"
             [class.active]="experienceTheme === 'blue'"
             title="Blue"
             style="background-color: #3b82f6;"
           ></button>
-          <button 
-            (click)="setTheme('purple')" 
-            class="theme-btn" 
+          <button
+            (click)="setTheme('purple')"
+            class="theme-btn"
             [class.active]="experienceTheme === 'purple'"
             title="Purple"
             style="background-color: #a855f7;"
           ></button>
-          <button 
-            (click)="setTheme('teal')" 
-            class="theme-btn" 
+          <button
+            (click)="setTheme('teal')"
+            class="theme-btn"
             [class.active]="experienceTheme === 'teal'"
             title="Teal"
             style="background-color: #14b8a6;"
           ></button>
-          <button 
-            (click)="setTheme('red')" 
-            class="theme-btn" 
+          <button
+            (click)="setTheme('red')"
+            class="theme-btn"
             [class.active]="experienceTheme === 'red'"
             title="Red"
             style="background-color: #ef4444;"
           ></button>
-          <button 
-            (click)="setTheme('gray')" 
-            class="theme-btn" 
+          <button
+            (click)="setTheme('gray')"
+            class="theme-btn"
             [class.active]="experienceTheme === 'gray'"
             title="Gray"
             style="background-color: #6b7280;"
@@ -192,37 +192,37 @@ import { ConfigService } from '../../services/config.service';
       <div class="control-section">
         <label class="control-label">Education Color:</label>
         <div class="theme-buttons">
-          <button 
-            (click)="setEducationTheme('green')" 
-            class="theme-btn" 
+          <button
+            (click)="setEducationTheme('green')"
+            class="theme-btn"
             [class.active]="educationTheme === 'green'"
             title="Green"
             style="background-color: #22c55e;"
           ></button>
-          <button 
-            (click)="setEducationTheme('blue')" 
-            class="theme-btn" 
+          <button
+            (click)="setEducationTheme('blue')"
+            class="theme-btn"
             [class.active]="educationTheme === 'blue'"
             title="Blue"
             style="background-color: #3b82f6;"
           ></button>
-          <button 
-            (click)="setEducationTheme('purple')" 
-            class="theme-btn" 
+          <button
+            (click)="setEducationTheme('purple')"
+            class="theme-btn"
             [class.active]="educationTheme === 'purple'"
             title="Purple"
             style="background-color: #a855f7;"
           ></button>
-          <button 
-            (click)="setEducationTheme('orange')" 
-            class="theme-btn" 
+          <button
+            (click)="setEducationTheme('orange')"
+            class="theme-btn"
             [class.active]="educationTheme === 'orange'"
             title="Orange"
             style="background-color: #f97316;"
           ></button>
-          <button 
-            (click)="setEducationTheme('pink')" 
-            class="theme-btn" 
+          <button
+            (click)="setEducationTheme('pink')"
+            class="theme-btn"
             [class.active]="educationTheme === 'pink'"
             title="Pink"
             style="background-color: #ec4899;"
@@ -297,9 +297,9 @@ import { ConfigService } from '../../services/config.service';
       }
 
       .control-btn.active-style {
-        background: #2196F3;
+        background: #2196f3;
         color: white;
-        border-color: #1976D2;
+        border-color: #1976d2;
       }
 
       .checkbox-container {
@@ -348,7 +348,9 @@ import { ConfigService } from '../../services/config.service';
         border-radius: 50%;
         border: 2px solid transparent;
         cursor: pointer;
-        transition: transform 0.2s, border-color 0.2s;
+        transition:
+          transform 0.2s,
+          border-color 0.2s;
       }
 
       .theme-btn:hover {
@@ -383,7 +385,6 @@ export class UnifiedControlComponent {
     this.asideWidth = s.asideWidth ?? 20;
     this.verticalPaddingScale = s.verticalPaddingScale;
 
-
     this.photoOnTop = s.photoOnTop;
     this.experienceTheme = s.experienceTheme || 'blue';
     this.educationTheme = s.educationTheme || 'green';
@@ -399,7 +400,6 @@ export class UnifiedControlComponent {
       this.sectionTitleScale = cfg.sectionTitleScale || 1;
       this.asideWidth = cfg.asideWidth ?? 20;
       this.verticalPaddingScale = cfg.verticalPaddingScale;
-
 
       this.photoOnTop = cfg.photoOnTop;
       this.experienceTheme = cfg.experienceTheme || 'blue';
@@ -442,8 +442,6 @@ export class UnifiedControlComponent {
     this.config.set({ verticalPaddingScale: scale });
     this.logCurrentConfiguration('📐 Vertical Padding Scale Applied');
   }
-
-
 
   onPhotoOnTopChange(event: Event): void {
     const target = event.target as HTMLInputElement;
@@ -494,8 +492,6 @@ export class UnifiedControlComponent {
     this.logCurrentConfiguration('📝 Base Font Scale Applied');
   }
 
-
-
   notifyLayoutChange(): void {
     // Emit event to communicate layout changes
     const event = new CustomEvent('layoutChanged', {
@@ -506,7 +502,6 @@ export class UnifiedControlComponent {
 
   private logCurrentConfiguration(action: string): void {
     const layoutHuman = {
-
       photoOnTop: this.photoOnTop ? 'Photo and About Me on top' : 'Original layout',
     };
 
@@ -536,7 +531,6 @@ export class UnifiedControlComponent {
           percentage: Math.round(this.verticalPaddingScale * 100) + '%',
         },
         layout: {
-
           photoOnTop: this.photoOnTop,
         },
         theme: this.experienceTheme,

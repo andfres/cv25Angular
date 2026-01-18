@@ -1,7 +1,6 @@
 @import 'tailwindcss';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 
 /* Experience Theme Classes - Filled Style (default) */
 .experience-card {
@@ -39,23 +38,23 @@
 }
 
 /* Outlined Card Style - No background, keeps left border and rounded corners from HTML */
-:root[data-card-style="outlined"] .experience-card {
+:root[data-card-style='outlined'] .experience-card {
   background-color: transparent;
 }
 
-:root[data-card-style="outlined"] .education-card {
+:root[data-card-style='outlined'] .education-card {
   background-color: transparent;
 }
 
 /* Subtle Card Style - Very light backgrounds, rounded corners */
-:root[data-card-style="subtle"] .experience-card {
+:root[data-card-style='subtle'] .experience-card {
   background-color: rgba(255, 255, 255, 0.5);
   border-width: 1px;
   border-radius: 0.5rem;
   border-color: rgba(0, 0, 0, 0.1);
 }
 
-:root[data-card-style="subtle"] .education-card {
+:root[data-card-style='subtle'] .education-card {
   background-color: rgba(255, 255, 255, 0.5);
   border-width: 1px;
   border-radius: 0.5rem;
@@ -64,8 +63,7 @@
 
 /* You can add global styles to this file, and also import other style files */
 
-/* Import Roboto font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 
 /* Font Size Control System */
 :root {
@@ -298,7 +296,8 @@
 }
 
 /* Unified Border Style */
-.afborder {}
+.afborder {
+}
 
 /* Base Styles */
 html,
@@ -317,7 +316,6 @@ body {
 
 /* Prevenir overflow en móvil */
 @media screen and (max-width: 768px) {
-
   html,
   body {
     width: 100%;
@@ -368,7 +366,6 @@ body {
    PRINT STYLES - Para impresión en A4
    ======================================== */
 @media print {
-
   /* Sin márgenes de página para evitar encabezados del navegador */
   @page {
     margin: 0;
@@ -484,8 +481,6 @@ body {
   p {
     margin: 0.1rem 0 !important;
   }
-
-
 
   /* Ajustar espaciado de timeline */
   .border-l-4 {
@@ -639,10 +634,6 @@ body {
   }
 }
 
-
-
-
-
 .flexaf {
   display: flex;
   flex-direction: row;
@@ -705,8 +696,6 @@ body {
   padding: 0;
   margin-bottom: 1rem;
 }
-
-
 
 .personal-info-block {
   margin-bottom: 1rem;
@@ -820,7 +809,6 @@ body {
    RESPONSIVE - Para pantallas pequeñas
    ======================================== */
 @media screen and (max-width: 768px) {
-
   /* Ajustar contenedor A4 */
   .a4-page {
     width: 100% !important;
@@ -845,7 +833,6 @@ body {
     flex: none !important;
     margin: 1rem !important;
   }
-
 
   .about-me-section {
     width: 100% !important;

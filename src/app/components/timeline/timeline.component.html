@@ -1,76 +1,88 @@
 <section class="">
-
-
   @if (sortedEntries && sortedEntries.length > 0) {
-  @for (entry of sortedEntries; track entry.startDate) {
-  @if (entry.show !== false) {
-  <div [class.experience-card]="isExperience(entry)" [class.education-card]="!isExperience(entry)"
-    class="border-l-4 py-2 px-3 my-sm rounded-lg mb-4">
-    <!-- Cabecera Principal (Empresa / Institución) -->
-    <div class="flex items-start justify-between mb-2 gap-2">
-      <!-- Izquierda: Icono + Nombre -->
-      <div class="flex items-center gap-2 flex-1 min-w-0">
-        @if (isExperience(entry)) {
-        <!-- <img src="./assets/icons/briefcase.png" alt="Experience Icon" class="h-6 w-6 flex-shrink-0" /> -->
-        <h3 class="text-lg font-bold experience-title break-words">{{ $any(entry).company }}</h3>
-        } @else {
-        <!-- <img src="./assets/icons/graduation-hat.png" alt="Education Icon" class="h-6 w-6 flex-shrink-0" /> -->
-        <div class="flex flex-col min-w-0">
-          <h3 class="text-md font-semibold text-gray-800 break-words">{{ $any(entry).degree }}</h3>
-          <span class="text-sm font-medium text-gray-600 break-words">{{ $any(entry).institution }}</span>
+    @for (entry of sortedEntries; track entry.startDate) {
+      @if (entry.show !== false) {
+        <div
+          [class.experience-card]="isExperience(entry)"
+          [class.education-card]="!isExperience(entry)"
+          class="border-l-4 py-2 px-3 my-sm rounded-lg mb-4"
+        >
+          <!-- Cabecera Principal (Empresa / Institución) -->
+          <div class="flex items-start justify-between mb-2 gap-2">
+            <!-- Izquierda: Icono + Nombre -->
+            <div class="flex items-center gap-2 flex-1 min-w-0">
+              @if (isExperience(entry)) {
+                <!-- <img src="./assets/icons/briefcase.png" alt="Experience Icon" class="h-6 w-6 flex-shrink-0" /> -->
+                <h3 class="text-lg font-bold experience-title break-words">
+                  {{ $any(entry).company }}
+                </h3>
+              } @else {
+                <!-- <img src="./assets/icons/graduation-hat.png" alt="Education Icon" class="h-6 w-6 flex-shrink-0" /> -->
+                <div class="flex flex-col min-w-0">
+                  <h3 class="text-md font-semibold text-gray-800 break-words">
+                    {{ $any(entry).degree }}
+                  </h3>
+                  <span class="text-sm font-medium text-gray-600 break-words">{{
+                    $any(entry).institution
+                  }}</span>
+                </div>
+              }
+            </div>
+
+            <!-- Derecha: Ubicación (para experiencia, la fecha va en los roles) -->
+            <div class="text-right flex-shrink-0">
+              <span class="text-sm text-gray-500 block">{{ entry.location }}</span>
+              @if (!isExperience(entry)) {
+                <span
+                  class="text-sm font-mono text-gray-600 bg-gray-100 px-2 py-0.5 rounded inline-block mt-1 whitespace-nowrap"
+                >
+                  {{ formatPeriod(entry.startDate, entry.endDate) }}
+                </span>
+              }
+            </div>
+          </div>
+
+          <!-- Roles de Experiencia -->
+          @if (isExperience(entry) && getExperienceRoles(entry)) {
+            <div class="mt-3 space-y-4">
+              @for (role of getExperienceRoles(entry); track role.startDate) {
+                <div class="relative pl-4 border-l-2 experience-role-border ml-2">
+                  <!-- Bolita del timeline -->
+                  <div
+                    class="absolute -left-[9px] top-0 h-4 w-4 rounded-full experience-dot border-2"
+                  ></div>
+
+                  <div class="flex flex-wrap justify-between items-baseline mb-1">
+                    <h4 class="text-md font-semibold experience-role-title">{{ role.title }}</h4>
+                    <span class="text-sm font-mono text-gray-600 bg-gray-100 px-2 py-0.5 rounded">
+                      {{ formatPeriod(role.startDate, role.endDate) }}
+                    </span>
+                  </div>
+
+                  <p class="role-summary text-gray-700 mb-2 leading-relaxed">{{ role.summary }}</p>
+                </div>
+              }
+            </div>
+          }
+
+          <!-- Tecnologías (Globales para la entrada) -->
+          @if (entry.technologies && entry.technologies.length > 0) {
+            <div class="mt-3 pt-2 border-t border-gray-200">
+              <div class="flex flex-wrap gap-2">
+                @for (tech of entry.technologies; track tech) {
+                  <span
+                    class="px-2 py-1 text-xs font-medium bg-white border border-gray-300 rounded-md shadow-sm text-gray-700"
+                  >
+                    {{ tech }}
+                  </span>
+                }
+              </div>
+            </div>
+          }
         </div>
-        }
-      </div>
-
-      <!-- Derecha: Ubicación (para experiencia, la fecha va en los roles) -->
-      <div class="text-right flex-shrink-0">
-        <span class="text-sm text-gray-500 block">{{ entry.location }}</span>
-        @if (!isExperience(entry)) {
-        <span
-          class="text-sm font-mono text-gray-600 bg-gray-100 px-2 py-0.5 rounded inline-block mt-1 whitespace-nowrap">
-          {{ formatPeriod(entry.startDate, entry.endDate) }}
-        </span>
-        }
-      </div>
-    </div>
-
-    <!-- Roles de Experiencia -->
-    @if (isExperience(entry) && getExperienceRoles(entry)) {
-    <div class="mt-3 space-y-4">
-      @for (role of getExperienceRoles(entry); track role.startDate) {
-      <div class="relative pl-4 border-l-2 experience-role-border ml-2">
-        <!-- Bolita del timeline -->
-        <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full experience-dot border-2"></div>
-
-        <div class="flex flex-wrap justify-between items-baseline mb-1">
-          <h4 class="text-md font-semibold experience-role-title">{{ role.title }}</h4>
-          <span class="text-sm font-mono text-gray-600 bg-gray-100 px-2 py-0.5 rounded">
-            {{ formatPeriod(role.startDate, role.endDate) }}
-          </span>
-        </div>
-
-        <p class="role-summary text-gray-700 mb-2 leading-relaxed">{{ role.summary }}</p>
-      </div>
       }
-    </div>
     }
-
-    <!-- Tecnologías (Globales para la entrada) -->
-    @if (entry.technologies && entry.technologies.length > 0) {
-    <div class="mt-3 pt-2 border-t border-gray-200">
-      <div class="flex flex-wrap gap-2">
-        @for (tech of entry.technologies; track tech) {
-        <span class="px-2 py-1 text-xs font-medium bg-white border border-gray-300 rounded-md shadow-sm text-gray-700">
-          {{ tech }}
-        </span>
-        }
-      </div>
-    </div>
-    }
-  </div>
-  }
-  }
   } @else {
-  <p class="text-gray-600">{{ 'sections.noExperience' | translate }}</p>
+    <p class="text-gray-600">{{ 'sections.noExperience' | translate }}</p>
   }
 </section>
