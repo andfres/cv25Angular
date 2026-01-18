@@ -1,7 +1,7 @@
 {
   // Comentario de prueba para verificar soporte JSONC
   "profile": {
-    "picture": "Foto de Perfil"
+    "picture": "Foto de Perfil",
   },
   "sections": {
     "languages": "Idiomas",
@@ -12,7 +12,7 @@
     "education": "Educación",
     "present": "Actualidad",
     "noExperience": "No hay entradas de experiencia para mostrar.",
-    "noEducation": "No hay entradas de educación para mostrar."
+    "noEducation": "No hay entradas de educación para mostrar.",
   },
   "personalInfo": {
     "name": "Andrés Fresno Bausela",
@@ -21,7 +21,7 @@
     "email": "andfres@gmail.com",
     "linkedin": "678294117",
     "github": "https://github.com/andfres",
-    "objective": "Ingeniero fullstack orientado a frontend con experiencia en Vue.js, React y Spring Boot. Disfruto creando aplicaciones escalables, mentorando equipos y cuidando la calidad del código. Me gusta probar nuevas tecnologías; este CV está desarrollado con Angular 20. Puedes verlo online en: https://andfres.github.io/cv25Angular/"
+    "objective": "Ingeniero fullstack orientado a frontend con experiencia en Vue.js, React y Spring Boot. Disfruto creando aplicaciones escalables, mentorando equipos y cuidando la calidad del código. Me gusta probar nuevas tecnologías; este CV está desarrollado con Angular 20. Puedes verlo online en: https://andfres.github.io/cv25Angular/",
   },
   "experience": [
     {
@@ -34,16 +34,35 @@
           "title": "Líder Técnico Frontend",
           "startDate": "2024-03-01",
           "endDate": "present",
-          "summary": "Responsable de proyectos estratégicos para empresas energéticas líderes en España. Toma de decisiones arquitectónicas y análisis de accesibilidad y seguridad. Desarrollo de nuevas aplicaciones y mantenimiento de las existentes. Mentoría y transferencia de conocimiento, fomentando el uso de herramientas internas de IA. Propuesta de mejoras en la arquitectura y en el entorno de desarrollo, promoviendo el uso de herramientas que facilitan el trabajo diario."
+          /* "summary": "Responsable de proyectos estratégicos para empresas energéticas líderes en España. Toma de decisiones arquitectónicas y análisis de accesibilidad y seguridad. Desarrollo de nuevas aplicaciones y mantenimiento de las existentes. Mentoría y transferencia de conocimiento, fomentando el uso de herramientas internas de IA. Propuesta de mejoras en la arquitectura y en el entorno de desarrollo, promoviendo el uso de herramientas que facilitan el trabajo diario." */
+          "summary": [
+            "Lideré proyectos estratégicos para empresas energéticas líderes en España, definiendo decisiones arquitectónicas clave.",
+
+            "Analicé y mejoré la accesibilidad y seguridad de aplicaciones, asegurando cumplimiento de estándares corporativos.",
+
+            "Diseñé y desarrollé nuevas aplicaciones, manteniendo y optimizando las existentes.",
+
+            "Mentoricé a equipos junior, promoviendo la adopción de herramientas internas de IA y buenas prácticas de desarrollo.",
+
+            "Propuse mejoras en la arquitectura y el entorno de desarrollo, aumentando la eficiencia del equipo y facilitando el flujo diario de trabajo.",
+          ],
         },
         {
           "title": "Desarrollador Junior",
           "startDate": "2023-04-01",
           "endDate": "2024-03-31",
-          "summary": "Desarrollo de funcionalidades en Vue 3 y React. Participación en carve-outs y mantenimiento de aplicaciones existentes. Participación en migraciones técnicas, incluyendo versiones de Node y Spring Boot. Migración de la autenticación a Azure AD usando JWT en frontend y backend. Análisis técnico y estimaciones de proyectos."
-        }
+          "summary": [
+            "Implementé nuevas funcionalidades en Vue 3 y React, contribuyendo a carve-outs y mantenimiento de aplicaciones existentes.",
+
+            "Participé en migraciones técnicas de Node y Spring Boot, asegurando compatibilidad y estabilidad de sistemas.",
+
+            "Migré la autenticación a Azure AD usando JWT en frontend y backend, mejorando la seguridad y gestión de usuarios.",
+
+            "Realicé análisis técnicos y estimaciones de proyectos, apoyando la planificación y la toma de decisiones.",
+          ],
+        },
       ],
-      "technologies": ["Vue 3", "React", "TypeScript", "FormKit", "Vite", "Spring Boot"]
+      "technologies": ["Vue 3", "React", "TypeScript", "FormKit", "Vite", "Spring Boot"],
     },
     {
       "type": "experience",
@@ -51,34 +70,42 @@
       "company": "Alcañiz Fresnos",
       "location": "Valladolid, España",
       "roles": [
-        {
-          "title": "Maquetador del Boletín Oficial",
-          "startDate": "2007-01-01",
-          "endDate": "2017-12-31",
-          "summary": "Desarrollo de scripts (ExtendScript/RegEx) para automatizar el maquetado, ahorrando horas diarias de trabajo manual. Liderazgo de equipo en boletines oficiales (Junta y Cortes de CyL)."
-        },
-        /* {
-          "title": "Maquetador del Boletín Oficial",
-          "startDate": "2007-01-01",
-          "endDate": "2021-01-31",
-                    //"dateText": "ene 2007 – dic 2017 (colaboración puntual a media jornada 2020–2021, durante estudios de Desarrollo de Aplicaciones Web)",
-
-          "summary": [
-            "Desarrollo de scripts en ExtendScript y uso de expresiones regulares para automatizar procesos de maquetación.",
-            "Automatización de flujos de trabajo en publicaciones oficiales, reduciendo el trabajo manual.",
-            "Coordinación de equipos en boletines oficiales institucionales."
-          ]
-        }, */
-        {
+        /*  {
           "title": "Proyecto Boletín (Canarias)",
           "startDate": "2020-09-01",
           "endDate": "2021-01-31",
 
           "summary": "Dirigí la implantación del boletín oficial para la región de Canarias."
-        }
+        }, 
+        {
+          "title": "Maquetador del Boletín Oficial",
+          "startDate": "2007-01-01",
+          "endDate": "2017-12-31",
+          "summary": "Desarrollo de scripts (ExtendScript/RegEx) para automatizar el maquetado, ahorrando horas diarias de trabajo manual. Liderazgo de equipo en boletines oficiales (Junta y Cortes de CyL)."
+        }, */
+        {
+          "title": "Maquetador del Boletín Oficial",
+          "startDate": "2012-01-01",
+          "endDate": "2017-12-31",
+          // "dateText": "ene 2007 – dic 2017 (colaboración puntual a media jornada 2020–2021, durante estudios de Desarrollo de Aplicaciones Web)",
+
+          "summary": [
+            "Automatización de procesos de maquetación editorial mediante ExtendScript y RegEx.",
+
+            "Maquetación y publicación de boletines oficiales (Junta y Cortes de Castilla y León), coordinando el trabajo con distintos perfiles y garantizando plazos y calidad.",
+
+            "Implantación del Boletín Oficial de Canarias como colaboración puntual posterior (2020), en modalidad parcial y compaginada con estudios de DAW.",
+          ],
+        },
+        {
+          "title": "Asistente de imprenta",
+          "startDate": "2007-01-01",
+          "endDate": "2011-12-31",
+          "summary": ["Soporte en tareas de imprenta y procesos editoriales."],
+        },
       ],
-      "technologies": ["InDesign", "ExtendScript", "Accesibilidad", "Gestión de Proyectos"]
-    }
+      "technologies": ["InDesign", "ExtendScript", "Accesibilidad", "Gestión de Proyectos"],
+    },
   ],
   "education": [
     {
@@ -89,7 +116,7 @@
       "location": "Valladolid, España",
       "startDate": "2020-01-01",
       "endDate": "2023-12-31",
-      "technologies": ["HTML", "CSS", "JavaScript", "PHP", "SQL", "Git"]
+      "technologies": ["HTML", "CSS", "JavaScript", "PHP", "SQL", "Git"],
     },
     {
       "type": "education",
@@ -99,12 +126,12 @@
       "location": "Valladolid, España",
       "startDate": "2025-01-01",
       "endDate": "2025-06-30",
-      "technologies": ["Python", "TensorFlow", "BigQuery"]
-    }
+      "technologies": ["Python", "TensorFlow", "BigQuery"],
+    },
   ],
   "languages": [
     "Español - Nativo",
     "Italiano - Fluido (2 años viviendo y trabajando en Italia 2018-2019)",
-    "Inglés - Fluidez profesional"
-  ]
+    "Inglés - Fluidez profesional",
+  ],
 }

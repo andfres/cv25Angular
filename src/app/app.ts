@@ -74,7 +74,8 @@ export class App implements OnInit {
   }
 
   private stripComments(text: string): string {
-    return text.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '$1');
+    const commentsStripped = text.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '$1');
+    return commentsStripped.replace(/,(\s*[\]}])/g, '$1');
   }
 
   printPage(): void {

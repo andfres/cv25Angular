@@ -24,8 +24,9 @@ export class CustomTranslateLoader implements TranslateLoader {
 
   private stripComments(text: string): string {
     // Regex para quitar comentarios de línea (//) y multilínea (/*...*/)
-    // Precaución: Esto es una simplificación, pero suele ser suficiente para JSONC sencillo
-    return text.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '$1');
+    const commentsStripped = text.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '$1');
+    // Regex para quitar comas finales (trailing commas) antes de ] o }
+    return commentsStripped.replace(/,(\s*[\]}])/g, '$1');
   }
 }
 
